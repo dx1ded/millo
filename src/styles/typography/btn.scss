@@ -1,0 +1,18 @@
+@use "sass:color";
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  &--primary {
+    color: var(--color-light);
+    background-color: var(--color-primary);
+
+    &:hover,
+    &.focus-visible {
+      background-color: color.adjust(#f9b300, $lightness: 15%);
+    }
+  }
+}

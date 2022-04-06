@@ -1,0 +1,26 @@
+:root {
+  // Colors
+
+  --color-black: #000;
+  --color-light: #fff;
+  --color-primary: #f9b300;
+  --color-secondary: #fff7e1;
+  --color-dark: #222;
+  --color-gray: #c9c9c9;
+  --color-cork: #40241d;
+
+  // Offsets
+
+  --container-horizontal-offset: 20px;
+  --design-mw: 1660px;
+  --mw: calc(var(--design-mw) + var(--container-horizontal-offset) * 2);
+  --grid-gap: 20px;
+
+  // Fonts
+
+  --font-family: "Gilroy", sans-serif;
+
+  // Shades
+
+  --shadow-primary: 0 0 30px rgb(146 146 146 / 20%);
+}

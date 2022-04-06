@@ -1,0 +1,110 @@
+@import "@cmps/Select/select";
+@import "@cmps/Rating/rating";
+@import "@cmps/Quality/quality";
+@import "@cmps/Char/char";
+
+.sales-sign {
+  position: relative;
+  font-weight: 700;
+  color: var(--color-primary);
+  transform: translateY(26px);
+
+  &::before {
+    position: absolute;
+    top: rem(-86px);
+    left: rem(-2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(70px);
+    height: rem(70px);
+    font-size: rem(35px);
+    color: var(--color-black);
+    content: "%";
+    background-color: var(--color-primary);
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgb(146 146 146 / 25%);
+  }
+}
+
+.product {
+  padding: rem(25px) rem(38px) rem(52px) rem(41px);
+  background-color: var(--color-light);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(146 146 146 / 25%);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(50px);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(33px);
+  }
+
+  &__image img {
+    width: rem(152px);
+    height: rem(304px);
+  }
+
+  &__options {
+    padding-top: rem(18px);
+  }
+
+  &__name {
+    margin-bottom: rem(10px);
+    font-weight: 900;
+  }
+
+  &__description {
+    max-width: rem(269px);
+    margin-bottom: rem(30px);
+    line-height: 1.16;
+    color: var(--color-dark);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__cta {
+    padding: rem(13.7px) rem(47px);
+    font-size: rem(18px);
+    font-weight: 600;
+  }
+
+  .rating {
+    margin-bottom: rem(29px);
+  }
+
+  .quality {
+    margin-bottom: rem(25px);
+  }
+
+  .char:not(:last-child) {
+    margin-bottom: rem(15px);
+  }
+}
+
+.product-price {
+  position: relative;
+
+  &__old {
+    position: absolute;
+    top: rem(-27px);
+    color: #c6c6c6;
+  }
+
+  &__current {
+    font-size: rem(35px);
+    font-weight: 900;
+    color: var(--color-dark);
+    text-decoration: none;
+  }
+}

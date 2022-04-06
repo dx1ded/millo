@@ -1,0 +1,35 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: rem(100px);
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+
+      &::after {
+        display: block;
+        width: 100%;
+        height: rem(2px);
+        content: "";
+        background-color: var(--color-primary);
+        transition: transform 0.3s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      &:hover::after,
+      &.focus-visible::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

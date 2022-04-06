@@ -1,0 +1,10 @@
+.quality {
+  svg {
+    width: rem(19px);
+    height: rem(19px);
+
+    &:not(:last-child) {
+      margin-right: rem(4px);
+    }
+  }
+}

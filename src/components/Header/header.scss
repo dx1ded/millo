@@ -1,0 +1,43 @@
+@import "@cmps/Logo/logo";
+@import "@cmps/Navigation/nav";
+@import "@cmps/Actions/actions";
+
+.header {
+  padding: rem(41px) 0;
+  background-color: var(--color-light);
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
+  &:focus-within {
+    background-color: var(--color-light);
+    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+  }
+
+  @include is-desktop {
+    &:hover {
+      background-color: var(--color-light);
+      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: rem(230px) 1fr rem(230px);
+    align-items: center;
+  }
+
+  .logo {
+    margin-top: rem(3px);
+    margin-left: rem(15px);
+  }
+
+  .nav {
+    justify-self: center;
+  }
+
+  .actions {
+    justify-self: flex-end;
+  }
+}

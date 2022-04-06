@@ -1,0 +1,90 @@
+.subscribe {
+  position: relative;
+  padding-top: rem(146px);
+  background-color: var(--color-light);
+
+  &__container {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: rem(-280px);
+      right: rem(-180px);
+      display: block;
+      width: rem(800px);
+      height: rem(589px);
+      content: "";
+      background-image: url("@images/coffee-with-beans.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(50px);
+  }
+
+  &__text {
+    max-width: rem(757px);
+    margin-bottom: rem(60px);
+  }
+
+  .top-wave {
+    position: absolute;
+    top: rem(-3px);
+    width: 100%;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: rem(246px);
+    }
+  }
+}
+
+.subscribe-form {
+  &__group {
+    display: flex;
+    max-width: rem(1100px);
+    padding: 0;
+    margin-bottom: rem(25px);
+    border: none;
+
+    [type="email"] {
+      width: 100%;
+      padding: rem(24px) rem(60px);
+      margin-right: rem(-40px);
+      font-size: rem(25px);
+      font-weight: 500;
+      color: var(--color-black);
+      background-color: #f3f3f3;
+      border: none;
+      border-radius: 40px 0 0 40px;
+      outline: none;
+
+      &::placeholder {
+        color: #c9c9c9;
+      }
+    }
+
+    [type="submit"] {
+      padding: 0 rem(53px);
+      font-size: rem(25px);
+      font-weight: 700;
+      border-radius: 40px;
+    }
+  }
+
+  &__info {
+    font-size: rem(16px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #5b5b5b;
+
+    a {
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+}

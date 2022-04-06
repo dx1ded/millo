@@ -1,0 +1,116 @@
+.catalog {
+  margin-bottom: rem(88px);
+
+  &__container {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      top: 5px;
+      left: -878px;
+      z-index: -1;
+      width: 1230px;
+      height: 1380px;
+      background-image: url("@images/shape-2.svg");
+    }
+
+    &::after {
+      top: 524px;
+      left: -436px;
+      z-index: 0;
+      width: 674px;
+      height: 674px;
+      pointer-events: none;
+      background-image: url("@images/blured-beans.png");
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(84px);
+  }
+}
+
+.catalog__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+.catalog-item {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: rem(60px) rem(35px) rem(64px);
+  text-align: center;
+  background-color: var(--color-light);
+  border-radius: 20px;
+  outline: none;
+  box-shadow: var(--shadow-primary);
+
+  @include is-desktop {
+    &:hover & {
+      &__image {
+        transform: translateY(-20px);
+      }
+
+      &__name {
+        transform: translateY(-15px);
+      }
+
+      &__link {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__link {
+      opacity: 0;
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(253px);
+    margin-bottom: rem(51px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 700;
+    color: var(--color-black);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__link {
+    display: block;
+    padding: rem(15.7px) 0;
+    margin-top: rem(20px);
+    font-size: rem(25px);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      opacity 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+
+    &.focus-visible {
+      opacity: 1;
+
+      & ~ .catalog-item__name {
+        transform: translateY(-15px);
+      }
+
+      & ~ .catalog-item__image {
+        transform: translateY(-20px);
+      }
+    }
+  }
+}

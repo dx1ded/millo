@@ -1,0 +1,28 @@
+.char {
+  &__name {
+    display: inline-block;
+    margin-bottom: rem(8px);
+  }
+
+  &__bullets {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    div {
+      width: rem(10px);
+      height: rem(10px);
+      background-color: #f0f0f0;
+      border-radius: 100%;
+
+      &:not(:first-child) {
+        margin-right: rem(3px);
+      }
+
+      &.current,
+      &.current ~ div {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+include @cmps/Product/product
+
+section.sales
+  .container
+    h2.title.sales__title Товары со скидкой
+    p.text.sales__text
+      | Наша компания предлагает покупать товар со скидкой не только в дни распродаж 
+      br
+      | или в течение действия ограниченных предложений, но и пользоваться скидками постоянно!
+    .sales__row
+      button.btn.btn-reset.btn--primary.sales-nav.sales-nav--prev(aria-label="Слайдер влево")
+      .sales__wrapper
+        .swiper.sales-slider
+          .swiper-wrapper
+            +product-with-sales.swiper-slide
+            +product-with-sales.swiper-slide
+            +product-with-sales.swiper-slide
+            +product-with-sales.swiper-slide
+      button.btn.btn-reset.btn--primary.sales-nav.sales-nav--next(aria-label="Слайдер вправо")
+    .sales__link
+      a.text.text--small(href="coffee.html") Смотреть все

@@ -1,0 +1,116 @@
+.news {
+  position: relative;
+  padding-bottom: rem(90px);
+  background-color: var(--color-secondary);
+
+  &__container {
+    position: relative;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: rem(60px);
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: "";
+      background-color: var(--color-black);
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  .top-wave {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(375px);
+    }
+  }
+}
+
+.news-item {
+  display: flex;
+  flex-basis: rem(680px);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-light);
+  border-radius: 20px;
+  box-shadow: var(--shadow-primary);
+
+  &:first-child {
+    margin-right: rem(20px);
+  }
+
+  &__image {
+    margin-right: rem(84px);
+    font-size: 0;
+
+    img {
+      border-radius: 20px 0 0 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+    font-weight: 700;
+  }
+
+  &__text {
+    max-width: rem(459px);
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(25px);
+    }
+  }
+
+  &__more {
+    display: inline-block;
+    margin-top: rem(30px);
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &::after {
+      display: inline-block;
+      width: rem(13px);
+      height: rem(13px);
+      margin-left: rem(10px);
+      vertical-align: middle;
+      content: "";
+      background-image: url("#/small-arrow-right");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: translateX(8px);
+    }
+  }
+
+  &--big {
+    flex: 1;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,41 @@
+@import "../mixins";
+
+// Libs
+
+@import "swiper/swiper";
+@import "swiper/modules/effect-fade/effect-fade";
+@import "swiper/modules/grid/grid";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+@import "@partials/index/hero";
+@import "@partials/index/catalog";
+@import "@partials/index/sales";
+@import "@partials/index/benefits";
+@import "@partials/index/about";
+@import "@partials/index/news";
+@import "@partials/index/social";
+
+.header {
+  background-color: transparent;
+
+  &__container::after {
+    position: absolute;
+    top: -313px;
+    right: -835px;
+    z-index: -2;
+    display: block;
+    width: 1443px;
+    height: 1740px;
+    content: "";
+    background-image: url("@images/shape-1.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+}

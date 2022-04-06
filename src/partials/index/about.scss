@@ -1,0 +1,66 @@
+.about {
+  position: relative;
+  padding: rem(194px) 0 rem(130px);
+  margin-bottom: rem(58px);
+  background-image: url("@images/about-background.jpg");
+  background-repeat: no-repeat;
+  background-position: left 96%;
+  background-size: 100%;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title,
+  &__text {
+    color: var(--color-light);
+  }
+
+  &__title {
+    margin-bottom: rem(100px);
+  }
+
+  &__text {
+    max-width: rem(1246px);
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__link {
+    padding: rem(22.75px) rem(68px);
+    margin-top: rem(99px);
+    font-size: rem(30px);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .top-wave,
+  .bottom-wave {
+    position: absolute;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+    }
+  }
+
+  .top-wave {
+    top: 0;
+
+    svg {
+      height: rem(225px);
+    }
+  }
+
+  .bottom-wave {
+    bottom: 0;
+
+    svg {
+      height: rem(208px);
+    }
+  }
+}

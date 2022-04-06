@@ -1,0 +1,16 @@
+mixin subscribe(top)
+  section.subscribe
+    //- From _mixins.pug
+    +subscribe-wave(top)
+    .container.subscribe__container
+      h2.title.subscribe__title Подписка на новости и рассылку
+      p.text.subscribe__text
+        | Подпишитесь на нашу рассылку прямо сейчас и будьте в курсе новых поставок, скидок и эксклюзивных предложений.
+      form.subscribe-form
+        legend.visually-hidden Форма для подписки на рассылку
+        fieldset.subscribe-form__group
+          input(type="email" placeholder="Ваш email" required)
+          input.btn.btn-reset.btn--primary(type="submit" value="Подписаться")
+        small.subscribe-form__info
+          | Нажимая на кнопку “Подписаться”, вы принимаете правила 
+          a(href="#") пользовательского соглашения

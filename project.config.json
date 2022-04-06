@@ -1,0 +1,15 @@
+{
+  "projectName": "Millo",
+  "publishUrl": "https://dx1ded.github.io/config-mpa",
+  "description": "Производство кофе, чая и других напитков. Магазины и точки доставки по всей России. Выгодные цены и вкуснейший аромат",
+  "keywords": [
+    "кофе",
+    "чай",
+    "вендинг",
+    "зерна",
+    "здоровое питание"
+  ],
+  "author": "Volodymyr Doskochinskiy",
+  "lang": "ru",
+  "locale": "ru_RU"
+}

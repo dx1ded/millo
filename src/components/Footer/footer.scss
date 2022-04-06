@@ -1,0 +1,13 @@
+@import "@cmps/Logo/logo";
+@import "@cmps/Navigation/nav";
+
+.footer {
+  padding-bottom: rem(60px);
+  margin-top: rem(210px);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

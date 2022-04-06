@@ -1,0 +1,28 @@
+include @cmps/Select/select
+include @cmps/Rating/rating
+include @cmps/Quality/quality
+include @cmps/Char/char
+
+mixin product-with-sales
+  .product.product--sales&attributes(attributes)
+    .product__header
+      span.text.text--usmall.sales-sign Скидки
+      +select(0, ["250 г.", "500 г.", "750 г.", "1 кг."])
+    .product__content
+      .product__image
+        +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
+      .product__options
+        +rating
+        +quality
+        .product-chars
+          +char("Кислинка")
+          +char("Горчинка")
+          +char("Насыщенность")
+    .product__info
+      h4.text.product__name Colombia Supremo
+      p.text.text--usmall.product__description Свежеобжаренный кофе - описание товара, вкус, аромат
+      .product__wrapper
+        .product-price
+          del.text.product-price__old 350 &#8381;
+          ins.product-price__current 250 &#8381;
+        button.btn.btn-reset.btn--primary.product__cta В корзину

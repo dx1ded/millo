@@ -1,0 +1,34 @@
+section.benefits
+  .top-wave
+    svg(viewbox="0 0 1904 225" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+      path(d="M1894.5 1.5L1904 0H0V183.5L162.5 210.5L263 220L384 224.5H456.5L526.5 222L628.5 217L736.5 208L836.5 195L1012.5 167L1133.5 144.5L1259.5 120L1420 88L1557.5 61.5L1778 21.5L1798 18L1827 13L1847 9.5L1867.5 6L1885.5 3L1894.5 1.5Z" fill="white")
+  .container.benefits__container
+    .benefits__image
+      +image(
+        "cup-of-coffee-with-beans.png",
+        "Чашка кофе, сзади которой гора зерен"
+      )
+    .benefits__content
+      h2.title.benefits__title Почему стоит работать именно с нами?
+      dl.benefits__list
+        .benefits-item
+          .benefits-item__icon
+            +icon("cup-of-coffee")
+          .benefits-item__content
+            dt.benefits-item__title Всегда свежая обжарка
+            dd.text.benefits-item__description
+              | Подбор степени обжарки под каждый сорт&nbsp;кофе. Всегда свежая обжарка
+        .benefits-item
+          .benefits-item__icon
+            +icon("sales")
+          .benefits-item__content
+            dt.benefits-item__title Лучшие цены на продукцию
+            dd.text.benefits-item__description
+              | Благодаря крупным объемам производства мы&nbsp;даем лучшие цены на нашу продукцию
+        .benefits-item
+          .benefits-item__icon
+            +icon("person-with-tick")
+          .benefits-item__content
+            dt.benefits-item__title Консультации 24/7
+            dd.text.benefits-item__description
+              | Наши специалисты готовы всегда помочь и&nbsp;подсказать вам с выбором кофе или другой&nbsp;продукции.

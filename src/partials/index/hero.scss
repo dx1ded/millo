@@ -1,0 +1,90 @@
+.hero {
+  margin-top: rem(81px);
+  margin-bottom: rem(157px);
+
+  &__container {
+    position: relative;
+  }
+}
+
+.hero-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: rem(28px);
+
+  &__item {
+    /* purgecss ignore current */
+
+    width: rem(20px);
+    height: rem(20px);
+    cursor: pointer;
+    background-color: var(--color-light);
+    border: none;
+    border-radius: 100%;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      /* purgecss ignore current */
+
+      margin-right: rem(30px);
+    }
+
+    &.focus-visible {
+      border: 2px solid var(--color-dark);
+    }
+
+    &--active {
+      /* purgecss ignore current */
+
+      background-color: var(--color-cork);
+    }
+  }
+}
+
+.hero-slide {
+  position: relative;
+  padding-bottom: rem(118px);
+
+  &::after {
+    position: absolute;
+    top: rem(-85px);
+    right: rem(89px);
+    z-index: -1;
+    display: block;
+    width: rem(899px);
+    height: rem(772px);
+    pointer-events: none;
+    content: "";
+    background-image: url("@images/coffee-with-beans.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__headline {
+    margin-top: 0;
+    margin-bottom: rem(62px);
+    font-size: rem(80px);
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--color-black);
+  }
+
+  &__text {
+    max-width: rem(658px);
+
+    p:not(:last-child) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__link {
+    padding: rem(22px) rem(56px);
+    margin-top: rem(90px);
+    font-size: rem(30px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+}

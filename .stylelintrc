@@ -1,0 +1,40 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-config-recess-order"
+	],
+	"plugins": ["stylelint-order"],
+	"rules": {
+		"no-empty-source": null,
+    "value-list-comma-newline-after": "always-multi-line",
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "order/order": [
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::(before|after)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:nth-child"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      }
+    ]
+	}
+}

@@ -1,0 +1,35 @@
+.rating {
+  &__stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    svg {
+      width: rem(25px);
+      height: rem(25px);
+      fill: #f0f0f0;
+
+      &:not(:first-child) {
+        margin-right: rem(2px);
+      }
+
+      &.current,
+      &.current ~ svg {
+        fill: var(--color-primary);
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-top: rem(9px);
+    margin-left: rem(2px);
+    font-size: rem(14px);
+    color: #5b5b5b;
+
+    strong {
+      font-size: rem(20px);
+      color: var(--color-black);
+    }
+  }
+}

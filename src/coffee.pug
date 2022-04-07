@@ -1,0 +1,53 @@
+extends layouts/page
+
+include @cmps/PageBanner/banner
+include @cmps/Filter/filter
+include @cmps/ProductsList/list
+include @cmps/Product/product
+include @cmps/Subscribe/subscribe
+
+block config
+  - page.title = "Millo - Кофе"
+
+block styles
+  +style("styles/coffee.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +banner(
+      "Свежеобжаренный кофе",
+      [
+        {
+          name: "Главная",
+          path: "/"
+        },
+        {
+          name: "Каталог товаров",
+          path: "/"
+        },
+        {
+          name: "Свежеобжаренный кофе",
+          path: "coffee.html"
+        }
+      ]
+    )
+    +filter-section
+    +products-list
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-with-sales
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+      +product-popular-new
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/coffee.js")

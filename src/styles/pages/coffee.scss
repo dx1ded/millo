@@ -1,0 +1,27 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/PageBanner/banner";
+@import "@cmps/Filter/filter";
+@import "@cmps/ProductsList/list";
+@import "@cmps/Product/product";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+.banner__container::after {
+  position: absolute;
+  top: -160px;
+  right: 10px;
+  z-index: 1;
+  display: block;
+  width: 800px;
+  height: 590px;
+  content: "";
+  background-image: url("@images/coffee-with-beans.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

@@ -1,0 +1,13 @@
+@import "@cmps/Sort/sort";
+@import "@cmps/MoreButton/more";
+
+.products {
+  padding: rem(77px) 0 rem(152px);
+  background-color: var(--color-wild-sand);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(70px) var(--grid-gap);
+  }
+}

@@ -1,0 +1,19 @@
+.radio {
+  font-size: rem(20px);
+  font-weight: 500;
+
+  &__input:checked ~ &__visual {
+    background-color: var(--color-primary);
+  }
+
+  &__visual {
+    display: inline-block;
+    width: rem(25px);
+    height: rem(25px);
+    margin-right: rem(15px);
+    cursor: pointer;
+    background-color: #e4e4e4;
+    border-radius: 100%;
+    transition: background-color 0.2s ease-in-out;
+  }
+}

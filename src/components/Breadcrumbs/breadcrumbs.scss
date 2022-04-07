@@ -1,0 +1,22 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    &:not(:first-child)::before {
+      display: inline-block;
+      width: rem(4px);
+      height: rem(4px);
+      margin: 0 rem(5px);
+      vertical-align: middle;
+      content: "";
+      background-color: var(--color-light);
+      border-radius: 100%;
+    }
+
+    a {
+      color: var(--color-light);
+      text-decoration: none;
+    }
+  }
+}

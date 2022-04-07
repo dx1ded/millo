@@ -8,13 +8,14 @@
   --color-dark: #222;
   --color-gray: #c9c9c9;
   --color-cork: #40241d;
+  --color-wild-sand: #f5f5f5;
 
   // Offsets
 
-  --container-horizontal-offset: 20px;
-  --design-mw: 1660px;
+  --container-horizontal-offset: #{rem(20px)};
+  --design-mw: #{rem(1660px)};
   --mw: calc(var(--design-mw) + var(--container-horizontal-offset) * 2);
-  --grid-gap: 20px;
+  --grid-gap: #{rem(20px)};
 
   // Fonts
 
@@ -23,4 +24,8 @@
   // Shades
 
   --shadow-primary: 0 0 30px rgb(146 146 146 / 20%);
+
+  // Z-indexes
+
+  --z-header: 100;
 }

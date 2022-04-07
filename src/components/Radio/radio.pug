@@ -1,0 +1,12 @@
+mixin radio(ariaText)
+  label.radio
+    input(
+      class="visually-hidden radio__input"
+      type="radio"
+      aria-label=ariaText
+    )&attributes(attributes)
+    span.radio__visual
+
+    //- Additional content
+
+    block

@@ -3,23 +3,13 @@
 @import "@cmps/Actions/actions";
 
 .header {
+  position: relative;
   padding: rem(41px) 0;
   background-color: var(--color-light);
+  box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
   transition:
     background-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
-
-  &:focus-within {
-    background-color: var(--color-light);
-    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
-  }
-
-  @include is-desktop {
-    &:hover {
-      background-color: var(--color-light);
-      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
-    }
-  }
 
   &__container {
     position: relative;

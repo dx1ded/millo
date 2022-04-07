@@ -24,15 +24,29 @@
 
 .header {
   background-color: transparent;
+  box-shadow: none;
+
+  &:focus-within {
+    background-color: var(--color-light);
+    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+  }
+
+  @include is-desktop {
+    &:hover {
+      background-color: var(--color-light);
+      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+    }
+  }
 
   &__container::after {
     position: absolute;
     top: -313px;
     right: -835px;
-    z-index: -2;
+    z-index: -1;
     display: block;
     width: 1443px;
     height: 1740px;
+    pointer-events: none;
     content: "";
     background-image: url("@images/shape-1.svg");
     background-repeat: no-repeat;

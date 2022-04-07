@@ -1,0 +1,10 @@
+.more {
+  grid-column: span 4;
+  padding: rem(18px) 0;
+  font-size: rem(20px);
+  font-weight: 500;
+  color: var(--color-black);
+  background-color: var(--color-light);
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+}

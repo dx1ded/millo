@@ -1,0 +1,136 @@
+include @cmps/Radio/radio
+include @cmps/Beans/beans
+
+mixin filter-extent
+  .filter-extent
+    .filter-extent__wrapper
+      h3.filter-extent__title Степень обжарки
+      fieldset
+        +radio("Степень обжарки - 5")(name="extent" checked)
+          +beans
+        +radio("Степень обжарки - 4")(name="extent")
+          +beans(4)
+        +radio("Степень обжарки - 3")(name="extent")
+          +beans(3)
+        +radio("Степень обжарки - 2")(name="extent")
+          +beans(2)
+        +radio("Степень обжарки - 1")(name="extent")
+          +beans(1)
+
+mixin filter-options
+  .filter-options
+    .filter-options__wrapper
+      .filter-options__column
+        fieldset.filter-option
+          h4.text.filter-option__title География
+          +radio("Локация - Африка")(name="location")
+            | Африка
+          +radio("Локация - Йемен")(name="location")
+            | Йемен
+          +radio("Локация - Уганда")(name="location")
+            | Уганда
+          +radio("Локация - Эфиопия")(name="location")
+            | Эфиопия
+          +radio("Локация - Азия")(name="location")
+            | Азия
+          +radio("Локация - Центральная Америка")(name="location" checked)
+            | Центр. Америка
+          +radio("Локация - Латинская Америка")(name="location")
+            | Лат. Америка
+      .filter-options__column
+        fieldset.filter-option
+          h4.text.filter-option__title Кислинка
+          +radio("Степень кислости - низкая")(name="acid")
+            | Низкая
+          +radio("Степень кислости - средняя")(name="acid")
+            | Средняя
+          +radio("Степень кислости - высокая")(name="acid" checked)
+            | Высокая
+        fieldset.filter-option
+          h4.text.filter-option__title Способ обработки
+          +radio("Способ обработки - сухой")(name="method" checked)
+            | Сухая
+          +radio("Способ обработки - мытый")(name="method")
+            | Мытая
+          +radio("Способ обработки - прочий")(name="method")
+            | Прочие
+      .filter-options__column
+        fieldset.filter-option
+          h4.text.filter-option__title Особые
+          +radio("Категория - Популярное")(name="category")
+            | Популярное
+          +radio("Категория - Новый урожай")(name="category")
+            | Новый урожай
+          +radio("Категория - Ваш выбор")(name="category" checked)
+            | Ваш выбор
+          +radio("Категория - Микролот")(name="category")
+            | Микролот
+          +radio("Категория - Сорт недели")(name="category")
+            | Сорт недели
+          +radio("Категория - Скидки")(name="category")
+            | Скидки
+          +radio("Категория - Новинка")(name="category")
+            | Новинка
+      .filter-options__column
+        fieldset.filter-option
+          h4.text.filter-option__title Вид кофе
+          +radio("Вид кофе - Арабика")(name="kind-of-coffee")
+            | Арабика
+          +radio("Вид кофе - Робуста")(name="kind-of-coffee" checked)
+            | Робуста
+          +radio("Вид кофе - Смесь арабик")(name="kind-of-coffee")
+            | Смесь арабик
+          +radio("Вид кофе - Смесь арабика/робуста")(name="kind-of-coffee")
+            | Смесь арабика/робуста
+
+mixin filter-types
+  .filter-types
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - турка" checked)
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Турка
+        +icon("turka")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - френч-пресс")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Френч-пресс
+        +icon("french-press")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - мока")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Мока
+        +icon("moka")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - эспрессо")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Эспрессо
+        +icon("espresso")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - воронка")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Воронка
+        +icon("funnel")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - аэропресс")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Аэропресс
+        +icon("aero-press")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - чашка")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Чашка
+        +icon("cup-with-smoke")
+    .filter-type
+      input(type="radio" name="type" aria-label="Тип - автомат")
+      .filter-type__visual
+        h5.text.text--small(aria-hidden="true") Автомат
+        +icon("vending")
+
+//- Section
+
+mixin filter-section
+  section.filter
+    .container.filter__container
+      +filter-extent
+      +filter-options
+      +filter-types

@@ -1,0 +1,37 @@
+@import "@cmps/Breadcrumbs/breadcrumbs";
+
+.header {
+  z-index: var(--z-header);
+}
+
+.banner {
+  position: relative;
+  padding: rem(40px) 0 rem(158px);
+  background-color: var(--color-primary);
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: rem(131px);
+    font-size: rem(70px);
+    font-weight: 900;
+    color: var(--color-light);
+  }
+
+  .bottom-wave {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    transform: translateY(100%);
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(288px);
+    }
+  }
+}

@@ -13,6 +13,7 @@
       display: block;
       width: rem(800px);
       height: rem(589px);
+      pointer-events: none;
       content: "";
       background-image: url("@images/coffee-with-beans.png");
       background-repeat: no-repeat;

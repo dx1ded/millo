@@ -1,0 +1,6 @@
+mixin breadcrumbs(pathLine)
+  ul.list-reset.breadcrumbs
+    each item in pathLine
+      - const { name, path } = item
+      li.breadcrumbs__item
+        a.text.text--usmall(href=path)= name

@@ -1,0 +1,8 @@
+mixin products-list
+  section.products
+    .container.products__container
+      include @cmps/Sort/sort
+      //- Content (might be blocks of products)
+      block
+      //- ==================
+      include @cmps/MoreButton/more

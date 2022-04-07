@@ -1,9 +1,23 @@
 @import "@cmps/Sort/sort";
-@import "@cmps/MoreButton/more";
+@import "@cmps/More/more";
 
 .products {
+  position: relative;
   padding: rem(77px) 0 rem(152px);
   background-color: var(--color-wild-sand);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: rem(94px);
+    content: "";
+    background-color: var(--color-wild-sand);
+    transform: translateY(-100%);
+  }
 
   &__container {
     display: grid;

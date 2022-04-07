@@ -1,0 +1,10 @@
+mixin proposition(data)
+  section.proposition
+    .container.proposition__container
+      each item, index in data
+        if index === 3
+          div
+        figure.proposition-item
+            .proposition-item__image
+              +image(item.image.url, item.image.alt)
+            figcaption.text.proposition-item__text= item.name

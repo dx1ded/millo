@@ -1,0 +1,141 @@
+extends layouts/page
+
+include @cmps/PageBanner/banner
+include @cmps/Proposition/proposition
+include @cmps/ProductsList/list
+include @cmps/Product/product
+include @cmps/Subscribe/subscribe
+
+block config
+  -
+    page.title = "Millo - Чай и кофейные напитки"
+    const data = [
+      {
+        name: "Черный чай",
+        image: {
+          url: "black-tea-sm.jpg",
+          alt: "Пачка черного чая"
+        }
+      },
+      {
+        name: "Зеленый чай",
+        image: {
+          url: "green-tea.jpg",
+          alt: "Пачка зеленого чая"
+        }
+      },
+      {
+        name: "Молочный улунг",
+        image: {
+          url: "milk-tea.jpg",
+          alt: "Пачка молочного чая"
+        }
+      },
+      {
+        name: "Травяной чай",
+        image: {
+          url: "black-tea-sm.jpg",
+          alt: "Пачка черного чая"
+        }
+      },
+      {
+        name: "Матча",
+        image: {
+          url: "green-tea.jpg",
+          alt: "Пачка зеленого чая"
+        }
+      },
+      {
+        name: "Пуэр",
+        image: {
+          url: "milk-tea.jpg",
+          alt: "Пачка молочного чая"
+        }
+      },
+      {
+        name: "Кофейные напитки",
+        image: {
+          url: "cappucino.jpg",
+          alt: "Пачка капучино"
+        }
+      }
+    ]
+
+block styles
+  +style("styles/tea.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +banner(
+      "Чай и кофейные напитки",
+      [
+        {
+          name: "Главная",
+          path: "/"
+        },
+        {
+          name: "Каталог товаров",
+          path: "/"
+        },
+        {
+          name: "Чай и кофейные напитки",
+          path: "tea.html"
+        }
+      ]
+    )
+    +proposition(data)
+    +products-list
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+      +product-without-options({
+        url: "black-tea.jpg",
+        alt: "Пакет черного чая"
+      })
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/type-template.js")

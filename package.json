@@ -61,8 +61,6 @@
   },
   "dependencies": {
     "focus-visible": "^5.2.0",
-    "focus-within": "^3.0.2",
-    "focus-within-polyfill": "^5.2.1",
     "normalize.css": "^8.0.1",
     "swiper": "^8.0.7",
     "vanilla-lazyload": "^17.5.0"

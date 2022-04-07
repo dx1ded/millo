@@ -65,8 +65,10 @@
     font-weight: 600;
   }
 
-  &--sale {
-    align-items: center;
+  &--sale & {
+    &__header {
+      align-items: center;
+    }
 
     .sales-sign {
       position: relative;
@@ -90,6 +92,21 @@
         border-radius: 100%;
         box-shadow: 0 0 10px rgb(146 146 146 / 25%);
       }
+    }
+  }
+
+  &--wide & {
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      justify-content: center;
+      margin-bottom: rem(20px);
+    }
+
+    &__image img {
+      width: auto;
     }
   }
 

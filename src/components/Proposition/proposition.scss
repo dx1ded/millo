@@ -1,0 +1,43 @@
+.proposition {
+  padding-bottom: rem(30px);
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+
+    &::after {
+      position: absolute;
+      top: -308px;
+      right: -230px;
+      display: block;
+      width: 819px;
+      height: 655px;
+      content: "";
+      background-image: url("@images/teapot-with-cups-and-leaves.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+
+.proposition-item {
+  padding: rem(20px) rem(35px) rem(40px);
+  text-align: center;
+  background-color: var(--color-light);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgb(149 149 149 / 25%);
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(236px);
+    margin-bottom: rem(4px);
+  }
+
+  &__text {
+    font-weight: 700;
+  }
+}

@@ -65,11 +65,7 @@
     font-weight: 600;
   }
 
-  &--sale & {
-    &__header {
-      align-items: center;
-    }
-
+  &--sale {
     .sales-sign {
       position: relative;
       font-weight: 700;

@@ -1,0 +1,41 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/PageBanner/banner";
+@import "@cmps/Proposition/proposition";
+@import "@cmps/ProductsList/list";
+@import "@cmps/Product/product";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+.proposition__container {
+  z-index: 0;
+
+  &::after {
+    top: rem(-234px);
+    right: rem(-110px);
+    z-index: -1;
+    width: rem(671px);
+    height: rem(615px);
+    background-image: url("@images/vending-machine-xxl.png");
+  }
+}
+
+.proposition-item__image {
+  height: rem(175px);
+  margin-bottom: rem(45px);
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+.product--wide .product__image img {
+  width: 100%;
+  height: rem(250px);
+}

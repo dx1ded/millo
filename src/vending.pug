@@ -1,0 +1,141 @@
+extends layouts/page
+
+include @cmps/PageBanner/banner
+include @cmps/Proposition/proposition
+include @cmps/ProductsList/list
+include @cmps/Product/product
+include @cmps/Subscribe/subscribe
+
+block config
+  -
+    page.title = "Millo - Вендинг"
+    const data = [
+      {
+        name: "Гранулированный кофе",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Гранулированный цикорий",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Зерновой кофе",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Гранулированный какао",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Гранулированные напитки",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Кофе порошкообразный",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      },
+      {
+        name: "Сухое молоко",
+        image: {
+          url: "beans-dust.jpg",
+          alt: "Перемеленный кофе"
+        }
+      }
+    ]
+
+block styles
+  +style("styles/vending.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +banner(
+      "Продукция для вендинга",
+      [
+        {
+          name: "Главная",
+          path: "/"
+        },
+        {
+          name: "Каталог товаров",
+          path: "/"
+        },
+        {
+          name: "Продукция для вендинга",
+          path: "vending.html"
+        }
+      ]
+    )
+    +proposition(data)
+    +products-list
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+      +product-without-options({
+        url: "beans-dust.jpg",
+        alt: "Перемеленный кофе"
+      })
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/type-template.js")

@@ -1,0 +1,15 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+@import "@partials/product/overlay";
+
+.breadcrumbs {
+  padding: rem(40px) 0;
+}

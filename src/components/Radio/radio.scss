@@ -1,4 +1,6 @@
 .radio {
+  display: flex;
+  align-items: center;
   font-size: rem(20px);
   font-weight: 500;
 
@@ -12,7 +14,7 @@
     height: rem(25px);
     margin-right: rem(15px);
     cursor: pointer;
-    background-color: #e4e4e4;
+    background-color: var(--color-mercury);
     border-radius: 100%;
     transition: background-color 0.2s ease-in-out;
   }

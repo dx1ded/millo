@@ -1,0 +1,185 @@
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Beans/beans";
+@import "@cmps/Rating/rating";
+@import "@cmps/Char/char";
+@import "@cmps/Radio/radio";
+@import "@cmps/Counter/counter";
+
+.overlay {
+  position: relative;
+  margin-bottom: rem(100px);
+  background-color: var(--color-secondary);
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bottom-wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(288px);
+    }
+  }
+}
+
+.product {
+  display: flex;
+  padding: rem(73px) rem(132px) rem(121px);
+  background-color: var(--color-light);
+  border: 1px solid var(--color-mercury);
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgb(163 163 163 / 25%);
+
+  &__image {
+    position: relative;
+    margin-right: rem(183px);
+
+    &::after {
+      position: absolute;
+      top: rem(54px);
+      right: rem(-54px);
+      display: block;
+      width: rem(206px);
+      height: rem(196px);
+      content: "";
+      background-image: url("@images/coffee-beans.jpg");
+      background-repeat: no-repeat;
+      border-radius: 100%;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: rem(700px);
+    margin-bottom: rem(38px);
+  }
+
+  &__column:last-child {
+    max-width: rem(1290px);
+  }
+
+  &__name {
+    margin-bottom: rem(20px);
+    font-size: rem(30px);
+    font-weight: 900;
+    color: var(--color-dark);
+  }
+
+  &__sign {
+    display: block;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-primary);
+
+    &:not(:last-child) {
+      margin-bottom: rem(10px);
+    }
+  }
+
+  &__description {
+    max-width: rem(652px);
+    margin-bottom: rem(40px);
+  }
+
+  &__chars {
+    display: flex;
+    justify-content: space-between;
+    max-width: rem(740px);
+    margin-bottom: rem(78px);
+
+    .char {
+      &__name {
+        font-size: rem(20px);
+        font-weight: 700;
+      }
+
+      &__bullets div {
+        width: rem(14px);
+        height: rem(14px);
+      }
+    }
+  }
+
+  &__buy {
+    padding: rem(20.6px) 0;
+    font-size: rem(25px);
+    font-weight: 600;
+  }
+
+  .beans {
+    margin-bottom: rem(20px);
+
+    svg {
+      width: rem(27px);
+      height: rem(27px);
+
+      &:not(:last-child) {
+        margin-right: rem(11px);
+      }
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(30px);
+
+    &__stars {
+      margin-right: rem(20px);
+
+      svg {
+        width: rem(34px);
+        height: rem(34px);
+      }
+    }
+
+    &__text {
+      font-size: rem(16px);
+
+      strong {
+        margin-right: rem(10px);
+        font-size: rem(30px);
+      }
+    }
+  }
+}
+
+.product-form {
+  &__options {
+    display: flex;
+    padding: 0;
+    margin-bottom: rem(65px);
+    border: none;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: rem(260px) 1fr;
+    gap: var(--grid-gap);
+    max-width: rem(680px);
+  }
+
+  .radio {
+    font-size: rem(30px);
+
+    &:not(:last-child) {
+      margin-right: rem(60px);
+    }
+  }
+
+  .select {
+    margin-right: rem(20px);
+  }
+}

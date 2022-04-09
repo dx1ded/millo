@@ -1,0 +1,19 @@
+extends layouts/page
+
+include @cmps/Subscribe/subscribe
+
+block config
+  - page.title = "Millo - Colombia Supremo"
+
+block styles
+  +style("styles/product.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    include @partials/product/overlay
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/product.js")

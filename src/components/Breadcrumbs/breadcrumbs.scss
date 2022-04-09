@@ -3,6 +3,8 @@
   align-items: center;
 
   &__item {
+    color: var(--color-dark);
+
     &:not(:first-child)::before {
       display: inline-block;
       width: rem(4px);
@@ -10,12 +12,12 @@
       margin: 0 rem(5px);
       vertical-align: middle;
       content: "";
-      background-color: var(--color-light);
+      background-color: currentcolor;
       border-radius: 100%;
     }
 
     a {
-      color: var(--color-light);
+      color: inherit;
       text-decoration: none;
     }
   }

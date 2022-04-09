@@ -1,0 +1,45 @@
+.counter {
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  background-color: var(--color-grayer);
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+
+  &__action {
+    font-size: rem(30px);
+    font-weight: 500;
+    color: var(--color-black);
+    cursor: pointer;
+
+    &--decrement {
+      order: 1;
+    }
+
+    &--increment {
+      order: 3;
+    }
+  }
+
+  &__display {
+    order: 2;
+    width: 100%;
+    font-size: rem(25px);
+    font-weight: 600;
+    color: var(--color-dark);
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: textfield;
+
+    &[value="1"] ~ .counter__action--decrement,
+    &[value="99"] ~ .counter__action--increment {
+      color: var(--color-silver);
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+}

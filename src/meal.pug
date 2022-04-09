@@ -1,0 +1,127 @@
+extends layouts/page
+
+include @cmps/PageBanner/banner
+include @cmps/Proposition/proposition
+include @cmps/ProductsList/list
+include @cmps/Product/product
+include @cmps/Subscribe/subscribe
+
+block config
+  -
+    page.title = "Millo - Здоровое питание"
+    const data = [
+      {
+        name: "Цикорий и\u00A0корень\u00A0цикория",
+        image: {
+          url: "barley-drink.jpg",
+          alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+        }
+      },
+      {
+        name: "Ячменные напитки",
+        image: {
+          url: "barley-drink.jpg",
+          alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+        }
+      },
+      {
+        name: `Напитки для\u00A0здоровья`,
+        image: {
+          url: "barley-drink.jpg",
+          alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+        }
+      },
+      {
+        name: "Протеиновые смеси",
+        image: {
+          url: "barley-drink.jpg",
+          alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+        }
+      },
+      {
+        name: "Толокняные каши",
+        image: {
+          url: "barley-drink.jpg",
+          alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+        }
+      }
+    ]
+
+block styles
+  +style("styles/meal.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +banner(
+      "Здоровое питание",
+      [
+        {
+          name: "Главная",
+          path: "/"
+        },
+        {
+          name: "Каталог товаров",
+          path: "/"
+        },
+        {
+          name: "Здоровое питание",
+          path: "meal.html"
+        }
+      ]
+    )
+    +proposition(data, 2)
+    +products-list
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+      +product-without-options({
+        url: "barley-drink.jpg",
+        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
+      })
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/type-template.js")

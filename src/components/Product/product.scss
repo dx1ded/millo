@@ -16,13 +16,17 @@
     margin-bottom: rem(50px);
   }
 
-  &__types span {
-    display: block;
-    font-weight: 700;
-    color: var(--color-primary);
+  &__types {
+    margin-bottom: -100%;
 
-    &:not(:last-child) {
-      margin-bottom: rem(6px);
+    span {
+      display: block;
+      font-weight: 700;
+      color: var(--color-primary);
+
+      &:not(:last-child) {
+        margin-bottom: rem(6px);
+      }
     }
   }
 

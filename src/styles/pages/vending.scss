@@ -19,7 +19,7 @@
     z-index: -1;
     width: rem(671px);
     height: rem(615px);
-    background-image: url("@images/vending-machine-xxl.png");
+    background-image: url("@images/vending-machine.png");
   }
 }
 
@@ -28,10 +28,10 @@
   margin-bottom: rem(45px);
 
   img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    min-width: 100%;
+    max-height: 100%;
     object-fit: cover;
+    border-radius: 20px;
   }
 }
 

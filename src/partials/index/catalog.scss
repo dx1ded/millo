@@ -46,7 +46,7 @@
 .catalog-item {
   display: flex;
   flex-direction: column-reverse;
-  padding: rem(60px) rem(35px) rem(64px);
+  padding: rem(60px) rem(35px) rem(54px);
   text-align: center;
   background-color: var(--color-light);
   border-radius: 20px;
@@ -78,8 +78,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: rem(253px);
-    margin-bottom: rem(51px);
+    height: rem(278px);
+    margin-bottom: rem(35px);
     transition: transform 0.3s ease-in-out;
   }
 

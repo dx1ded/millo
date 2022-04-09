@@ -1,8 +1,8 @@
-mixin proposition(data)
+mixin proposition(data, spaceIndex = 3)
   section.proposition
     .container.proposition__container
       each item, index in data
-        if index === 3
+        if index === spaceIndex
           div
         figure.proposition-item
             .proposition-item__image

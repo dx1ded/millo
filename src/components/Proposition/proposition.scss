@@ -12,8 +12,8 @@
       top: -308px;
       right: -230px;
       display: block;
-      width: 819px;
-      height: 655px;
+      width: rem(819px);
+      height: rem(655px);
       content: "";
       background-image: url("@images/teapot-with-cups-and-leaves.png");
       background-repeat: no-repeat;
@@ -35,6 +35,10 @@
     justify-content: center;
     height: rem(236px);
     margin-bottom: rem(4px);
+
+    img {
+      max-width: rem(142px);
+    }
   }
 
   &__text {

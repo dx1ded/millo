@@ -1,0 +1,35 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/PageBanner/banner";
+@import "@cmps/Proposition/proposition";
+@import "@cmps/ProductsList/list";
+@import "@cmps/Product/product";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+.proposition__container {
+  grid-template-columns: repeat(3, 1fr);
+
+  &::after {
+    top: -50px;
+    right: 20px;
+    width: rem(518px);
+    height: rem(364px);
+    background-image: url("@images/harmless-meal.png");
+  }
+}
+
+.proposition-item {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    max-width: rem(256px);
+    margin: 0 auto;
+    line-height: em(30px, 25px);
+    text-align: left;
+  }
+}

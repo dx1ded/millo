@@ -1,0 +1,6 @@
+mixin product-navigation(items)
+  nav.product-nav
+    .container.product-nav__container
+      each item in items
+        - const { name, path } = item
+        a.text.product-nav__item(href=path)= name

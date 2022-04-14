@@ -1,0 +1,33 @@
+.addition {
+  margin-bottom: rem(150px);
+
+  &__title {
+    margin-bottom: rem(60px);
+  }
+}
+
+.addition-theme {
+  &:not(:last-child) {
+    margin-bottom: rem(60px);
+  }
+
+  &__name {
+    margin-bottom: rem(60px);
+    font-size: rem(30px);
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  &__text {
+    max-width: rem(1380px);
+    margin-bottom: rem(70px);
+
+    p:not(:last-child) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__image img {
+    border-radius: 20px;
+  }
+}

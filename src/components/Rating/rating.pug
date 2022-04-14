@@ -9,3 +9,12 @@ mixin rating
     span.rating__text
       strong 4.0 
       | (32 отзыва)
+
+mixin rating-without-text
+  .rating
+    .rating__stars
+      +icon("star")
+      +icon("star").current
+      +icon("star")
+      +icon("star")
+      +icon("star")

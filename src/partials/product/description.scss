@@ -1,0 +1,112 @@
+.description {
+  padding-bottom: rem(100px);
+  margin-bottom: rem(50px);
+  border-bottom: 1px solid #b3b3b3;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: rem(399px) 1fr;
+    gap: var(--grid-gap);
+    margin-bottom: rem(90px);
+  }
+
+  &__title {
+    margin-bottom: rem(50px);
+    font-size: rem(30px);
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    max-width: rem(1100px);
+
+    p {
+      color: var(--color-dark);
+
+      &:not(:last-child) {
+        margin-bottom: rem(30px);
+      }
+    }
+  }
+
+  &__image img {
+    width: rem(397px);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+
+.description-taste,
+.description-chars {
+  padding: rem(60px) rem(80px);
+  background-color: var(--color-light);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgb(149 149 149 / 25%);
+}
+
+.description-taste {
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(70px);
+    height: rem(70px);
+    margin-right: rem(50px);
+    background-color: var(--color-primary);
+    border-radius: 100%;
+
+    svg {
+      width: rem(42px);
+      height: rem(42px);
+      fill: var(--color-black);
+    }
+  }
+}
+
+.description-chars {
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: rem(20px);
+    border-bottom: 1px solid #b2b2b2;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
+
+    &:first-child .description-chars__text {
+      transform: translateY(-35%);
+    }
+  }
+
+  &__name {
+    font-size: rem(25px);
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: rem(433px);
+    text-align: right;
+  }
+}

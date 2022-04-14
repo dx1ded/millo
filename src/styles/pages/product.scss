@@ -3,13 +3,22 @@
 // Components
 
 @import "@cmps/Header/header";
+@import "@cmps/ProductNavigation/nav";
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
 
 // Sections
 
 @import "@partials/product/overlay";
+@import "@partials/product/description";
+@import "@partials/product/how";
+@import "@partials/product/addition";
+@import "@partials/product/reviews";
 
 .breadcrumbs {
   padding: rem(40px) 0;
+}
+
+.product-nav {
+  margin-bottom: rem(100px);
 }

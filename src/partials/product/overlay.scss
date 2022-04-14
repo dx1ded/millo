@@ -108,6 +108,10 @@
       &__bullets div {
         width: rem(14px);
         height: rem(14px);
+
+        &:not(:first-child) {
+          margin-right: rem(4.25px);
+        }
       }
     }
   }
@@ -142,6 +146,10 @@
       svg {
         width: rem(34px);
         height: rem(34px);
+
+        &:not(:first-child) {
+          margin-right: rem(4px);
+        }
       }
     }
 

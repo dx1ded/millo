@@ -1,0 +1,13 @@
+include @cmps/Comment/comment
+
+section.reviews#reviews
+  .top-wave
+    svg(viewbox="0 0 1904 203" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+      path(d="M90 154L0 135V0H1904L1747.5 29.5L1553 66L1293.5 117L1063 157.5L955.5 173.5L832.5 188L686 199L576 203L453.5 200.5L403 197.5L294.5 187L199 174.5L90 154Z" fill="white")
+  .container.reviews__container
+    h2.title.title--sm.reviews__title Отзывы
+    .reviews__wrapper
+      +comment
+      +comment
+      +comment
+    include @cmps/More/more

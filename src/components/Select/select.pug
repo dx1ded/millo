@@ -1,7 +1,7 @@
 mixin select(current, list)
   .select
-    span.text.text--usmall.select__display= list[current]
+    span.text.text--xs.select__display= list[current]
     ul.list-reset.select-list
       - list.splice(current, 1)
       each item in list
-        li.text.text--usmall.select-list__item= item
+        li.text.text--xs.select-list__item= item

@@ -1,0 +1,11 @@
+@import "@cmps/Filter/filter";
+
+.how {
+  padding-bottom: rem(100px);
+  margin-bottom: rem(50px);
+  border-bottom: 1px solid #b3b3b3;
+
+  &__title {
+    margin-bottom: rem(60px);
+  }
+}

@@ -7,6 +7,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: var(--font-family);
 
   &.scroll-disabled {
@@ -29,10 +30,6 @@ body {
   border: none;
   outline: none;
 }
-
-// .site-container {
-//   overflow-x: hidden;
-// }
 
 .visually-hidden {
   position: absolute;

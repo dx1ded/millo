@@ -1,8 +1,10 @@
-const element = document.querySelector(".product-nav")
-const tabs = [...element.querySelectorAll(".product-nav__item")]
+const element = document.querySelector(".tabs")
+const tabs = Array.from(element.querySelectorAll(".tabs__item"))
 const tabsHref = tabs.map((tab) => tab.getAttribute("href"))
-const elementStuckedClassName = "product-nav--isSticky"
-const tabActiveClassName = "product-nav__item--active"
+const elementStuckedClassName = "tabs--stucked"
+const tabActiveClassName = "tabs__item--active"
+
+// <stuck> event handler
 
 new IntersectionObserver( 
   ([event]) => event.target.classList.toggle(
@@ -12,27 +14,24 @@ new IntersectionObserver(
   { threshold: [1] }
 ).observe(element)
 
-// Tabs Change
+// Tabs Condition Change
 
 const options = {
   root: null,
-  rootMargin: "-120px 0px 0px 0px",
-  threshold: 0.3
+  rootMargin: "-40% 0px -60% 0px",
+  threshold: 0
 }
 
 const observer = new IntersectionObserver((entries) => {
-  console.log(entries)
-
   entries.forEach((entry) => {
-    const element = entry.target
-    const activeTab = tabs.find((tab) => tab.hash === `#${element.id}`)
+    const id = `#${entry.target.id}`
+    const targetTab = tabs.find(({ hash }) => hash === id)
 
     if (entry.isIntersecting) {
-      activeTab.classList.add(tabActiveClassName)
+      targetTab.classList.add(tabActiveClassName)
     } else if (!entry.isIntersecting) {
-      activeTab.classList.remove(tabActiveClassName)
+      targetTab.classList.remove(tabActiveClassName)
     }
-
   })
 }, options)
 

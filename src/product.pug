@@ -1,7 +1,7 @@
 extends layouts/page
 
 include @cmps/Subscribe/subscribe
-include @cmps/ProductNavigation/nav
+include @cmps/Tabs/tabs
 
 block config
   - page.title = "Millo - Colombia Supremo"
@@ -13,7 +13,7 @@ block partials
   include @cmps/Header/header
   main
     include @partials/product/overlay
-    +product-navigation([
+    +scroll-tabs([
       {
         name: "Описание",
         path: "#description"
@@ -35,7 +35,7 @@ block partials
     include @partials/product/how
     include @partials/product/addition
     include @partials/product/reviews
-    //- +subscribe
+    +subscribe
   include @cmps/Footer/footer
 
 block scripts

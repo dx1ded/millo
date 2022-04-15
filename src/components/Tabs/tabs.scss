@@ -1,4 +1,4 @@
-.product-nav {
+.tabs {
   position: sticky;
   top: -1px;
   z-index: var(--z-product-navigation);
@@ -33,7 +33,7 @@
     }
   }
 
-  &--isSticky {
+  &--stucked {
     padding-bottom: rem(30px);
     background-color: var(--color-light);
     box-shadow: 0 5px 20px rgb(157 157 157 / 25%);

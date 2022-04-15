@@ -3,7 +3,7 @@
 // Components
 
 @import "@cmps/Header/header";
-@import "@cmps/ProductNavigation/nav";
+@import "@cmps/Tabs/tabs";
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
 
@@ -19,6 +19,6 @@
   padding: rem(40px) 0;
 }
 
-.product-nav {
+.tabs {
   margin-bottom: rem(100px);
 }

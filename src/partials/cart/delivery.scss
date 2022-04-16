@@ -1,0 +1,27 @@
+.delivery {
+  margin-bottom: rem(30px);
+
+  &__container {
+    padding: rem(70px) rem(140px);
+    background-color: var(--color-light);
+    border: 1px solid var(--color-mercury);
+    border-radius: 20px;
+    box-shadow: 0 0 50px 0 rgb(163 163 163 / 25%);
+  }
+
+  &__title {
+    margin-bottom: rem(50px);
+    color: var(--color-dark);
+  }
+}
+
+.delivery-form {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap);
+    padding: 0;
+    margin-bottom: rem(40px);
+    border: none;
+  }
+}

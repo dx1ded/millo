@@ -1,0 +1,47 @@
+include @cmps/Counter/counter
+
+section.list
+  .container.list__container
+    .list__wrapper
+      h2.title.title--sm.list__title 2 товара в корзине
+      button.btn.btn-reset.btn--secondary.list__btn#remove-all Удалить все
+    table.list__table
+      thead.list-head
+        tr.list-head__row
+          th.text.text--sm.list-head__sign Удалить товар
+          th.text.text--sm.list-head__sign Наименование товара
+          th.text.text--sm.list-head__sign Цена
+          th.text.text--sm.list-head__sign Количество
+          th.text.text--sm.list-head__sign Скидка (10%)
+          th.text.text--sm.list-head__sign Итого
+      tbody.list-body
+        tr.list-item
+          td.list-item__delete
+            button.btn-reset(aria-label="Удалить товар с корзины")
+          td.list-item__info
+            .list-item__image
+              +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
+            .list-item__content
+              h4.text.list-item__name Columbia Supremo
+              p.text.text--xs.list-item__type Мытая, натуральная, смесь
+              p.text.text--xs.list-item__weight 250 г.
+          td.text.list-item__price 270 &#8381;
+          td.list-item__count
+            +counter
+          td.text.list-item__sale 27 &#8381;
+          td.text.list-item__total 243 &#8381;
+        tr.list-item
+          td.list-item__delete
+            button.btn-reset(aria-label="Удалить товар с корзины")
+          td.list-item__info
+            .list-item__image
+              +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
+            .list-item__content
+              h4.text.list-item__name Columbia Supremo
+              p.text.text--xs.list-item__type Мытая, натуральная, смесь
+              p.text.text--xs.list-item__weight 250 г.
+          td.text.list-item__price 270 &#8381;
+          td.list-item__count
+            +counter
+          td.text.list-item__sale 27 &#8381;
+          td.text.list-item__total 243	&#8381;

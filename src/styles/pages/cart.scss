@@ -1,0 +1,48 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+@import "@partials/cart/list";
+@import "@partials/cart/delivery";
+@import "@partials/cart/conclusion";
+
+.breadcrumbs {
+  background-color: var(--color-secondary);
+
+  &__list {
+    max-width: var(--mw);
+    padding: rem(40px) var(--container-horizontal-offset) rem(50px);
+    margin: 0 auto;
+  }
+}
+
+// Inputs / submit buttons
+
+.input {
+  padding: rem(22.5px) rem(60px);
+  font-size: rem(20px);
+  font-weight: 500;
+  color: var(--color-dark);
+  background-color: var(--color-alabaster);
+  border: 1px solid var(--color-grayer);
+  border-radius: 5px;
+  outline: none;
+
+  &::placeholder {
+    color: #c4c4c4;
+  }
+}
+
+.submit {
+  width: 100%;
+  padding: rem(19px) 0;
+  font-size: rem(25px);
+  font-weight: 600;
+}

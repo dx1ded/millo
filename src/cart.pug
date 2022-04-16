@@ -1,0 +1,32 @@
+extends layouts/page
+
+include @cmps/Breadcrumbs/breadcrumbs
+include @cmps/Subscribe/subscribe
+
+block config
+  - page.title = "Millo - Корзина"
+
+block styles
+  +style("styles/cart.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +breadcrumbs([
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Корзина",
+        path: "cart.html"
+      }
+    ])
+    include @partials/cart/list
+    include @partials/cart/delivery
+    include @partials/cart/conclusion
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/cart.js")

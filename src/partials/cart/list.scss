@@ -1,0 +1,139 @@
+@import "@cmps/Counter/counter";
+
+.list {
+  margin-bottom: rem(30px);
+  background-color: var(--color-secondary);
+
+  &__container {
+    padding: rem(110px) rem(140px) rem(86px);
+    background-color: var(--color-light);
+    border: 1px solid var(--color-mercury);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgb(163 163 163 / 25%);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: rem(64px);
+  }
+
+  &__title {
+    color: var(--color-dark);
+  }
+
+  &__btn {
+    padding: rem(10px) rem(17.5px);
+    font-size: rem(20px);
+    font-weight: 600;
+  }
+
+  &__table {
+    display: grid;
+    row-gap: rem(30px);
+  }
+
+  .counter {
+    grid-template-columns: rem(59px) 1fr rem(59px);
+    padding: rem(9.6px) 0;
+
+    &__action {
+      font-size: rem(25px);
+    }
+
+    &__display {
+      font-size: rem(20px);
+    }
+  }
+}
+
+.list-head,
+.list-body {
+  display: contents;
+}
+
+.list-head__sign {
+  color: var(--color-dark);
+}
+
+.list-item,
+.list-head__row {
+  display: grid;
+  grid-template-columns:
+    rem(141px) rem(393px) rem(62px)
+    rem(170px) rem(120px) rem(62px);
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  padding-right: rem(60px);
+
+  td,
+  th {
+    &:nth-child(2),
+    &:nth-child(4) {
+      justify-self: start;
+    }
+  }
+}
+
+.list-item {
+  background-color: var(--color-alabaster);
+  border: 1px solid #f0f0f0;
+  border-radius: 20px;
+
+  &__delete button {
+    position: relative;
+    width: rem(21px);
+    height: rem(21px);
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: rem(3px);
+      content: "";
+      background-color: var(--color-primary);
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    padding: rem(30px) rem(58px) rem(30px) 0;
+  }
+
+  &__image {
+    margin-right: rem(34px);
+
+    img {
+      width: rem(53px);
+      height: rem(113px);
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__type {
+    margin: rem(10px) 0;
+  }
+
+  &__name,
+  &__type,
+  &__price,
+  &__sale,
+  &__total {
+    color: var(--color-dark);
+  }
+}

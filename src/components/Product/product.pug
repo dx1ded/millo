@@ -4,7 +4,7 @@ include @cmps/Beans/beans
 include @cmps/Char/char
 
 mixin product-popular-new
-  .product&attributes(attributes)
+  article.product&attributes(attributes)
     .product__header
       .product__types
         span.text.text--xs Популярное
@@ -29,7 +29,7 @@ mixin product-popular-new
         button.btn.btn-reset.btn--primary.product__cta В корзину
 
 mixin product-with-sales
-  .product.product--sale&attributes(attributes)
+  article.product.product--sale&attributes(attributes)
     .product__header
       span.text.text--xs.sales-sign Скидки
       +select(0, ["250 г.", "500 г.", "750 г.", "1 кг."])
@@ -53,7 +53,7 @@ mixin product-with-sales
         button.btn.btn-reset.btn--primary.product__cta В корзину
 
 mixin product-without-options(image)
-  .product.product--wide&attributes(attributes)
+  article.product.product--wide&attributes(attributes)
     .product__header
       +rating
       +select(0, ["100 г.", "500 г."])

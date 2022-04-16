@@ -1,29 +1,11 @@
-include @cmps/Breadcrumbs/breadcrumbs
 include @cmps/Beans/beans
 include @cmps/Rating/rating
 include @cmps/Char/char
 include @cmps/Radio/radio
+include @cmps/Counter/counter
 
 section.overlay
   .container.overlay__container
-    +breadcrumbs([
-      {
-        name: "Главная",
-        path: "/"
-      },
-      {
-        name: "Каталог товаров",
-        path: "/"
-      },
-      {
-        name: "Свежеобжаренный кофе",
-        path: "coffee.html"
-      },
-      {
-        name: "Карточка название товара",
-        path: "product.html"
-      }
-    ])
     .product
       .product__image
         +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
@@ -50,7 +32,7 @@ section.overlay
             +radio("1000 г. продукта")(name="product-weight")
               | 1000 г.
           .product-form__row
-            include @cmps/Counter/counter
+            +counter
             input.btn.btn-reset.btn--primary.product__buy(type="submit" value="Купить за 250 ₽")
   .bottom-wave
     svg(viewbox="0 0 1909 265" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")

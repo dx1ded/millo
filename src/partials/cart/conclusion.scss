@@ -1,0 +1,112 @@
+@import "@cmps/Radio/radio";
+
+.conclusion {
+  margin-bottom: rem(150px);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr rem(680px);
+    gap: var(--grid-gap);
+  }
+}
+
+.promocode {
+  padding: rem(50px) 0 rem(60px);
+
+  &__wrapper {
+    max-width: rem(680px);
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+    color: var(--color-dark);
+  }
+
+  &__info {
+    max-width: rem(600px);
+    margin-bottom: rem(40px);
+    color: var(--color-dark);
+  }
+}
+
+.promocode-form {
+  &__input {
+    width: 100%;
+    margin-bottom: rem(40px);
+  }
+}
+
+.result {
+  padding: rem(50px) rem(80px) rem(23px);
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: rem(30px);
+  }
+
+  &__title {
+    margin-bottom: rem(20px);
+  }
+
+  &__pre-conclusion,
+  &__sale {
+    margin-bottom: rem(10px);
+    line-height: 1.2;
+    color: #747474;
+  }
+
+  &__methods {
+    display: flex;
+    align-items: center;
+
+    img:not(:last-child) {
+      margin-right: rem(8px);
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    padding: rem(19.5px) 0;
+    margin-bottom: rem(10px);
+    font-size: rem(25px);
+    font-weight: 600;
+  }
+
+  &__credentials {
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: em(16.48px, 14px);
+    color: #747474;
+  }
+}
+
+.result-delivery {
+  display: flex;
+
+  &__column:first-child {
+    margin-right: rem(13px);
+  }
+
+  .radio {
+    &:not(:last-child) {
+      margin-bottom: rem(14px);
+    }
+
+    &__visual {
+      width: rem(16px);
+      height: rem(16px);
+      margin-right: rem(12px);
+    }
+  }
+}
+
+.promocode,
+.result {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-mercury);
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgb(163 163 163 / 25%);
+}

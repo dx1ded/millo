@@ -1,0 +1,37 @@
+include @cmps/Radio/radio
+
+section.conclusion
+  .container.conclusion__container
+    .promocode
+      .promocode__wrapper
+        h3.title.title--xs.promocode__title Промокод
+        p.text.text--sm.promocode__info
+          | Введите подарочный промокод в поле ниже и получите скидку на заказ до 20%. Скидка не распространяется на доставку
+        form.promocode-form
+          input.input.promocode-form__input(type="text" placeholder="Введите промокод")
+          input.btn.btn-reset.btn--secondary.submit(type="submit" value="Ввести промокод")
+    .result
+      .result__wrapper
+        .result__info
+          h3.title.title--xs.result__title Итог: 486 &#8381;
+          h4.text.text--sm.result__pre-conclusion Подытог 540 &#8381;
+          h4.text.text--sm.result__sale Скидка: 54 &#8381; (10%)
+          .result-delivery
+            .result-delivery__column
+              span.text.text--sm Доставка
+            .result-delivery__column
+              +radio("Доставка через СДЭК. Цена 390 рублей")(name="delivery" checked)
+                | СДЭК - до двери&nbsp;
+                strong 390 &#8381;
+              +radio("Доставка через почту России. Цена 300 рублей")(name="delivery")
+                | Почта России&nbsp;
+                strong 300 &#8381;
+              +radio("Доставка через DPD курьером. Цена 427 рублей")(name="delivery")
+                | DPD - курьер, 3дн&nbsp; 
+                strong 427 &#8381;
+        .result__methods
+          +image("master-card.jpg")(aria-hidden="true")
+          +image("visa.jpg")(aria-hidden="true")
+      button.btn.btn-reset.btn--primary.result__submit Оплатить заказ
+      small.result__credentials
+        | Ваши персональные данные будут использоваться для управления доступом к вашей учетной записи и для других целей, описанных в нашем документе политика конфиденциальности.

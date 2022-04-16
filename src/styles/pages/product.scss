@@ -3,6 +3,7 @@
 // Components
 
 @import "@cmps/Header/header";
+@import "@cmps/Breadcrumbs/breadcrumbs";
 @import "@cmps/Tabs/tabs";
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
@@ -16,7 +17,14 @@
 @import "@partials/product/reviews";
 
 .breadcrumbs {
-  padding: rem(40px) 0;
+  padding: rem(40px);
+  background-color: var(--color-secondary);
+
+  &__list {
+    max-width: var(--mw);
+    padding: 0 var(--container-horizontal-offset);
+    margin: 0 auto;
+  }
 }
 
 .tabs {

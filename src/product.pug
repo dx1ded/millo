@@ -1,5 +1,6 @@
 extends layouts/page
 
+include @cmps/Breadcrumbs/breadcrumbs
 include @cmps/Subscribe/subscribe
 include @cmps/Tabs/tabs
 
@@ -12,6 +13,24 @@ block styles
 block partials
   include @cmps/Header/header
   main
+    +breadcrumbs([
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Каталог товаров",
+        path: "/"
+      },
+      {
+        name: "Свежеобжаренный кофе",
+        path: "coffee.html"
+      },
+      {
+        name: "Карточка название товара",
+        path: "product.html"
+      }
+    ])
     include @partials/product/overlay
     +scroll-tabs([
       {

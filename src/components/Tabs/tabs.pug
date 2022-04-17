@@ -1,6 +1,16 @@
 mixin scroll-tabs(items)
-  nav.tabs
-    .container.tabs__container
+  nav.scroll-tabs
+    .container.scroll-tabs__container
       each item in items
         - const { name, path } = item
         a.text.tabs__item(href=path)= name
+
+mixin tabs(items, activeIndex)
+  nav.tabs
+    .container.tabs__container
+      each item, i in items
+        - const { name, path } = item
+        if i === activeIndex
+          a.text.tabs__item.tabs__item--active(href=path)= name
+        else
+          a.text.tabs__item(href=path)= name

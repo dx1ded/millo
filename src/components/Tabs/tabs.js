@@ -1,38 +1,89 @@
-const element = document.querySelector(".tabs")
-const tabs = Array.from(element.querySelectorAll(".tabs__item"))
-const tabsHref = tabs.map((tab) => tab.getAttribute("href"))
-const elementStuckedClassName = "tabs--stucked"
-const tabActiveClassName = "tabs__item--active"
+export class ScrollTabs {
+  constructor() {
+    this.container = document.querySelector(".scroll-tabs")
+    this.tabs = Array.from(this.container.querySelectorAll(".tabs__item"))
+    this.hrefs = this.tabs.map((tab) => tab.getAttribute("href"))
 
-// <stuck> event handler
+    this.elementStuckedClassName = "scroll-tabs--stucked"
+    this.tabActiveClassName = "tabs__item--active"
 
-new IntersectionObserver( 
-  ([event]) => event.target.classList.toggle(
-    elementStuckedClassName,
-    event.intersectionRatio < 1
-  ),
-  { threshold: [1] }
-).observe(element)
+    this.init()
+  }
 
-// Tabs Condition Change
+  init() {
+    this.stuckHandler()
+    this.tabsHandler()
+  }
 
-const options = {
-  root: null,
-  rootMargin: "-40% 0px -60% 0px",
-  threshold: 0
+  stuckHandler() {
+    new IntersectionObserver(
+      ([ event ]) => event.target.classList.toggle(
+        this.elementStuckedClassName,
+        event.intersectionRatio < 1
+      ),
+      { threshold: 1 }
+    ).observe(this.container)
+  }
+
+  tabsHandler() {
+    const options = {
+      root: null,
+      rootMargin: "-40% 0px -60% 0px",
+      threshold: 0
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = `#${entry.target.id}`
+        const targetTab = this.tabs.find(({ hash }) => hash === id)
+    
+        if (entry.isIntersecting) {
+          targetTab.classList.add(this.tabActiveClassName)
+        } else if (!entry.isIntersecting) {
+          targetTab.classList.remove(this.tabActiveClassName)
+        }
+      })
+    }, options)
+
+    this.hrefs.forEach(
+      (href) => observer.observe(document.querySelector(href)
+    ))
+  }
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const id = `#${entry.target.id}`
-    const targetTab = tabs.find(({ hash }) => hash === id)
+export class Tabs {
+  constructor(tabsContainer) {
+    this.tabs = tabsContainer.querySelectorAll(".tabs__item")
+    this.sections = [...this.tabs].map((tab) => {
+      const href = tab.getAttribute("href")
 
-    if (entry.isIntersecting) {
-      targetTab.classList.add(tabActiveClassName)
-    } else if (!entry.isIntersecting) {
-      targetTab.classList.remove(tabActiveClassName)
-    }
-  })
-}, options)
+      return document.querySelector(href)
+    })
 
-tabsHref.forEach((href) => observer.observe(document.querySelector(href)))
+    this.tabActiveClassName = "tabs__item--active"
+
+    this.init()
+  }
+
+  init() {
+    this.tabs.forEach((tab) => {
+      const targetSection = document.querySelector(tab.getAttribute("href"))
+
+      tab.addEventListener("click", this.clickHandler.bind(this, targetSection))  
+    })
+  }
+
+  clickHandler = (section, event) => {
+    event.preventDefault()
+
+    // Set all tabs / sections unactive
+
+    this.tabs.forEach((tab) => tab.classList.remove(this.tabActiveClassName))
+    this.sections.forEach((section) => section.removeAttribute("data-active"))
+
+    // Set current tab / section active
+
+    event.target.classList.add(this.tabActiveClassName)
+    section.setAttribute("data-active", "true")
+  }
+}

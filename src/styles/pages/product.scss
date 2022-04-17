@@ -17,7 +17,7 @@
 @import "@partials/product/reviews";
 
 .breadcrumbs {
-  padding: rem(40px);
+  padding: rem(40px) 0;
   background-color: var(--color-secondary);
 
   &__list {
@@ -27,6 +27,6 @@
   }
 }
 
-.tabs {
+.scroll-tabs {
   margin-bottom: rem(100px);
 }

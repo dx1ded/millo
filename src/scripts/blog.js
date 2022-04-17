@@ -1,2 +1,4 @@
 import "focus-visible";
-import "@cmps/Tabs/tabs";
+import { ScrollTabs } from "@cmps/Tabs/tabs";
+
+new ScrollTabs()

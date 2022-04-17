@@ -1,10 +1,11 @@
 @import "@cmps/Counter/counter";
 
 .list {
+  position: relative;
   margin-bottom: rem(30px);
   background-color: var(--color-secondary);
 
-  &__container {
+  &__wrapper {
     padding: rem(110px) rem(140px) rem(86px);
     background-color: var(--color-light);
     border: 1px solid var(--color-mercury);
@@ -12,7 +13,7 @@
     box-shadow: 0 0 50px rgb(163 163 163 / 25%);
   }
 
-  &__wrapper {
+  &__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,6 +45,19 @@
 
     &__display {
       font-size: rem(20px);
+    }
+  }
+
+  .bottom-wave {
+    position: absolute;
+    bottom: -250px;
+    z-index: -1;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(288px);
     }
   }
 }

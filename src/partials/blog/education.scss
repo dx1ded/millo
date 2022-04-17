@@ -1,13 +1,15 @@
-.addition {
-  margin-bottom: rem(150px);
+.education {
+  padding-bottom: rem(100px);
+  margin-bottom: rem(50px);
+  border-bottom: 1px solid #b3b3b3;
 
   &__title,
-  &-theme:not(:last-of-type) {
+  &-topic:not(:last-of-type) {
     margin-bottom: rem(60px);
   }
 }
 
-.addition-theme {
+.education-topic {
   &__name {
     margin-bottom: rem(60px);
     font-size: rem(30px);

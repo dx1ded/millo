@@ -3,6 +3,7 @@
   top: -1px;
   z-index: var(--z-product-navigation);
   padding-top: rem(30px);
+  margin-top: rem(-30px);
 
   &__container {
     display: flex;

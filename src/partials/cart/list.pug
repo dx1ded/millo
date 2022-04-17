@@ -1,47 +1,51 @@
 include @cmps/Counter/counter
 
 section.list
-  .container.list__container
+  .container
     .list__wrapper
-      h2.title.title--sm.list__title 2 товара в корзине
-      button.btn.btn-reset.btn--secondary.list__btn#remove-all Удалить все
-    table.list__table
-      thead.list-head
-        tr.list-head__row
-          th.text.text--sm.list-head__sign Удалить товар
-          th.text.text--sm.list-head__sign Наименование товара
-          th.text.text--sm.list-head__sign Цена
-          th.text.text--sm.list-head__sign Количество
-          th.text.text--sm.list-head__sign Скидка (10%)
-          th.text.text--sm.list-head__sign Итого
-      tbody.list-body
-        tr.list-item
-          td.list-item__delete
-            button.btn-reset(aria-label="Удалить товар с корзины")
-          td.list-item__info
-            .list-item__image
-              +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
-            .list-item__content
-              h4.text.list-item__name Columbia Supremo
-              p.text.text--xs.list-item__type Мытая, натуральная, смесь
-              p.text.text--xs.list-item__weight 250 г.
-          td.text.list-item__price 270 &#8381;
-          td.list-item__count
-            +counter
-          td.text.list-item__sale 27 &#8381;
-          td.text.list-item__total 243 &#8381;
-        tr.list-item
-          td.list-item__delete
-            button.btn-reset(aria-label="Удалить товар с корзины")
-          td.list-item__info
-            .list-item__image
-              +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
-            .list-item__content
-              h4.text.list-item__name Columbia Supremo
-              p.text.text--xs.list-item__type Мытая, натуральная, смесь
-              p.text.text--xs.list-item__weight 250 г.
-          td.text.list-item__price 270 &#8381;
-          td.list-item__count
-            +counter
-          td.text.list-item__sale 27 &#8381;
-          td.text.list-item__total 243	&#8381;
+      .list__row
+        h2.title.title--sm.list__title 2 товара в корзине
+        button.btn.btn-reset.btn--secondary.list__btn#remove-all Удалить все
+      table.list__table
+        thead.list-head
+          tr.list-head__row
+            th.text.text--sm.list-head__sign Удалить товар
+            th.text.text--sm.list-head__sign Наименование товара
+            th.text.text--sm.list-head__sign Цена
+            th.text.text--sm.list-head__sign Количество
+            th.text.text--sm.list-head__sign Скидка (10%)
+            th.text.text--sm.list-head__sign Итого
+        tbody.list-body
+          tr.list-item
+            td.list-item__delete
+              button.btn-reset(aria-label="Удалить товар с корзины")
+            td.list-item__info
+              .list-item__image
+                +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
+              .list-item__content
+                h4.text.list-item__name Columbia Supremo
+                p.text.text--xs.list-item__type Мытая, натуральная, смесь
+                p.text.text--xs.list-item__weight 250 г.
+            td.text.list-item__price 270 &#8381;
+            td.list-item__count
+              +counter
+            td.text.list-item__sale 27 &#8381;
+            td.text.list-item__total 243 &#8381;
+          tr.list-item
+            td.list-item__delete
+              button.btn-reset(aria-label="Удалить товар с корзины")
+            td.list-item__info
+              .list-item__image
+                +image("product-coffee.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
+              .list-item__content
+                h4.text.list-item__name Columbia Supremo
+                p.text.text--xs.list-item__type Мытая, натуральная, смесь
+                p.text.text--xs.list-item__weight 250 г.
+            td.text.list-item__price 270 &#8381;
+            td.list-item__count
+              +counter
+            td.text.list-item__sale 27 &#8381;
+            td.text.list-item__total 243	&#8381;
+  .bottom-wave
+    svg(viewbox="0 0 1905 288" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+      path(fill-rule="evenodd" clip-rule="evenodd" d="M0 180L79.375 150C158.75 120 317.5 60 476.25 36C635 12 793.75 24 952.5 54C1111.25 84 1270 132 1428.75 174C1587.5 216 1746.25 252 1825.63 270L1905 288V0H1825.63C1746.25 0 1587.5 0 1428.75 0C1270 0 1111.25 0 952.5 0C793.75 0 635 0 476.25 0C317.5 0 158.75 0 79.375 0H0V180Z" fill="#FFF7E1")

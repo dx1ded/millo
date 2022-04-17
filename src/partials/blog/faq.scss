@@ -1,0 +1,46 @@
+@import "@cmps/Accordion/accordion";
+
+.faq {
+  position: relative;
+  padding-bottom: rem(150px);
+  background-color: var(--color-secondary);
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: rem(55px);
+  }
+
+  &__wrapper {
+    background-image: url("@images/cup-of-coffee-with-beans.png");
+    background-repeat: no-repeat;
+    background-position: rem(30px) center;
+    background-size: rem(780px) rem(645px);
+  }
+
+  .accordion {
+    max-width: rem(960px);
+    margin-left: auto;
+  }
+
+  .top-wave,
+  .bottom-wave {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(225px);
+    }
+  }
+
+  .bottom-wave {
+    top: auto;
+    bottom: 0;
+  }
+}

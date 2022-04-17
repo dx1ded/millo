@@ -1,12 +1,26 @@
 @import "@cmps/Radio/radio";
 
 .conclusion {
-  margin-bottom: rem(150px);
+  position: relative;
+  padding-bottom: rem(150px);
 
   &__container {
     display: grid;
     grid-template-columns: 1fr rem(680px);
     gap: var(--grid-gap);
+  }
+
+  .bottom-wave {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+
+    svg {
+      display: block;
+      width: inherit;
+      height: rem(358px);
+    }
   }
 }
 

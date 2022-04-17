@@ -1,0 +1,26 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Tabs/tabs";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+@import "@partials/blog/cook";
+@import "@partials/blog/education";
+@import "@partials/blog/news";
+@import "@partials/blog/faq";
+
+.breadcrumbs {
+  background-color: var(--color-light);
+
+  &__list {
+    max-width: var(--mw);
+    padding: rem(40px) var(--container-horizontal-offset) rem(50px);
+    margin: 0 auto;
+  }
+}

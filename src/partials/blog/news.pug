@@ -1,0 +1,60 @@
+section.news#news
+  .container
+    .news__top
+      h2.title.title--sm.news__title Новости:
+      .news-tags
+        button.btn.btn-reset.news-tags__item.news-tags__item--active Тег №1
+        button.btn.btn-reset.news-tags__item Тег №2
+        button.btn.btn-reset.news-tags__item Тег №3
+        button.btn.btn-reset.news-tags__item Тег №4
+        button.btn.btn-reset.news-tags__item Тег №5
+    .news__wrapper
+      article.news-item
+        .news-item__image
+          +image(
+            "tanzania-arabica.jpg",
+            "Пачка кофе Tanzania Arabica со львом на логотипе"
+          )
+        .news-item__content
+          h4.text.news-item__title Танзанийский кофе. Откуда он взялся и почему мы его так любим?
+          p.text.text--sm.news-item__text
+            | Танзания – красивая африканская страна. Именно здесь расположены легендарные географические объекты – вулкан Килиманджаро и озеро Виктория. 
+          p.text.text--sm.news-item__text
+            | Но наш интерес вызван не столько природными красотами, сколько кофе...
+          .news-item__row
+            address.news-item__author
+              | Автор статьи: Иван Иванов
+            include @cmps/Details/details
+      article.news-item
+        .news-item__image
+          +image(
+            "tanzania-arabica.jpg",
+            "Пачка кофе Tanzania Arabica со львом на логотипе"
+          )
+        .news-item__content
+          h4.text.news-item__title Танзанийский кофе. Откуда он взялся и почему мы его так любим?
+          p.text.text--sm.news-item__text
+            | Танзания – красивая африканская страна. Именно здесь расположены легендарные географические объекты – вулкан Килиманджаро и озеро Виктория. 
+          p.text.text--sm.news-item__text
+            | Но наш интерес вызван не столько природными красотами, сколько кофе...
+          .news-item__row
+            address.news-item__author
+              | Автор статьи: Иван Иванов
+            include @cmps/Details/details
+      article.news-item
+        .news-item__image
+          +image(
+            "tanzania-arabica.jpg",
+            "Пачка кофе Tanzania Arabica со львом на логотипе"
+          )
+        .news-item__content
+          h4.text.news-item__title Танзанийский кофе. Откуда он взялся и почему мы его так любим?
+          p.text.text--sm.news-item__text
+            | Танзания – красивая африканская страна. Именно здесь расположены легендарные географические объекты – вулкан Килиманджаро и озеро Виктория. 
+          p.text.text--sm.news-item__text
+            | Но наш интерес вызван не столько природными красотами, сколько кофе...
+          .news-item__row
+            address.text.text--sm.news-item__author
+              | Автор статьи: Иван Иванов
+            include @cmps/Details/details
+    include @cmps/More/more

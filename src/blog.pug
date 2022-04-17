@@ -1,0 +1,48 @@
+extends layouts/page
+
+include @cmps/Breadcrumbs/breadcrumbs
+include @cmps/Tabs/tabs
+include @cmps/Subscribe/subscribe
+
+block config
+  - page.title = "Millo - Блог"
+
+block styles
+  +style("styles/blog.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +breadcrumbs([
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Блог",
+        path: "blog.html"
+      }
+    ])
+    +scroll-tabs([
+      {
+        name: "Обучение",
+        path: "#education"
+      },
+      {
+        name: "Новости",
+        path: "#news"
+      },
+      {
+        name: "Частые вопросы",
+        path: "#faq"
+      }
+    ])
+    include @partials/blog/cook
+    include @partials/blog/education
+    include @partials/blog/news
+    include @partials/blog/faq
+    +subscribe("#fff", "#fff", "#fff")
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/blog.js")

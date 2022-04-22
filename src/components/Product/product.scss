@@ -39,6 +39,8 @@
   &__image img {
     width: rem(152px);
     height: rem(304px);
+    object-fit: cover;
+    object-position: center;
   }
 
   &__options {

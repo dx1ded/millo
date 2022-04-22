@@ -1,0 +1,25 @@
+section.user
+  .container
+    .user__wrapper
+      .user__info
+        .user-avatar
+          .user-avatar__photo
+            +image("user-photo.jpg", "Фотография пользователя")
+          button.btn.btn-reset.btn--secondary.user-avatar__change Изменить
+        .user__column
+          h2.title.title--sm.user__greeting Иван Иванов, здравствуйте!
+          address.user__data
+            p.text.text--sm.user__email ivan.ivanov@gmail.com
+            p.text.text--sm.user__number + 7 (909) 909 99 99
+          p.text.text--sm.user__password Пароль: **************
+      .user-sale
+        button.btn.reset.user-sale__what(aria-label="Информация о скидках") ?
+        h3.title.title--xs.user-sale__percent Ваша скидка: 10%
+        p.text.text--sm.user-sale__sum
+          | Сума заказов: 
+          span 5675 &#8381;*
+        p.user-sale__info
+          | *До скидки 15% не хватает покупок на сумму: 1255 &#8381;
+  .bottom-wave
+    svg(viewbox="0 0 1904 289" fill="none" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="none")
+      path(fill-rule="evenodd" clip-rule="evenodd" d="M0 180.018L79.3333 150.018C158.667 120.018 317.333 60.0184 476 36.0184C634.667 12.0184 793.333 24.0184 952 54.0184C1110.67 84.0184 1269.33 132.018 1428 174.018C1586.67 216.018 1745.33 252.018 1824.67 270.018L1904 288.018V0.0183716H1824.67C1745.33 0.0183716 1586.67 0.0183716 1428 0.0183716C1269.33 0.0183716 1110.67 0.0183716 952 0.0183716C793.333 0.0183716 634.667 0.0183716 476 0.0183716C317.333 0.0183716 158.667 0.0183716 79.3333 0.0183716H0V180.018Z" fill="#FFF7E1")

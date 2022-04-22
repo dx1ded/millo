@@ -1,0 +1,26 @@
+mixin order
+  .order
+    .order__info
+      p.text.text--sm.order__status 01.08.2021 12:24:00 - доставлено
+      p.text.text--sm.order__delivery Доставлено: 03.08.2021
+    table.order-table
+      thead.order-table__head
+        tr
+          th.order-table__item Товаров:
+          th.order-table__item Сумма заказа:
+          th.order-table__item Скидка (10%):
+          th.order-table__item Сумма заказа:
+      tbody.order-table__body
+        tr.order-table__item
+          td.order-table__data 2 х Columbia Supremo, 250 г.
+          td.order-table__data 480 &#8381;
+          td.order-table__data 48 &#8381;
+          td.order-table__data 432 &#8381;
+        tr.order-table__item
+          td.order-table__data 1 х Напиток ячменый Millor, 250 г.
+          td.order-table__data 480 &#8381;
+          td.order-table__data 48 &#8381;
+          td.order-table__data 432 &#8381;
+    .order__summary
+      p.text.text--xs.order__sum Сумма заказа: 864 &#8381;
+      p.text.text--xs.order__delivery-sum Доставка: 350 &#8381;

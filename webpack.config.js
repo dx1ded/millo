@@ -27,7 +27,8 @@ export default {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      "@cmps": path.resolve(__dirname, 'src/components')
+      '@cmps': path.resolve(__dirname, 'src/components'),
+      'services': path.resolve(__dirname, 'src/scripts/services')
     }
   }
 }

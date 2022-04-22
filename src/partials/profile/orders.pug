@@ -1,0 +1,22 @@
+include @cmps/Tabs/tabs
+include @cmps/Order/order
+
+section.orders
+  .container
+    .orders__wrapper
+      h3.title.title--xs.orders__title Мои заказы
+      +tabs([
+        {
+          name: "Текущие заказы",
+          path: "#current"
+        },
+        {
+          name: "Завершенные",
+          path: "#completed"
+        }
+      ], 0)
+      .current#current
+        +order
+      .completed#completed
+        +order
+        +order

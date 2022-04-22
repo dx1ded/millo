@@ -5,7 +5,8 @@ import Swiper, {
   EffectFade,
   Autoplay,
   Grid,
-  A11y
+  A11y,
+  Manipulation
 } from "swiper"
 
 // Hero Slider
@@ -30,8 +31,8 @@ new Swiper(".hero-slider", {
 
 // Sales Slider
 
-new Swiper(".sales-slider", {
-  modules: [Navigation],
+const salesSlider = new Swiper(".sales-slider", {
+  modules: [Navigation, Manipulation],
   slidesPerView: 3,
   spaceBetween: 20,
   loop: true,
@@ -56,3 +57,20 @@ new Swiper(".social-slider", {
     nextEl: ".social-slider__nav--next"
   }
 })
+
+// Products load / render / loader
+
+import { getProducts } from "./services/FirebaseService"
+import { slide } from "./utils/slideMarkup"
+
+new IntersectionObserver(async ([ entry ]) => {
+  if (!entry.isIntersecting) return
+
+  const products = await getProducts({ from: 4, to: 8 })
+
+  products.forEach((product) => {
+    salesSlider.appendSlide(slide(product.data()))
+  })
+
+  document.querySelector(".loader").style.display = "none"
+}, { threshold: 0 }).observe(document.querySelector(".sales-slider"))

@@ -1,0 +1,17 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255 255 255 / 50%);
+
+  &::after {
+    display: block;
+    width: rem(64px);
+    height: rem(64px);
+    content: "";
+    border: 6px solid;
+    border-color: var(--color-primary) transparent;
+    border-radius: 100%;
+    animation: loader 1.2s linear infinite;
+  }
+}

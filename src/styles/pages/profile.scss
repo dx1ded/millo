@@ -1,0 +1,25 @@
+@import "../mixins";
+
+// Components
+
+@import "@cmps/Header/header";
+@import "@cmps/Breadcrumbs/breadcrumbs";
+@import "@cmps/Subscribe/subscribe";
+@import "@cmps/Footer/footer";
+
+// Sections
+
+@import "@partials/profile/user";
+@import "@partials/profile/orders";
+@import "@partials/profile/offers";
+
+.breadcrumbs {
+  padding: rem(40px) 0;
+  background-color: var(--color-secondary);
+
+  &__list {
+    max-width: var(--mw);
+    padding: 0 var(--container-horizontal-offset);
+    margin: 0 auto;
+  }
+}

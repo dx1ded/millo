@@ -1,0 +1,32 @@
+extends layouts/page
+
+include @cmps/Breadcrumbs/breadcrumbs
+include @cmps/Subscribe/subscribe
+
+block config
+  - page.title = "Millo - Личный кабинет"
+
+block styles
+  +style("styles/profile.css")
+
+block partials
+  include @cmps/Header/header
+  main
+    +breadcrumbs([
+      {
+        name: "Главная",
+        path: "/"
+      },
+      {
+        name: "Личный кабинет",
+        path: "profile.html"
+      }
+    ])
+    include @partials/profile/user
+    include @partials/profile/orders
+    include @partials/profile/offers
+    +subscribe
+  include @cmps/Footer/footer
+
+block scripts
+  +script("scripts/profile.js")

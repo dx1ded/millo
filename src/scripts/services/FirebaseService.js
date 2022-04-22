@@ -5,8 +5,10 @@ import {
   collection,
   query,
   orderBy,
+  where,
   startAt,
-  endAt
+  endAt,
+  limit
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -22,11 +24,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const firestore = getFirestore(app)
 
-export const getProducts = async ({ type = 0, from, to }) => {
+export const getProductsWithSales = async ({ count }) => {
   const q = query(collection(firestore, "products"),
-    orderBy("id"),
-    startAt(from),
-    endAt(--to)
+    where("price.old", "!=", false),
+    limit(count)
   )
   
   return getDocs(q)

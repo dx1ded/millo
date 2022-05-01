@@ -1,21 +1,3 @@
-.scroll-tabs {
-  position: sticky;
-  top: -1px;
-  z-index: var(--z-product-navigation);
-  padding-top: rem(30px);
-  margin-top: rem(-30px);
-
-  &__container {
-    display: flex;
-  }
-
-  &--stucked {
-    padding-bottom: rem(30px);
-    background-color: var(--color-light);
-    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
-  }
-}
-
 .tabs {
   &__container {
     display: flex;
@@ -44,5 +26,23 @@
       background-color: var(--color-secondary);
       border-color: var(--color-primary);
     }
+  }
+}
+
+.scroll-tabs {
+  position: sticky;
+  top: rem(-1px);
+  z-index: var(--z-scroll-tabs);
+  padding-top: rem(30px);
+  margin-top: rem(-30px);
+
+  &__container {
+    display: flex;
+  }
+
+  &--stucked {
+    padding-bottom: rem(30px);
+    background-color: var(--color-light);
+    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
   }
 }

@@ -69,7 +69,7 @@
   &__sale {
     margin-bottom: rem(10px);
     line-height: 1.2;
-    color: #747474;
+    color: var(--color-boulder);
   }
 
   &__methods {
@@ -93,7 +93,7 @@
     font-size: rem(14px);
     font-weight: 500;
     line-height: em(16.48px, 14px);
-    color: #747474;
+    color: var(--color-boulder);
   }
 }
 

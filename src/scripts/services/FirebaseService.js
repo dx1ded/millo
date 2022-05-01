@@ -7,7 +7,6 @@ import {
   orderBy,
   where,
   startAt,
-  endAt,
   limit
 } from "firebase/firestore"
 
@@ -30,5 +29,16 @@ export const getProductsWithSales = async ({ count }) => {
     limit(count)
   )
   
+  return getDocs(q)
+}
+
+export const getProducts = async ({ type, offset }) => {
+  const q = query(collection(firestore, "products"),
+    where("type", "==", Number(type)),
+    orderBy("id"),
+    startAt(++offset),
+    limit(12)
+  )
+
   return getDocs(q)
 }

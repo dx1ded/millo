@@ -6,15 +6,15 @@ mixin filter-extent
     .filter-extent__wrapper
       h3.filter-extent__title Степень обжарки
       fieldset
-        +radio("Степень обжарки - 5")(name="extent" checked)
+        +radio("Степень обжарки - 5")(name="extent" value="5")
           +beans
-        +radio("Степень обжарки - 4")(name="extent")
+        +radio("Степень обжарки - 4")(name="extent" value="4")
           +beans(4)
-        +radio("Степень обжарки - 3")(name="extent")
+        +radio("Степень обжарки - 3")(name="extent" value="3")
           +beans(3)
-        +radio("Степень обжарки - 2")(name="extent")
+        +radio("Степень обжарки - 2")(name="extent" value="2")
           +beans(2)
-        +radio("Степень обжарки - 1")(name="extent")
+        +radio("Степень обжарки - 1")(name="extent" value="1")
           +beans(1)
 
 mixin filter-options
@@ -23,64 +23,64 @@ mixin filter-options
       .filter-options__column
         fieldset.filter-option
           h4.text.filter-option__title География
-          +radio("Локация - Африка")(name="location")
+          +radio("Локация - Африка")(name="geography" value="Африка")
             | Африка
-          +radio("Локация - Йемен")(name="location")
+          +radio("Локация - Йемен")(name="geography" value="Йемен")
             | Йемен
-          +radio("Локация - Уганда")(name="location")
+          +radio("Локация - Уганда")(name="geography" value="Уганда")
             | Уганда
-          +radio("Локация - Эфиопия")(name="location")
+          +radio("Локация - Эфиопия")(name="geography" value="Эфиопия")
             | Эфиопия
-          +radio("Локация - Азия")(name="location")
+          +radio("Локация - Азия")(name="geography" value="Азия")
             | Азия
-          +radio("Локация - Центральная Америка")(name="location" checked)
+          +radio("Локация - Центральная Америка")(name="geography" value="Центральная Америка")
             | Центр. Америка
-          +radio("Локация - Латинская Америка")(name="location")
+          +radio("Локация - Латинская Америка")(name="geography" value="Латинская Америка")
             | Лат. Америка
       .filter-options__column
         fieldset.filter-option
           h4.text.filter-option__title Кислинка
-          +radio("Степень кислости - низкая")(name="acid")
+          +radio("Степень кислости - низкая")(name="acid" value="Низкая")
             | Низкая
-          +radio("Степень кислости - средняя")(name="acid")
+          +radio("Степень кислости - средняя")(name="acid" value="Средняя")
             | Средняя
-          +radio("Степень кислости - высокая")(name="acid" checked)
+          +radio("Степень кислости - высокая")(name="acid" value="Высокая")
             | Высокая
         fieldset.filter-option
           h4.text.filter-option__title Способ обработки
-          +radio("Способ обработки - сухой")(name="method" checked)
+          +radio("Способ обработки - сухой")(name="method" value="Сухая")
             | Сухая
-          +radio("Способ обработки - мытый")(name="method")
+          +radio("Способ обработки - мытый")(name="method" value="Мытая")
             | Мытая
-          +radio("Способ обработки - прочий")(name="method")
+          +radio("Способ обработки - прочий")(name="method" value="Прочие")
             | Прочие
       .filter-options__column
         fieldset.filter-option
           h4.text.filter-option__title Особые
-          +radio("Категория - Популярное")(name="category")
+          +radio("Категория - Популярное")(name="category" value="Популярное")
             | Популярное
-          +radio("Категория - Новый урожай")(name="category")
+          +radio("Категория - Новый урожай")(name="category" value="Новый урожай")
             | Новый урожай
-          +radio("Категория - Ваш выбор")(name="category" checked)
+          +radio("Категория - Ваш выбор")(name="category" value="Ваш выбор")
             | Ваш выбор
-          +radio("Категория - Микролот")(name="category")
+          +radio("Категория - Микролот")(name="category" value="Микролот")
             | Микролот
-          +radio("Категория - Сорт недели")(name="category")
+          +radio("Категория - Сорт недели")(name="category" value="Сорт недели")
             | Сорт недели
-          +radio("Категория - Скидки")(name="category")
+          +radio("Категория - Скидки")(name="category" value="Скидки")
             | Скидки
-          +radio("Категория - Новинка")(name="category")
+          +radio("Категория - Новинка")(name="category" value="Новинка")
             | Новинка
       .filter-options__column
         fieldset.filter-option
           h4.text.filter-option__title Вид кофе
-          +radio("Вид кофе - Арабика")(name="kind-of-coffee")
+          +radio("Вид кофе - Арабика")(name="kind-of-coffee" value="Арабика")
             | Арабика
-          +radio("Вид кофе - Робуста")(name="kind-of-coffee" checked)
+          +radio("Вид кофе - Робуста")(name="kind-of-coffee" value="Робуста")
             | Робуста
-          +radio("Вид кофе - Смесь арабик")(name="kind-of-coffee")
+          +radio("Вид кофе - Смесь арабик")(name="kind-of-coffee" value="Смесь арабик")
             | Смесь арабик
-          +radio("Вид кофе - Смесь арабика/робуста")(name="kind-of-coffee")
+          +radio("Вид кофе - Смесь арабика/робуста")(name="kind-of-coffee" value="Смесь арабика/робуста")
             | Смесь арабика/робуста
 
 mixin filter-types
@@ -130,7 +130,8 @@ mixin filter-types
 
 mixin filter-section
   section.filter
-    .container.filter__container
-      +filter-extent
-      +filter-options
-      +filter-types
+    .container
+      form.filter-form
+        +filter-extent
+        +filter-options
+        +filter-types

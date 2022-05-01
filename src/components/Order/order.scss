@@ -22,7 +22,7 @@
   &__delivery-sum {
     font-size: rem(18px);
     font-weight: 500;
-    color: #747474;
+    color: var(--color-boulder);
   }
 
   &__sum {
@@ -60,7 +60,7 @@
   &__data {
     font-size: rem(20px);
     font-weight: 500;
-    color: #747474;
+    color: var(--color-boulder);
   }
 
   tr {

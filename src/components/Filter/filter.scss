@@ -4,16 +4,16 @@
 .filter {
   padding-bottom: rem(30px);
 
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: var(--grid-gap);
-  }
-
   fieldset {
     padding: 0;
     border: none;
   }
+}
+
+.filter-form {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--grid-gap);
 }
 
 .filter-extent,

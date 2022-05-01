@@ -1,7 +1,7 @@
 import { select } from "./selectMarkup"
 
-export const slide = ({
-  name, preview, image, price, rating, reviewsCount,
+export const productCard = ({
+  id, name, preview, image, price, rating, reviewsCount,
   chars, extent, weights, isPopular, isNew
 }) => (`
   <article class="swiper-slide product product--sale">
@@ -69,7 +69,7 @@ export const slide = ({
           }
           <ins class="product-price__current">${price.current} &#8381;</ins>
         </div>
-        <button class="btn btn-reset btn--primary product__cta">В корзину</button>
+        <a class="btn btn-reset btn--primary product__cta" href="product.html#${id}">Купить</a>
       </div>
     </div>
   </article>

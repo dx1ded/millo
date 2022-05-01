@@ -60,18 +60,24 @@ new Swiper(".social-slider", {
 
 // Products load / render / loader
 
-import { getProductsWithSales } from "./services/FirebaseService"
-import { slide } from "./utils/slideMarkup"
+// import { getProductsWithSales } from "./services/FirebaseService"
+// import { productCard } from "./utils/productMarkup"
 
-new IntersectionObserver(async ([ entry ]) => {
-  if (!entry.isIntersecting) return
-  else if (document.querySelector(".product")) return
+// const options = {
+//   root: null,
+//   threshold: [0, 0.5]
+// }
 
-  const products = await getProductsWithSales({ count: 4 })
+// const observer = new IntersectionObserver(async ([ entry ]) => {
+//   if (!entry.isIntersecting || document.querySelector(".product")) return
 
-  products.forEach((product) => {
-    salesSlider.appendSlide(slide(product.data()))
-  })
+//   const products = await getProductsWithSales({ count: 4 })
 
-  document.querySelector(".loader").style.display = "none"
-}, { threshold: [0, 0.5] }).observe(document.querySelector(".sales-slider"))
+//   products.forEach((product) => {
+//     salesSlider.appendSlide(productCard(product.data()))
+//   })
+
+//   document.querySelector(".loader").style.display = "none"
+// }, options)
+
+// observer.observe(document.querySelector(".sales-slider"))

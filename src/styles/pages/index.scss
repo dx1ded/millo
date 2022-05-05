@@ -31,13 +31,6 @@
     box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
   }
 
-  @include is-desktop {
-    &:hover {
-      background-color: var(--color-light);
-      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
-    }
-  }
-
   &__container::after {
     position: absolute;
     top: -313px;
@@ -51,5 +44,21 @@
     background-image: url("@images/shape-1.svg");
     background-repeat: no-repeat;
     background-position: top right;
+
+    @include laptop {
+      right: -875px;
+    }
+  }
+
+  @include is-desktop {
+    &:hover {
+      background-color: var(--color-light);
+      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+    }
+  }
+
+  @include resolution(900px) {
+    background-color: var(--color-light);
+    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
   }
 }

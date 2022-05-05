@@ -1,6 +1,7 @@
 @import "@cmps/Logo/logo";
 @import "@cmps/Navigation/nav";
 @import "@cmps/Actions/actions";
+@import "@cmps/Burger/burger";
 
 .header {
   position: relative;
@@ -16,18 +17,47 @@
     display: grid;
     grid-template-columns: rem(230px) 1fr rem(230px);
     align-items: center;
+
+    @include laptop {
+      grid-template-columns: rem(170px) 1fr rem(170px);
+    }
+
+    @include resolution(900px) {
+      grid-template-columns: rem(135px) 1fr rem(135px);
+    }
+
+    @include tablet {
+      grid-template-columns: rem(50px) 1fr rem(170px);
+    }
+
+    @include resolution(500px) {
+      grid-template-columns: rem(35px) 1fr rem(131px);
+    }
+
+    @include mobile {
+      grid-template-columns: rem(30px) 1fr rem(109px);
+    }
   }
 
   .logo {
-    margin-top: rem(3px);
-    margin-left: rem(15px);
+    @include tablet {
+      justify-self: center;
+    }
   }
 
   .nav {
     justify-self: center;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   .actions {
     justify-self: flex-end;
+  }
+
+  @include tablet {
+    padding: rem(30px) 0;
   }
 }

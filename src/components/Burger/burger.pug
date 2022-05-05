@@ -1,0 +1,21 @@
+mixin burger-menu
+  .burger
+    .container.burger__container
+      .burger__header
+        include @cmps/Logo/logo
+        button.btn-reset.burger__close#burger-close(aria-label="Закрыть меню")
+      include @cmps/Navigation/nav
+      include @cmps/Actions/actions
+      address.burger__contacts
+        a.burger__email(href="mailto:import@kldrefine.com") Import@kldrefine.com
+        .burger__socials
+          a(href="tel:+74012375343" aria-label="Телефон: +74012375343")
+            +icon("phone")
+          a(href="instagram://user?username=coffeemillor" aria-label="Телефон: +74012375343")
+            +icon("instagram")
+
+mixin burger-open-button
+  button.btn-reset.burger__open#burger-open(aria-label="Открыть меню")
+    div
+    div
+    div

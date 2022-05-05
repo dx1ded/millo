@@ -10,6 +10,26 @@
 
     &:not(:last-child) {
       margin-right: rem(50px);
+
+      @include laptop {
+        margin-right: rem(40px);
+      }
+
+      @include resolution(900px) {
+        margin-right: rem(30px);
+      }
+
+      @include tablet {
+        margin-right: rem(40px);
+      }
+
+      @include resolution(500px) {
+        margin-right: rem(25px);
+      }
+
+      @include mobile {
+        margin-right: rem(17px);
+      }
     }
 
     &.focus-visible svg {
@@ -28,6 +48,26 @@
           stroke: var(--color-primary);
         }
       }
+    }
+
+    @include laptop {
+      width: rem(30px);
+      height: rem(30px);
+    }
+
+    @include resolution(900px) {
+      width: rem(25px);
+      height: rem(25px);
+    }
+
+    @include tablet {
+      width: rem(30px);
+      height: rem(30px);
+    }
+
+    @include resolution(500px) {
+      width: rem(25px);
+      height: rem(25px);
     }
   }
 }

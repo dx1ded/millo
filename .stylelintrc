@@ -34,7 +34,12 @@
       {
         "type": "rule",
         "selector": "^."
-      }
+      },
+      {
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true
+			}
     ]
 	}
 }

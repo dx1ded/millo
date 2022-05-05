@@ -35,4 +35,11 @@
   --z-header: 100;
   --z-scroll-tabs: 200;
   --z-loader: 300;
+  --z-burger: 1000;
+}
+
+@include laptop {
+  :root {
+    --design-mw: #{rem(1180px)};
+  }
 }

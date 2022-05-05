@@ -7,6 +7,14 @@
   &__item {
     &:not(:last-child) {
       margin-right: rem(100px);
+
+      @include laptop {
+        margin-right: rem(65px);
+      }
+
+      @include resolution(900px) {
+        margin-right: rem(45px);
+      }
     }
 
     a {
@@ -29,6 +37,10 @@
       &:hover::after,
       &.focus-visible::after {
         transform: scaleX(1);
+      }
+
+      @include laptop {
+        font-size: rem(18px);
       }
     }
   }

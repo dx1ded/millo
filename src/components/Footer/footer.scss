@@ -9,5 +9,69 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  .logo {
+    @include laptop {
+      width: rem(158px);
+      height: rem(45px);
+    }
+
+    @include tablet {
+      order: 2;
+    }
+
+    @include mobile {
+      width: rem(120px);
+      height: rem(35px);
+    }
+  }
+
+  .nav {
+    &__item {
+      &:not(:last-child) {
+        @include resolution(900px) {
+          margin-right: rem(70px);
+        }
+
+        @include resolution(500px) {
+          margin-right: rem(35px);
+        }
+
+        @include mobile {
+          margin-right: rem(24px);
+        }
+      }
+
+      a {
+        @include resolution(500px) {
+          font-size: rem(18px);
+        }
+
+        @include mobile {
+          font-size: rem(16px);
+        }
+      }
+    }
+
+    @include tablet {
+      margin-bottom: rem(50px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(35px);
+    }
+  }
+
+  @include resolution(500px) {
+    padding-bottom: rem(50px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(35px);
   }
 }

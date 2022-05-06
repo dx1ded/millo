@@ -11,4 +11,16 @@
   &--xs {
     font-size: rem(18px);
   }
+
+  @include laptop {
+    font-size: rem(18px);
+  }
+
+  @include tablet {
+    font-size: rem(20px);
+  }
+
+  @include mobile {
+    font-size: rem(14px);
+  }
 }

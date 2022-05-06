@@ -12,10 +12,10 @@
   overflow-y: auto;
   visibility: hidden;
   background-color: var(--color-light);
-  opacity: 0;
   transition:
     visibility 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
+    transform 0.3s ease-in-out;
+  transform: translateX(-100%);
 
   &__container {
     display: flex;
@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20vh;
+    margin-bottom: 15vh;
   }
 
   &__contacts {
@@ -64,7 +64,7 @@
       border-radius: 100%;
 
       &:not(:last-child) {
-        margin-right: rem(40px);
+        margin-right: rem(25px);
       }
 
       svg {
@@ -130,6 +130,11 @@
     }
   }
 
+  .logo {
+    width: rem(150px);
+    height: rem(45px);
+  }
+
   .nav {
     margin-bottom: rem(40px);
 
@@ -138,17 +143,33 @@
       align-items: flex-start;
     }
 
-    &__item:not(:last-child) {
-      margin-bottom: rem(20px);
+    &__item {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: rem(20px);
+      }
+
+      a {
+        font-size: rem(20px);
+      }
     }
   }
 
   .actions {
     margin-bottom: rem(40px);
+
+    &__item {
+      width: rem(30px);
+      height: rem(30px);
+
+      &:not(:last-child) {
+        margin-right: rem(35px);
+      }
+    }
   }
 
   &--active {
     visibility: visible;
-    opacity: 1;
+    transform: none;
   }
 }

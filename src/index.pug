@@ -11,15 +11,15 @@ block styles
 block partials
   include @cmps/Header/header
   main
-  //-   include @partials/index/hero
-  //-   include @partials/index/catalog
-  //-   include @partials/index/sales
-  //-   include @partials/index/benefits
-  //-   include @partials/index/about
-  //-   include @partials/index/news
-  //-   include @partials/index/social
-  //-   +subscribe("#f9b300")
-  //- include @cmps/Footer/footer
+    include @partials/index/hero
+    include @partials/index/catalog
+    include @partials/index/sales
+    include @partials/index/benefits
+    include @partials/index/about
+    include @partials/index/news
+    include @partials/index/social
+    +subscribe("#f9b300")
+  include @cmps/Footer/footer
 
 block scripts
   +script("scripts/index.js")

@@ -17,10 +17,10 @@
 
   // Offsets
 
-  --container-horizontal-offset: #{rem(20px)};
-  --design-mw: #{rem(1660px)};
+  --container-horizontal-offset: #{em(20px)};
+  --design-mw: #{em(1660px)};
   --mw: calc(var(--design-mw) + var(--container-horizontal-offset) * 2);
-  --grid-gap: #{rem(20px)};
+  --grid-gap: #{em(20px)};
 
   // Fonts
 
@@ -40,6 +40,6 @@
 
 @include laptop {
   :root {
-    --design-mw: #{rem(1180px)};
+    --design-mw: #{em(1180px)};
   }
 }

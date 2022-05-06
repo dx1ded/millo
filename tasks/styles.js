@@ -9,6 +9,7 @@ import SassAlias from 'sass-alias'
 import postCSS from 'gulp-postcss'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
+import combineMediaQueries from "postcss-combine-media-query"
 import avifcss from 'gulp-avif-css'
 import gulpIf from 'gulp-if'
 import through from 'through2'
@@ -67,7 +68,8 @@ export const styles = () => (
     .pipe(gulpIf(isProd, avifcss()))
     .pipe(postCSS([
       autoprefixer(),
-      cssnano()
+      cssnano(),
+      // combineMediaQueries()
     ]))
     .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(gulp.dest(build.styles))

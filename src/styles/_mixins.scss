@@ -53,7 +53,7 @@
 }
 
 @mixin small-mobile {
-  @media (max-width: em(320px)) {
+  @media (max-width: em(374px)) {
     @content;
   }
 }

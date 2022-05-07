@@ -1,9 +1,97 @@
 .hero {
-  margin-top: rem(81px);
-  margin-bottom: rem(157px);
+  margin: rem(81px) 0 rem(278px);
 
   &__container {
     position: relative;
+  }
+
+  &__link {
+    display: none;
+    width: 100%;
+    padding: rem(20px) 0;
+    font-size: rem(25px);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include resolution(630px) {
+      padding: rem(16px) 0;
+      font-size: rem(18px);
+    }
+  }
+
+  @include laptop {
+    margin-bottom: rem(120px);
+  }
+
+  @include mobile {
+    margin-top: rem(40px);
+  }
+}
+
+.hero-slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: visible;
+
+  &::after {
+    position: absolute;
+    top: rem(-36px);
+    left: rem(672px);
+    z-index: -1;
+    display: block;
+    width: rem(899px);
+    height: rem(772px);
+    pointer-events: none;
+    content: "";
+    background-image: url("@images/coffee-with-beans.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @include resolution(1350px) {
+      left: rem(450px);
+      width: rem(700px);
+      height: rem(600px);
+    }
+
+    @include resolution(900px) {
+      top: rem(50px);
+      left: rem(300px);
+      width: rem(600px);
+      height: rem(520px);
+    }
+
+    @include tablet {
+      top: rem(100px);
+      left: rem(240px);
+      width: rem(550px);
+      height: rem(470px);
+    }
+
+    @include resolution(630px) {
+      top: rem(76px);
+      left: rem(180px);
+      width: rem(480px);
+      height: rem(400px);
+    }
+
+    @include resolution(500px) {
+      top: rem(132px);
+      right: rem(-170px);
+      left: initial;
+      width: rem(400px);
+      height: rem(340px);
+    }
+
+    @include small-mobile {
+      display: none;
+    }
   }
 }
 
@@ -11,11 +99,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: 100%;
   margin-bottom: rem(28px);
 
   &__item {
-    /* purgecss ignore current */
-
     width: rem(20px);
     height: rem(20px);
     cursor: pointer;
@@ -26,9 +113,19 @@
     transition: background-color 0.3s ease-in-out;
 
     &:not(:last-child) {
-      /* purgecss ignore current */
-
       margin-right: rem(30px);
+
+      @include laptop {
+        margin-right: rem(20px);
+      }
+
+      @include tablet {
+        margin-right: rem(30px);
+      }
+
+      @include resolution(630px) {
+        margin-right: rem(16px);
+      }
     }
 
     &.focus-visible {
@@ -40,27 +137,45 @@
 
       background-color: var(--color-cork);
     }
+
+    @include laptop {
+      width: rem(14px);
+      height: rem(14px);
+    }
+
+    @include tablet {
+      width: rem(25px);
+      height: rem(25px);
+      background-color: #e9e9e9;
+
+      &--active {
+        background-color: var(--color-primary);
+      }
+    }
+
+    @include resolution(630px) {
+      width: rem(14px);
+      height: rem(14px);
+    }
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+    order: 2;
+    margin: rem(105px) 0 rem(155px);
+  }
+
+  @include resolution(630px) {
+    margin-bottom: rem(70px);
+  }
+
+  @include small-mobile {
+    margin: rem(50px) 0 rem(70px);
   }
 }
 
 .hero-slide {
   position: relative;
-  padding-bottom: rem(118px);
-
-  &::after {
-    position: absolute;
-    top: rem(-85px);
-    right: rem(89px);
-    z-index: -1;
-    display: block;
-    width: rem(899px);
-    height: rem(772px);
-    pointer-events: none;
-    content: "";
-    background-image: url("@images/coffee-with-beans.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
 
   &__headline {
     margin-top: 0;
@@ -69,6 +184,29 @@
     font-weight: 900;
     line-height: 1.25;
     color: var(--color-black);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+      font-size: rem(56px);
+    }
+
+    @include resolution(900px) {
+      font-size: rem(50px);
+    }
+
+    @include tablet {
+      max-width: rem(472px);
+    }
+
+    @include resolution(630px) {
+      max-width: rem(283px);
+      margin-bottom: rem(30px);
+      font-size: rem(40px);
+    }
+
+    @include resolution(500px) {
+      font-size: rem(30px);
+    }
   }
 
   &__text {
@@ -76,6 +214,22 @@
 
     p:not(:last-child) {
       margin-bottom: rem(30px);
+    }
+
+    @include laptop {
+      max-width: rem(466px);
+    }
+
+    @include tablet {
+      max-width: rem(320px);
+    }
+
+    @include resolution(630px) {
+      max-width: rem(294px);
+
+      p {
+        font-size: rem(16px);
+      }
     }
   }
 
@@ -86,5 +240,15 @@
     font-weight: 700;
     line-height: 1.2;
     text-decoration: none;
+
+    @include laptop {
+      padding: rem(16px) rem(41px);
+      margin-top: rem(60px);
+      font-size: rem(21px);
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 }

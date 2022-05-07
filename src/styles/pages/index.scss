@@ -46,7 +46,34 @@
     background-position: top right;
 
     @include laptop {
-      right: -875px;
+      top: -190px;
+      right: -510px;
+      width: 968px;
+      height: 1197px;
+    }
+
+    @include resolution(900px) {
+      top: 0;
+      right: -420px;
+      width: 736px;
+      height: 912px;
+    }
+
+    @include tablet {
+      right: -300px;
+      height: 740px;
+    }
+
+    @include resolution(630px) {
+      width: 453px;
+      height: 561px;
+      transform: rotate(-3deg);
+    }
+
+    @include resolution(500px) {
+      right: -270px;
+      width: 400px;
+      height: 503px;
     }
   }
 

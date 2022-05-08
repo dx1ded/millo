@@ -59,6 +59,52 @@ new Swiper(".social-slider", {
   }
 })
 
+// ===============================================
+// + Catalog Slider
+// ===============================================
+
+const mediaQuery = window.matchMedia("(max-width: 75em)")
+
+let catalogSlider
+
+function doesTheQueryMatch() {
+  if (mediaQuery.matches) {
+    catalogSlider = new Swiper(".catalog-slider", {
+      spaceBetween: 20,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          centeredSlides: true
+        },
+
+        467: { slidesPerView: 1.5 },
+
+        601: { slidesPerView: 1.8 },
+
+        769: {
+          slidesPerView: 2.5,
+          centeredSlides: false
+        },
+
+        900: { slidesPerView: 3 }
+      }
+    })
+  } else if (catalogSlider) {
+    catalogSlider.destroy()
+  }
+}
+
+// Check in load
+
+doesTheQueryMatch()
+
+// Add change event
+
+mediaQuery.addEventListener("change", doesTheQueryMatch)
+
+// ===============================================
+
+
 // Products load / render / loader
 
 // import { getProductsWithSales } from "./services/FirebaseService"

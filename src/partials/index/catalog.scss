@@ -34,13 +34,27 @@
 
   &__title {
     margin-bottom: rem(84px);
+
+    @include laptop {
+      margin-bottom: rem(60px);
+    }
   }
 }
 
-.catalog__wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--grid-gap);
+.catalog-slider {
+  padding: rem(30px);
+  margin: rem(-30px);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+
+    @include resolution(1200px) {
+      display: flex;
+      gap: 0;
+    }
+  }
 }
 
 .catalog-item {
@@ -57,9 +71,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: rem(270px);
     height: rem(278px);
-    margin-bottom: rem(35px);
+    margin: 0 auto rem(35px);
     transition: transform 0.3s ease-in-out;
+
+    img {
+      width: 100%;
+    }
+
+    @include laptop {
+      max-width: rem(194px);
+      height: rem(196px);
+    }
+
+    @include tablet {
+      max-width: rem(250px);
+      height: rem(250px);
+    }
+
+    @include resolution(600px) {
+      max-width: rem(200px);
+      height: rem(200px);
+    }
   }
 
   &__name {
@@ -67,11 +101,27 @@
     font-weight: 700;
     color: var(--color-black);
     transition: transform 0.3s ease-in-out;
+
+    @include resolution(1500px) {
+      font-size: rem(20px);
+    }
+
+    @include laptop {
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      font-size: rem(18px);
+    }
   }
 
   &__link {
     display: block;
-    padding: rem(15.7px) 0;
+    padding: rem(16px) 0;
     margin-top: rem(20px);
     font-size: rem(25px);
     font-weight: 600;
@@ -90,6 +140,23 @@
       & ~ .catalog-item__image {
         transform: translateY(-20px);
       }
+    }
+
+    @include resolution(1500px) {
+      padding: rem(12px) 0;
+      font-size: rem(20px);
+    }
+
+    @include laptop {
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      font-size: rem(20px);
     }
   }
 
@@ -112,5 +179,13 @@
     &__link {
       opacity: 0;
     }
+  }
+
+  @include resolution(1500px) {
+    padding: rem(30px) rem(24px);
+  }
+
+  @include resolution(600px) {
+    padding: rem(20px);
   }
 }

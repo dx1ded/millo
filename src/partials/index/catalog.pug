@@ -1,37 +1,38 @@
 section.catalog
   .container.catalog__container
     h2.title.catalog__title Каталоги нашей продукции
-    .catalog__wrapper
-      figure.catalog-item
-        a.btn.btn-reset.btn--primary.catalog-item__link(href="coffee.html") Купить
-        figcation.text.catalog-item__name Свежеобжаренный кофе
-        .catalog-item__image
-          +image(
-            "beans-with-leaves.png",
-            "Зерна кофе, под которыми лежат зеленые листья"
-          )(width="295px" height="212px")
-      figure.catalog-item
-        a.btn.btn-reset.btn--primary.catalog-item__link(href="tea.html") Купить
-        figcation.text.catalog-item__name Чай и кофейные напитки
-        .catalog-item__image
-          +image(
-            "teapot-with-leaves-inside.png",
-            "Чайник, в котором налит чай с листьями"
-          )(width="235px" height="278px")
-      figure.catalog-item
-        a.btn.btn-reset.btn--primary.catalog-item__link(href="vending.html") Купить
-        figcation.text.catalog-item__name Продукция для вендинга
-        .catalog-item__image
-          +image(
-            "vending-machine.png",
-            "Кофе-машина, около которой лежат два стаканы приготовленного напитка"
-          )(width="276px" height="253px")
-      figure.catalog-item
-        a.btn.btn-reset.btn--primary.catalog-item__link(href="meal.html") Купить
-        figcation.text.catalog-item__name Здоровое питание
-        .catalog-item__image
-          +image(
-            "harmless-meal.png",
-            "Тарелка, наполненная кашей с красным соусом, который налит сверху"
-          )(width="266px" height="186px")
+    .swiper.catalog-slider
+      .swiper-wrapper.catalog-slider__wrapper
+        figure.swiper-slide.catalog-item
+          a.btn.btn-reset.btn--primary.catalog-item__link(href="coffee.html") Купить
+          figcation.text.catalog-item__name Свежеобжаренный кофе
+          .catalog-item__image
+            +image(
+              "beans-with-leaves.png",
+              "Зерна кофе, под которыми лежат зеленые листья"
+            )(style="aspect-ratio='1.4 / 1'")
+        figure.swiper-slide.catalog-item
+          a.btn.btn-reset.btn--primary.catalog-item__link(href="tea.html") Купить
+          figcation.text.catalog-item__name Чай и кофейные напитки
+          .catalog-item__image
+            +image(
+              "teapot-with-leaves-inside.png",
+              "Чайник, в котором налит чай с листьями"
+            )(style="aspect-ratio='0.85 / 1'")
+        figure.swiper-slide.catalog-item
+          a.btn.btn-reset.btn--primary.catalog-item__link(href="vending.html") Купить
+          figcation.text.catalog-item__name Продукция для вендинга
+          .catalog-item__image
+            +image(
+              "vending-machine.png",
+              "Кофе-машина, около которой лежат два стаканы приготовленного напитка"
+            )(style="aspect-ratio='1.08 / 1'")
+        figure.swiper-slide.catalog-item
+          a.btn.btn-reset.btn--primary.catalog-item__link(href="meal.html") Купить
+          figcation.text.catalog-item__name Здоровое питание
+          .catalog-item__image
+            +image(
+              "harmless-meal.png",
+              "Тарелка, наполненная кашей с красным соусом, который налит сверху"
+            )(style="aspect-ratio='1.43 / 1'")
 

@@ -70,7 +70,18 @@ let catalogSlider
 function doesTheQueryMatch() {
   if (mediaQuery.matches) {
     catalogSlider = new Swiper(".catalog-slider", {
+      modules: [Pagination, A11y],
       spaceBetween: 20,
+      pagination: {
+        el: ".catalog-pagination",
+        bulletElement: "button",
+        bulletClass: "catalog-pagination__item",
+        bulletActiveClass: "catalog-pagination__item--active",
+        clickable: true
+      },
+      a11y: {
+        paginationBulletMessage: "Перейти на слайд номер {{index}}"
+      },
       breakpoints: {
         320: {
           slidesPerView: 1,
@@ -79,7 +90,10 @@ function doesTheQueryMatch() {
 
         467: { slidesPerView: 1.5 },
 
-        601: { slidesPerView: 1.8 },
+        601: {
+          slidesPerView: 1.8,
+          centeredSlides: true
+        },
 
         769: {
           slidesPerView: 2.5,

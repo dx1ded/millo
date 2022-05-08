@@ -25,7 +25,15 @@
   }
 
   @include laptop {
-    margin-bottom: rem(120px);
+    margin-bottom: rem(200px);
+  }
+
+  @include resolution(900px) {
+    margin-bottom: rem(240px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(70px);
   }
 
   @include mobile {

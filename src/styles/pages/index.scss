@@ -26,6 +26,18 @@
   background-color: transparent;
   box-shadow: none;
 
+  @include is-desktop {
+    &:hover {
+      background-color: var(--color-light);
+      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+    }
+  }
+
+  @include resolution(900px) {
+    background-color: var(--color-light);
+    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
+  }
+
   &:focus-within {
     background-color: var(--color-light);
     box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
@@ -75,17 +87,5 @@
       width: 400px;
       height: 503px;
     }
-  }
-
-  @include is-desktop {
-    &:hover {
-      background-color: var(--color-light);
-      box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
-    }
-  }
-
-  @include resolution(900px) {
-    background-color: var(--color-light);
-    box-shadow: 0 5px 20px rgb(157 157 157 / 25%);
   }
 }

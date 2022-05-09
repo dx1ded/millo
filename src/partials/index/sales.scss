@@ -11,10 +11,32 @@
 
   &__title {
     margin-bottom: rem(50px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__text {
     margin-bottom: rem(80px);
+
+    @include laptop {
+      max-width: rem(784px);
+      margin: 0 0 rem(54px) auto;
+    }
+
+    @include resolution(900px) {
+      max-width: rem(500px);
+
+      br {
+        display: none;
+      }
+    }
+
+    @include resolution(600px) {
+      max-width: rem(450px);
+      font-size: rem(16px);
+    }
   }
 
   &__row {
@@ -35,9 +57,16 @@
     margin-top: rem(55px);
     text-align: right;
 
+    @include resolution(1600px) {
+      padding-right: rem(100px);
+    }
+
+    @include laptop {
+      display: none;
+    }
+
     a {
       position: relative;
-      color: var(--color-black);
       text-decoration: none;
 
       &::after {
@@ -61,9 +90,22 @@
   width: rem(1240px);
   margin: 0;
   overflow: visible;
+
+  @include resolution(1500px) {
+    width: rem(840px);
+  }
+
+  @include laptop {
+    width: rem(900px);
+  }
+
+  @include resolution(900px) {
+    width: rem(500px);
+  }
 }
 
 .sales-nav {
+  flex-shrink: 0;
   width: rem(70px);
   height: rem(70px);
   background-repeat: no-repeat;
@@ -71,13 +113,37 @@
   background-size: rem(26px) rem(26px);
   border-radius: 100%;
 
+  @include resolution(1600px) {
+    width: rem(60px);
+    height: rem(60px);
+    background-size: rem(22px) rem(22px);
+  }
+
+  @include laptop {
+    width: rem(50px);
+    height: rem(50px);
+    background-size: rem(18px) rem(18px);
+  }
+
+  @include resolution(900px) {
+    display: none;
+  }
+
   &--prev {
     margin-right: rem(70px);
     background-image: url("#/arrow-left");
+
+    @include resolution(1600px) {
+      margin-right: rem(40px);
+    }
   }
 
   &--next {
     margin-left: rem(70px);
     background-image: url("#/arrow-right");
+
+    @include resolution(1600px) {
+      margin-left: rem(40px);
+    }
   }
 }

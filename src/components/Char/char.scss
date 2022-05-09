@@ -2,6 +2,10 @@
   &__name {
     display: inline-block;
     margin-bottom: rem(8px);
+
+    @include laptop {
+      margin-bottom: rem(6px);
+    }
   }
 
   &__bullets {
@@ -15,8 +19,17 @@
       background-color: #f0f0f0;
       border-radius: 100%;
 
+      @include laptop {
+        width: rem(7px);
+        height: rem(7px);
+      }
+
       &:not(:first-child) {
         margin-right: rem(3px);
+
+        @include laptop {
+          margin-right: rem(2px);
+        }
       }
 
       &.current,

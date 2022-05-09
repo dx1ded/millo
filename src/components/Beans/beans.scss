@@ -1,10 +1,17 @@
-.beans {
-  svg {
-    width: rem(19px);
-    height: rem(19px);
+.beans svg {
+  width: rem(19px);
+  height: rem(19px);
 
-    &:not(:last-child) {
-      margin-right: rem(4px);
+  @include laptop {
+    width: rem(13px);
+    height: rem(13px);
+  }
+
+  &:not(:last-child) {
+    margin-right: rem(4px);
+
+    @include laptop {
+      margin-right: rem(3px);
     }
   }
 }

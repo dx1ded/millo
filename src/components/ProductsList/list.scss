@@ -21,7 +21,8 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, rem(400px));
     gap: rem(70px) var(--grid-gap);
+    justify-content: center;
   }
 }

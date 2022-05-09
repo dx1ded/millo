@@ -4,14 +4,6 @@
   line-height: em(62px, 50px);
   color: var(--color-black);
 
-  &--sm {
-    font-size: rem(40px);
-  }
-
-  &--xs {
-    font-size: rem(30px);
-  }
-
   @include laptop {
     font-size: rem(35px);
   }
@@ -26,5 +18,13 @@
 
   @include mobile {
     font-size: rem(25px);
+  }
+
+  &--sm {
+    font-size: rem(40px);
+  }
+
+  &--xs {
+    font-size: rem(30px);
   }
 }

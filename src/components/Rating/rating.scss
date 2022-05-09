@@ -9,8 +9,17 @@
       height: rem(25px);
       fill: #f0f0f0;
 
+      @include laptop {
+        width: rem(18px);
+        height: rem(18px);
+      }
+
       &:not(:first-child) {
         margin-right: rem(2px);
+
+        @include laptop {
+          margin-right: rem(1px);
+        }
       }
 
       &.current,
@@ -27,9 +36,18 @@
     font-size: rem(14px);
     color: #5b5b5b;
 
+    @include laptop {
+      margin-top: rem(6px);
+      font-size: rem(10px);
+    }
+
     strong {
       font-size: rem(20px);
       color: var(--color-black);
+
+      @include laptop {
+        font-size: rem(14px);
+      }
     }
   }
 }

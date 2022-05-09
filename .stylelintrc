@@ -16,6 +16,11 @@
         "name": "media"
       },
       {
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true
+			},
+      {
         "type": "rule",
         "selector": "^&::(before|after)"
       },
@@ -34,12 +39,7 @@
       {
         "type": "rule",
         "selector": "^."
-      },
-      {
-				"type": "at-rule",
-				"name": "include",
-				"hasBlock": true
-			}
+      }
     ]
 	}
 }

@@ -1,6 +1,22 @@
 .hero {
   margin: rem(81px) 0 rem(278px);
 
+  @include laptop {
+    margin-bottom: rem(200px);
+  }
+
+  @include resolution(900px) {
+    margin-bottom: rem(240px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(70px);
+  }
+
+  @include mobile {
+    margin-top: rem(40px);
+  }
+
   &__container {
     position: relative;
   }
@@ -22,22 +38,6 @@
       padding: rem(16px) 0;
       font-size: rem(18px);
     }
-  }
-
-  @include laptop {
-    margin-bottom: rem(200px);
-  }
-
-  @include resolution(900px) {
-    margin-bottom: rem(240px);
-  }
-
-  @include tablet {
-    margin-bottom: rem(70px);
-  }
-
-  @include mobile {
-    margin-top: rem(40px);
   }
 }
 
@@ -110,6 +110,20 @@
   width: 100%;
   margin-bottom: rem(28px);
 
+  @include tablet {
+    justify-content: flex-start;
+    order: 2;
+    margin: rem(105px) 0 rem(155px);
+  }
+
+  @include resolution(630px) {
+    margin-bottom: rem(70px);
+  }
+
+  @include small-mobile {
+    margin: rem(50px) 0 rem(70px);
+  }
+
   &__item {
     width: rem(20px);
     height: rem(20px);
@@ -119,6 +133,22 @@
     border-radius: 100%;
     outline: none;
     transition: background-color 0.3s ease-in-out;
+
+    @include laptop {
+      width: rem(14px);
+      height: rem(14px);
+    }
+
+    @include tablet {
+      width: rem(25px);
+      height: rem(25px);
+      background-color: #e9e9e9;
+    }
+
+    @include resolution(630px) {
+      width: rem(14px);
+      height: rem(14px);
+    }
 
     &:not(:last-child) {
       margin-right: rem(30px);
@@ -144,41 +174,11 @@
       /* purgecss ignore current */
 
       background-color: var(--color-cork);
-    }
 
-    @include laptop {
-      width: rem(14px);
-      height: rem(14px);
-    }
-
-    @include tablet {
-      width: rem(25px);
-      height: rem(25px);
-      background-color: #e9e9e9;
-
-      &--active {
+      @include tablet {
         background-color: var(--color-primary);
       }
     }
-
-    @include resolution(630px) {
-      width: rem(14px);
-      height: rem(14px);
-    }
-  }
-
-  @include tablet {
-    justify-content: flex-start;
-    order: 2;
-    margin: rem(105px) 0 rem(155px);
-  }
-
-  @include resolution(630px) {
-    margin-bottom: rem(70px);
-  }
-
-  @include small-mobile {
-    margin: rem(50px) 0 rem(70px);
   }
 }
 
@@ -220,10 +220,6 @@
   &__text {
     max-width: rem(658px);
 
-    p:not(:last-child) {
-      margin-bottom: rem(30px);
-    }
-
     @include laptop {
       max-width: rem(466px);
     }
@@ -238,6 +234,10 @@
       p {
         font-size: rem(16px);
       }
+    }
+
+    p:not(:last-child) {
+      margin-bottom: rem(30px);
     }
   }
 

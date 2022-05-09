@@ -4,7 +4,7 @@ export const productCard = ({
   id, name, preview, image, price, rating, reviewsCount,
   chars, extent, weights, isPopular, isNew
 }) => (`
-  <article class="swiper-slide product product--sale">
+  <article class="product product--sale">
     <div class="product__header">
       ${price.old ? "<span class='text text--xs sales-sign'>Скидки</span>" : ""}
       <div class="product__types">

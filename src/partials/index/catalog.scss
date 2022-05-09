@@ -1,6 +1,18 @@
 .catalog {
   margin-bottom: rem(88px);
 
+  @include laptop {
+    margin-bottom: rem(50px);
+  }
+
+  @include resolution(1200px) {
+    margin-bottom: rem(100px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(60px);
+  }
+
   &__container {
     position: relative;
 
@@ -67,14 +79,14 @@
       @include resolution(900px) {
         top: 550px;
         left: -280px;
-        z-index: 0;
+        z-index: -1;
         width: 509px;
         height: 509px;
       }
 
       @include resolution(630px) {
         top: 640px;
-        left: -170px;
+        left: -190px;
         width: 300px;
         height: 300px;
       }
@@ -124,6 +136,35 @@
   outline: none;
   box-shadow: var(--shadow-primary);
 
+  @include is-desktop {
+    &:hover & {
+      &__image {
+        transform: translateY(-20px);
+      }
+
+      &__name {
+        transform: translateY(-15px);
+      }
+
+      &__link {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__link {
+      opacity: 0;
+    }
+  }
+
+  @include resolution(1500px) {
+    padding: rem(30px) rem(24px);
+  }
+
+  @include resolution(600px) {
+    padding: rem(20px);
+  }
+
   &__image {
     display: flex;
     align-items: center;
@@ -132,10 +173,6 @@
     height: rem(278px);
     margin: 0 auto rem(35px);
     transition: transform 0.3s ease-in-out;
-
-    img {
-      width: 100%;
-    }
 
     @include laptop {
       max-width: rem(194px);
@@ -150,6 +187,10 @@
     @include resolution(600px) {
       max-width: rem(200px);
       height: rem(200px);
+    }
+
+    img {
+      width: 100%;
     }
   }
 
@@ -187,18 +228,6 @@
       opacity 0.3s ease-in-out,
       background-color 0.3s ease-in-out;
 
-    &.focus-visible {
-      opacity: 1;
-
-      & ~ .catalog-item__name {
-        transform: translateY(-15px);
-      }
-
-      & ~ .catalog-item__image {
-        transform: translateY(-20px);
-      }
-    }
-
     @include resolution(1500px) {
       padding: rem(12px) 0;
       font-size: rem(20px);
@@ -215,35 +244,18 @@
     @include mobile {
       font-size: rem(20px);
     }
-  }
 
-  @include is-desktop {
-    &:hover & {
-      &__image {
-        transform: translateY(-20px);
-      }
+    &.focus-visible {
+      opacity: 1;
 
-      &__name {
+      & ~ .catalog-item__name {
         transform: translateY(-15px);
       }
 
-      &__link {
-        visibility: visible;
-        opacity: 1;
+      & ~ .catalog-item__image {
+        transform: translateY(-20px);
       }
     }
-
-    &__link {
-      opacity: 0;
-    }
-  }
-
-  @include resolution(1500px) {
-    padding: rem(30px) rem(24px);
-  }
-
-  @include resolution(600px) {
-    padding: rem(20px);
   }
 }
 
@@ -251,6 +263,10 @@
   display: none;
   justify-content: center;
   margin: rem(35px) auto 0;
+
+  @include resolution(1200px) {
+    display: flex;
+  }
 
   &__item {
     width: rem(25px);
@@ -260,6 +276,11 @@
     border: none;
     border-radius: 100%;
     transition: background-color 0.3s ease-in-out;
+
+    @include resolution(600px) {
+      width: rem(13px);
+      height: rem(13px);
+    }
 
     &:not(:last-child) {
       margin-right: rem(30px);
@@ -272,14 +293,5 @@
     &--active {
       background-color: var(--color-primary);
     }
-
-    @include resolution(600px) {
-      width: rem(13px);
-      height: rem(13px);
-    }
-  }
-
-  @include resolution(1200px) {
-    display: flex;
   }
 }

@@ -107,11 +107,6 @@
     height: rem(25px);
     cursor: pointer;
 
-    div {
-      height: rem(3px);
-      background-color: var(--color-black);
-    }
-
     @include tablet {
       display: flex;
     }
@@ -127,6 +122,11 @@
 
     @include mobile {
       width: rem(30px);
+    }
+
+    div {
+      height: rem(3px);
+      background-color: var(--color-black);
     }
   }
 

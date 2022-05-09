@@ -5,6 +5,14 @@
   padding-bottom: rem(60px);
   margin-top: rem(210px);
 
+  @include resolution(500px) {
+    padding-bottom: rem(50px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(35px);
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -32,6 +40,14 @@
   }
 
   .nav {
+    @include tablet {
+      margin-bottom: rem(50px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(35px);
+    }
+
     &__item {
       &:not(:last-child) {
         @include resolution(900px) {
@@ -57,21 +73,5 @@
         }
       }
     }
-
-    @include tablet {
-      margin-bottom: rem(50px);
-    }
-
-    @include mobile {
-      margin-bottom: rem(35px);
-    }
-  }
-
-  @include resolution(500px) {
-    padding-bottom: rem(50px);
-  }
-
-  @include mobile {
-    padding-bottom: rem(35px);
   }
 }

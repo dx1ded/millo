@@ -1,5 +1,6 @@
 .select {
   position: relative;
+  user-select: none;
 
   &:hover & {
     &__display {

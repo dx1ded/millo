@@ -4,7 +4,7 @@ mixin accordion(items)
       - const { title, text } = item
       .accordion-item
         .accordion-item__head
-          h4.text.accordion-item__title= title
+          h4.text.text--md.accordion-item__title= title
           button.btn-reset.accordion-item__toggle(aria-label="Открыть меню")
         .accordion-item__content
           p.text.text--sm.accordion-item__text= text

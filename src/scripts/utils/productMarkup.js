@@ -59,12 +59,12 @@ export const productCard = ({
       </div>
     </div>
     <div class="product__info">
-      <h4 class="text product__name">${name}</h4>
+      <h4 class="text text--md product__name">${name}</h4>
       <p class="text text--xs product__description">${preview}</p>
       <div class="product__wrapper">
         <div class="product-price">
           ${price.old
-            ? `<del class="text product-price__old">${price.old} &#8381;</del>`
+            ? `<del class="text text--md product-price__old">${price.old} &#8381;</del>`
             : ""
           }
           <ins class="product-price__current">${price.current} &#8381;</ins>

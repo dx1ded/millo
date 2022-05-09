@@ -21,7 +21,7 @@ mixin product-popular-new
           +char("Горчинка")
           +char("Насыщенность")
     .product__info
-      h4.text.product__name Colombia Supremo
+      h4.text.text--md.product__name Colombia Supremo
       p.text.text--xs.product__description Свежеобжаренный кофе - описание товара, вкус, аромат
       .product__wrapper
         .product-price
@@ -44,11 +44,11 @@ mixin product-with-sales
           +char("Горчинка")
           +char("Насыщенность")
     .product__info
-      h4.text.product__name Colombia Supremo
+      h4.text.text--md.product__name Colombia Supremo
       p.text.text--xs.product__description Свежеобжаренный кофе - описание товара, вкус, аромат
       .product__wrapper
         .product-price
-          del.text.product-price__old 350 &#8381;
+          del.text.text--md.product-price__old 350 &#8381;
           ins.product-price__current 250 &#8381;
         button.btn.btn-reset.btn--primary.product__cta В корзину
 
@@ -61,7 +61,7 @@ mixin product-without-options(image)
       .product__image
         +image(image.url, image.alt)
     .product__info
-      h4.text.product__name Наименование товара
+      h4.text.text--md.product__name Наименование товара
       p.text.text--xs.product__description Описание товара
       .product__wrapper
         .product-price

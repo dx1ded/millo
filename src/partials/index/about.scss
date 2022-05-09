@@ -5,7 +5,18 @@
   background-image: url("@images/about-background.jpg");
   background-repeat: no-repeat;
   background-position: left 96%;
-  background-size: 100%;
+
+  @include laptop {
+    padding: rem(140px) 0 rem(132px);
+  }
+
+  @include resolution(600px) {
+    padding: rem(100px) 0;
+  }
+
+  @include mobile {
+    padding: rem(80px) 0;
+  }
 
   &__container {
     position: relative;
@@ -19,13 +30,46 @@
 
   &__title {
     margin-bottom: rem(100px);
+
+    @include laptop {
+      margin-bottom: rem(70px);
+    }
+
+    @include resolution(560px) {
+      margin-bottom: rem(50px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(30px);
+      font-size: rem(20px);
+    }
   }
 
   &__text {
     max-width: rem(1246px);
 
+    @include laptop {
+      max-width: rem(882px);
+    }
+
+    @include tablet {
+      font-size: rem(18px);
+    }
+
+    @include resolution(560px) {
+      font-size: rem(15px);
+    }
+
+    @include mobile {
+      font-size: rem(14px);
+    }
+
     &:not(:last-of-type) {
       margin-bottom: rem(30px);
+
+      @include tablet {
+        margin-bottom: rem(20px);
+      }
     }
   }
 
@@ -35,6 +79,28 @@
     font-size: rem(30px);
     font-weight: 700;
     text-decoration: none;
+
+    @include laptop {
+      padding: rem(16px) rem(50px);
+      margin-top: rem(70px);
+      font-size: rem(21px);
+    }
+
+    @include tablet {
+      width: 100%;
+      padding: rem(20px) 0;
+      font-size: rem(18px);
+      text-align: center;
+    }
+
+    @include resolution(560px) {
+      margin-top: rem(50px);
+    }
+
+    @include mobile {
+      padding: rem(18px) 0;
+      margin-top: rem(30px);
+    }
   }
 
   .top-wave,
@@ -53,6 +119,18 @@
 
     svg {
       height: rem(225px);
+
+      @include resolution(1100px) {
+        height: rem(120px);
+      }
+
+      @include tablet {
+        height: rem(80px);
+      }
+
+      @include resolution(600px) {
+        height: rem(40px);
+      }
     }
   }
 
@@ -61,6 +139,14 @@
 
     svg {
       height: rem(208px);
+
+      @include resolution(1100px) {
+        height: rem(100px);
+      }
+
+      @include resolution(600px) {
+        height: rem(40px);
+      }
     }
   }
 }

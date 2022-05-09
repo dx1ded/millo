@@ -4,6 +4,10 @@
 .sales {
   margin-bottom: rem(29px);
 
+  @include resolution(900px) {
+    margin-bottom: rem(70px);
+  }
+
   &__title,
   &__text {
     text-align: right;

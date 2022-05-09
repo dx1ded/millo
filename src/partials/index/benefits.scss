@@ -3,6 +3,22 @@
   padding: rem(86px) 0 rem(95px);
   background-color: var(--color-secondary);
 
+  @include resolution(1100px) {
+    padding: rem(36px) 0 rem(80px);
+  }
+
+  @include resolution(960px) {
+    padding: rem(76px) 0 rem(80px);
+  }
+
+  @include tablet {
+    padding: rem(36px) 0 rem(75px);
+  }
+
+  @include resolution(560px) {
+    padding: rem(20px) 0 rem(60px);
+  }
+
   &__container {
     position: relative;
     display: flex;
@@ -13,6 +29,14 @@
     width: rem(760px);
     margin-right: rem(80px);
 
+    @include resolution(1060px) {
+      margin-right: rem(20px);
+    }
+
+    @include resolution(960px) {
+      display: none;
+    }
+
     img {
       width: 100%;
     }
@@ -21,6 +45,10 @@
   &__title {
     max-width: rem(585px);
     margin-bottom: rem(80px);
+
+    @include resolution(600px) {
+      margin-bottom: rem(60px);
+    }
   }
 
   .top-wave {
@@ -32,6 +60,18 @@
       display: block;
       width: inherit;
       height: rem(225px);
+
+      @include resolution(1100px) {
+        height: rem(150px);
+      }
+
+      @include tablet {
+        height: rem(100px);
+      }
+
+      @include resolution(560px) {
+        height: rem(60px);
+      }
     }
   }
 }
@@ -58,11 +98,38 @@
     @include laptop {
       width: rem(60px);
       height: rem(60px);
+      margin-right: rem(30px);
+
+      svg {
+        width: rem(26px);
+        height: rem(26px);
+      }
+    }
+
+    @include resolution(960px) {
+      width: rem(80px);
+      height: rem(80px);
+      margin-right: rem(40px);
+
+      svg {
+        width: rem(33px);
+        height: rem(33px);
+      }
+    }
+
+    @include resolution(560px) {
+      width: rem(50px);
+      height: rem(50px);
+      margin-right: rem(30px);
 
       svg {
         width: rem(22px);
         height: rem(22px);
       }
+    }
+
+    @include mobile {
+      margin-right: rem(20px);
     }
 
     svg {
@@ -85,5 +152,13 @@
 
   &__description {
     max-width: rem(531px);
+
+    @include resolution(560px) {
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      font-size: rem(14px);
+    }
   }
 }

@@ -5,9 +5,11 @@
   background-image: url("@images/about-background.jpg");
   background-repeat: no-repeat;
   background-position: left 96%;
+  background-size: 100%;
 
   @include laptop {
     padding: rem(140px) 0 rem(132px);
+    background-size: auto;
   }
 
   @include resolution(600px) {
@@ -41,7 +43,6 @@
 
     @include mobile {
       margin-bottom: rem(30px);
-      font-size: rem(20px);
     }
   }
 
@@ -76,20 +77,16 @@
   &__link {
     padding: rem(22.75px) rem(68px);
     margin-top: rem(99px);
-    font-size: rem(30px);
-    font-weight: 700;
     text-decoration: none;
 
     @include laptop {
       padding: rem(16px) rem(50px);
       margin-top: rem(70px);
-      font-size: rem(21px);
     }
 
     @include tablet {
-      width: 100%;
+      display: block;
       padding: rem(20px) 0;
-      font-size: rem(18px);
       text-align: center;
     }
 

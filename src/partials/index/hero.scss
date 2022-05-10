@@ -23,10 +23,7 @@
 
   &__link {
     display: none;
-    width: 100%;
     padding: rem(20px) 0;
-    font-size: rem(25px);
-    font-weight: 700;
     text-align: center;
     text-decoration: none;
 
@@ -36,7 +33,6 @@
 
     @include resolution(630px) {
       padding: rem(16px) 0;
-      font-size: rem(18px);
     }
   }
 }
@@ -186,8 +182,7 @@
   position: relative;
 
   &__headline {
-    margin-top: 0;
-    margin-bottom: rem(62px);
+    margin: 0 0 rem(62px);
     font-size: rem(80px);
     font-weight: 900;
     line-height: 1.25;
@@ -244,15 +239,11 @@
   &__link {
     padding: rem(22px) rem(56px);
     margin-top: rem(90px);
-    font-size: rem(30px);
-    font-weight: 700;
-    line-height: 1.2;
     text-decoration: none;
 
     @include laptop {
       padding: rem(16px) rem(41px);
       margin-top: rem(60px);
-      font-size: rem(21px);
     }
 
     @include tablet {

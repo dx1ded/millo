@@ -204,14 +204,6 @@
       font-size: rem(20px);
     }
 
-    @include laptop {
-      font-size: rem(18px);
-    }
-
-    @include tablet {
-      font-size: rem(20px);
-    }
-
     @include mobile {
       font-size: rem(18px);
     }
@@ -230,18 +222,6 @@
 
     @include resolution(1500px) {
       padding: rem(12px) 0;
-      font-size: rem(20px);
-    }
-
-    @include laptop {
-      font-size: rem(18px);
-    }
-
-    @include tablet {
-      font-size: rem(20px);
-    }
-
-    @include mobile {
       font-size: rem(20px);
     }
 

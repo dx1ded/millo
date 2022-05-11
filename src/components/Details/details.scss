@@ -1,7 +1,21 @@
-.details {
+// It was done because of specify problems
+
+.details.text {
   display: inline-block;
   color: var(--color-primary);
   text-decoration: none;
+
+  @include laptop {
+    font-size: rem(14px);
+  }
+
+  @include tablet {
+    font-size: rem(25px);
+  }
+
+  @include resolution(600px) {
+    font-size: rem(16px);
+  }
 
   &::after {
     display: inline-block;
@@ -14,6 +28,24 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     transition: transform 0.3s ease-in-out;
+
+    @include laptop {
+      width: rem(9px);
+      height: rem(9px);
+      margin-left: rem(8px);
+    }
+
+    @include tablet {
+      width: rem(20px);
+      height: rem(20px);
+      margin-left: rem(10px);
+    }
+
+    @include resolution(600px) {
+      width: rem(13px);
+      height: rem(13px);
+      margin-left: rem(8px);
+    }
   }
 
   &:hover::after {

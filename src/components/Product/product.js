@@ -1,4 +1,4 @@
-import { productCard } from "@/utils/productMarkup"
+import { productCard } from "@/markup/product"
 
 export class Product {
   constructor(data) {

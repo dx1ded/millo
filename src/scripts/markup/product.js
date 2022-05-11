@@ -1,4 +1,4 @@
-import { select } from "./selectMarkup"
+import { select } from "./select"
 
 export const productCard = ({
   id, name, preview, image, price, rating, reviewsCount,
@@ -6,7 +6,10 @@ export const productCard = ({
 }) => (`
   <article class="product product--sale">
     <div class="product__header">
-      ${price.old ? "<span class='text text--xs sales-sign'>Скидки</span>" : ""}
+      ${price.old
+        ? "<span class='text text--xs sales-sign'>Скидки</span>"
+        : ""
+      }
       <div class="product__types">
         ${isPopular
           ? "<span class='text text--xs'>Популярное</span>"
@@ -64,7 +67,10 @@ export const productCard = ({
       <div class="product__wrapper">
         <div class="product-price">
           ${price.old
-            ? `<del class="text text--md product-price__old">${price.old} &#8381;</del>`
+            ? `
+              <del class="text text--md product-price__old">
+                ${price.old} &#8381;
+              </del>`
             : ""
           }
           <ins class="product-price__current">${price.current} &#8381;</ins>

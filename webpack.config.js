@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 import { isDev } from './tasks/_utils'
 
@@ -27,8 +27,9 @@ export default {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
+      '@': path.resolve(__dirname, 'src/scripts'),
       '@cmps': path.resolve(__dirname, 'src/components'),
-      '@': path.resolve(__dirname, 'src/scripts')
+      '@partials': path.resolve(__dirname, 'src/partials')
     }
   }
 }

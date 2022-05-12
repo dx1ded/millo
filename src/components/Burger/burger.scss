@@ -106,6 +106,7 @@
     width: rem(50px);
     height: rem(25px);
     cursor: pointer;
+    background-color: var(--color-light);
 
     @include tablet {
       display: flex;
@@ -125,8 +126,9 @@
     }
 
     div {
+      width: 100%;
       height: rem(3px);
-      background-color: var(--color-black);
+      background-color: #000;
     }
   }
 

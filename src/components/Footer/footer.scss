@@ -5,12 +5,17 @@
   padding-bottom: rem(60px);
   margin-top: rem(210px);
 
+  @include laptop {
+    margin-top: rem(120px);
+  }
+
   @include resolution(500px) {
     padding-bottom: rem(50px);
   }
 
   @include mobile {
     padding-bottom: rem(35px);
+    margin-top: rem(100px);
   }
 
   &__container {

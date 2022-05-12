@@ -1,7 +1,7 @@
 {
-  "name": "project-name",
+  "name": "millo",
   "version": "1.0.0",
-  "description": "Project Desription",
+  "description": "Millo Landing",
   "scripts": {
     "build": "cross-env NODE_ENV=production gulp build",
     "start": "cross-env NODE_ENV=development gulp watch",
@@ -65,7 +65,7 @@
     "focus-visible": "^5.2.0",
     "normalize.css": "^8.0.1",
     "osm": "^1.0.0",
-    "swiper": "^8.0.7",
+    "swiper": "^8.1.4",
     "vanilla-lazyload": "^17.5.0"
   }
 }

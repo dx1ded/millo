@@ -3,6 +3,14 @@
   padding-top: rem(146px);
   background-color: var(--color-light);
 
+  @include tablet {
+    padding-top: rem(390px);
+  }
+
+  @include mobile {
+    padding-top: rem(300px);
+  }
+
   &__container {
     position: relative;
 
@@ -18,16 +26,74 @@
       background-image: url("@images/coffee-with-beans.png");
       background-repeat: no-repeat;
       background-size: 100%;
+
+      @include resolution(1600px) {
+        top: rem(-220px);
+        right: rem(-100px);
+        width: rem(600px);
+      }
+
+      @include laptop {
+        top: rem(-240px);
+        right: rem(-200px);
+        width: rem(540px);
+      }
+
+      @include resolution(900px) {
+        top: rem(-200px);
+        right: rem(-270px);
+        width: rem(480px);
+      }
+
+      @include tablet {
+        top: rem(-370px);
+        right: 50%;
+        width: rem(440px);
+        transform: translateX(50%);
+      }
+
+      @include mobile {
+        top: rem(-290px);
+        width: rem(350px);
+      }
     }
   }
 
   &__title {
     margin-bottom: rem(50px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include tablet {
+      font-size: rem(30px);
+    }
+
+    @include resolution(600px) {
+      margin-bottom: rem(30px);
+      font-size: rem(20px);
+    }
   }
 
   &__text {
     max-width: rem(757px);
     margin-bottom: rem(60px);
+
+    @include laptop {
+      max-width: rem(536px);
+      margin-bottom: rem(40px);
+    }
+
+    @include tablet {
+      max-width: rem(606px);
+      font-size: rem(20px);
+    }
+
+    @include resolution(600px) {
+      margin-bottom: rem(20px);
+      font-size: rem(14px);
+    }
   }
 
   .top-wave {
@@ -39,6 +105,18 @@
       display: block;
       width: 100%;
       height: rem(246px);
+
+      @include laptop {
+        height: rem(150px);
+      }
+
+      @include tablet {
+        height: rem(80px);
+      }
+
+      @include mobile {
+        height: rem(50px);
+      }
     }
   }
 }
@@ -50,6 +128,24 @@
     padding: 0;
     margin-bottom: rem(25px);
     border: none;
+
+    @include laptop {
+      max-width: rem(780px);
+      margin-bottom: rem(15px);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      margin-bottom: rem(40px);
+    }
+
+    @include resolution(600px) {
+      margin-bottom: rem(30px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(16px);
+    }
 
     [type="email"] {
       width: 100%;
@@ -63,6 +159,27 @@
       border-radius: 40px 0 0 40px;
       outline: none;
 
+      @include laptop {
+        padding: rem(18px) rem(40px);
+        font-size: rem(18px);
+      }
+
+      @include tablet {
+        padding: rem(20px) rem(40px);
+        margin-bottom: rem(20px);
+        font-size: rem(22px);
+        border-radius: 5px;
+      }
+
+      @include resolution(600px) {
+        font-size: rem(14px);
+      }
+
+      @include mobile {
+        padding: rem(18px) rem(20px);
+        margin-bottom: rem(16px);
+      }
+
       &::placeholder {
         color: var(--color-gray);
       }
@@ -73,6 +190,25 @@
       font-size: rem(25px);
       font-weight: 700;
       border-radius: 40px;
+
+      @include laptop {
+        padding: 0 rem(30px);
+        font-size: rem(18px);
+      }
+
+      @include tablet {
+        padding: rem(18.5px) 0;
+        font-size: rem(25px);
+        border-radius: 5px;
+      }
+
+      @include resolution(600px) {
+        font-size: rem(18px);
+      }
+
+      @include mobile {
+        padding: rem(16px) 0;
+      }
     }
   }
 
@@ -81,6 +217,23 @@
     font-weight: 500;
     line-height: 1.3;
     color: #5b5b5b;
+
+    @include laptop {
+      font-size: rem(12px);
+    }
+
+    @include tablet {
+      max-width: rem(492px);
+      font-size: rem(20px);
+    }
+
+    @include resolution(600px) {
+      font-size: rem(14px);
+    }
+
+    @include mobile {
+      font-size: rem(11px);
+    }
 
     a {
       font-weight: 600;

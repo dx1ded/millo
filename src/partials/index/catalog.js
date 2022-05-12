@@ -7,6 +7,8 @@ import {
 const slider = ".catalog-slider"
 const options = {
   modules: [Pagination, A11y],
+  slidesPerView: 1,
+  centeredSlides: true,
   spaceBetween: 20,
   pagination: {
     el: ".catalog-pagination",
@@ -19,11 +21,6 @@ const options = {
     paginationBulletMessage: "Перейти на слайд номер {{index}}"
   },
   breakpoints: {
-    320: {
-      slidesPerView: 1,
-      centeredSlides: true
-    },
-
     467: { slidesPerView: 1.5 },
 
     601: {
@@ -31,12 +28,12 @@ const options = {
       centeredSlides: true
     },
 
-    769: {
-      slidesPerView: 2.5,
-      centeredSlides: false
-    },
+    769: { slidesPerView: 2.5 },
 
-    900: { slidesPerView: 3 }
+    901: {
+      slidesPerView: 3,
+      centeredSlides: false
+    }
   }
 }
 

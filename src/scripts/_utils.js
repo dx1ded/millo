@@ -1,11 +1,9 @@
 import Swiper from "swiper"
 
-let sliderInstance
-
 export function doesTheQueryMatch(slider, options) {
   if (this.matches) {
-    sliderInstance = new Swiper(slider, options)
-  } else if (sliderInstance) {
-    sliderInstance.destroy()
+    this.sliderInstance = new Swiper(slider, options)
+  } else if (this.sliderInstance) {
+    this.sliderInstance.destroy()
   }
 }

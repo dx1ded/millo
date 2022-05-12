@@ -9,45 +9,125 @@
       var(--color-primary) 100%
     );
 
+  @include laptop {
+    padding-bottom: rem(120px);
+  }
+
+  @include resolution(600px) {
+    padding-bottom: rem(100px);
+  }
+
   &__title {
     margin-bottom: rem(45px);
 
     &::after {
       display: inline-block;
-      width: rem(86px);
-      height: rem(86px);
-      margin-left: rem(53px);
+      width: rem(70px);
+      height: rem(70px);
+      margin-left: rem(30px);
       vertical-align: middle;
       content: "";
-      background-image: url("#/instagram-shape");
+      background-color: var(--color-primary);
+      background-image: url("#/instagram");
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-position: center;
+      background-size: 70% 70%;
+      border-radius: 100%;
+
+      @include laptop {
+        width: rem(60px);
+        height: rem(60px);
+      }
+
+      @include tablet {
+        margin-left: rem(20px);
+      }
+
+      @include mobile {
+        width: rem(40px);
+        height: rem(40px);
+        margin-left: rem(15px);
+      }
     }
   }
 
   &__wrapper {
-    display: flex;
-    align-items: flex-start;
+    position: relative;
     padding-left:
       max(
         calc((100% - var(--design-mw)) / 2),
         var(--container-horizontal-offset)
       );
+
+    @include tablet {
+      padding: 0 var(--container-horizontal-offset);
+    }
   }
 
   &__image {
-    flex-shrink: 0;
+    position: absolute;
+    top: 50%;
     width: rem(506px);
-    margin-right: rem(150px);
+    transform: translateY(-50%);
+
+    @include resolution(1690px) {
+      width: rem(380px);
+    }
+
+    @include laptop {
+      width: rem(320px);
+    }
+
+    @include tablet {
+      right: rem(-150px);
+      width: rem(350px);
+    }
+
+    @include resolution(600px) {
+      width: rem(270px);
+    }
+
+    @include resolution(470px) {
+      width: rem(230px);
+      transform: translateY(-45%);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    $image-width: rem(506px);
+    $image-margin: rem(150px);
+
+    position: relative;
+    max-width:
+      max(
+        calc(100% - $image-width - $image-margin),
+        rem(1125px)
+      );
+    margin: 0 0 0 auto;
+
+    @include resolution(1690px) {
+      max-width: rem(900px);
+    }
+
+    @include laptop {
+      max-width: rem(700px);
+    }
+
+    @include resolution(1060px) {
+      max-width: rem(380px);
+    }
+
+    @include tablet {
+      max-width: 100%;
+    }
   }
 }
 
 .social-slider {
-  $image-width: rem(506px);
-  $image-margin: rem(150px);
-
-  width: calc(100% - $image-width - $image-margin);
-
   &__nav {
     position: absolute;
     top: 50%;
@@ -66,6 +146,43 @@
       visibility 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
     transform: translateY(-50%);
+
+    @include laptop {
+      width: rem(50px);
+      height: rem(50px);
+      background-size: rem(18px) rem(18px);
+
+      &--prev {
+        left: rem(10px);
+      }
+
+      &--next {
+        right: rem(10px);
+      }
+    }
+
+    @include tablet {
+      top: 100%;
+      width: rem(80px);
+      height: rem(80px);
+      background-size: rem(30px) rem(30px);
+      transform: translateY(50%);
+
+      &--prev {
+        left: 0;
+        transform: translateY(50%) rotate(180deg);
+      }
+
+      &--next {
+        right: 0;
+      }
+    }
+
+    @include resolution(600px) {
+      width: rem(60px);
+      height: rem(60px);
+      background-size: rem(20px) rem(20px);
+    }
 
     &.swiper-button-disabled {
       visibility: hidden;
@@ -87,4 +204,20 @@
   height: rem(382px);
   background-color: #e9e9e9;
   border-radius: 10px;
+
+  @include resolution(1690px) {
+    height: rem(308px);
+  }
+
+  @include laptop {
+    height: rem(270px);
+  }
+
+  @include tablet {
+    height: rem(390px);
+  }
+
+  @include resolution(600px) {
+    height: rem(270px);
+  }
 }

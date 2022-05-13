@@ -2,7 +2,24 @@
 @import "@cmps/Beans/beans";
 
 .filter {
+  position: relative;
   padding-bottom: rem(30px);
+
+  @include tablet {
+    padding-top: rem(110px);
+  }
+
+  @include resolution(630px) {
+    padding-top: rem(50px);
+  }
+
+  @include resolution(456px) {
+    padding-top: 0;
+  }
+
+  @include mobile {
+    padding-top: rem(120px);
+  }
 
   fieldset {
     padding: 0;
@@ -14,6 +31,14 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: var(--grid-gap);
+
+  @include resolution(930px) {
+    grid-template-columns: 1fr;
+  }
+
+  @include resolution(450px) {
+    gap: rem(12px);
+  }
 }
 
 .filter-extent,
@@ -31,16 +56,47 @@
 .filter-extent {
   display: flex;
   grid-column: span 2;
-  justify-content: space-between;
-  padding: rem(43px) rem(52px) rem(48px) rem(30px);
+  padding: rem(43px) rem(20px) rem(48px) rem(30px);
+
+  @include laptop {
+    padding: rem(30px) rem(20px) rem(32px) rem(20px);
+  }
+
+  @include resolution(930px) {
+    flex-direction: column;
+    grid-column: span 1;
+    align-items: flex-start;
+    padding: rem(30px) rem(32px) rem(50px);
+  }
+
+  @include resolution(500px) {
+    padding: rem(30px) rem(20px) rem(40px);
+  }
 
   &::before {
     display: block;
     width: rem(15px);
     height: 100%;
+    margin-right: rem(50px);
     content: "";
     background-color: var(--color-primary);
     border-radius: 10px;
+
+    @include laptop {
+      width: rem(10px);
+      margin-right: rem(30px);
+    }
+
+    @include resolution(930px) {
+      width: 100%;
+      height: rem(20px);
+      margin: 0 0 rem(45px);
+    }
+
+    @include resolution(500px) {
+      height: rem(15px);
+      margin-bottom: rem(30px);
+    }
   }
 
   &__title {
@@ -48,10 +104,92 @@
     font-size: rem(30px);
     font-weight: 700;
     color: var(--color-black);
+
+    @include laptop {
+      margin-bottom: rem(30px);
+      font-size: rem(22px);
+    }
+
+    @include resolution(930px) {
+      margin-bottom: rem(50px);
+      font-size: rem(32px);
+    }
+
+    @include resolution(640px) {
+      margin-bottom: rem(40px);
+      font-size: rem(24px);
+    }
+
+    @include resolution(500px) {
+      margin-bottom: rem(25px);
+      font-size: rem(20px);
+    }
   }
 
-  .radio:not(:last-child) {
-    margin-bottom: rem(42px);
+  .radio {
+    &:not(:last-child) {
+      margin-bottom: rem(42px);
+
+      @include laptop {
+        margin-bottom: rem(30px);
+      }
+
+      @include resolution(930px) {
+        margin-bottom: rem(40px);
+      }
+
+      @include resolution(640px) {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &__visual {
+      @include resolution(930px) {
+        margin-right: rem(50px);
+      }
+
+      @include resolution(640px) {
+        margin-right: rem(20px);
+      }
+    }
+  }
+
+  .beans svg {
+    @include laptop {
+      width: rem(15px);
+      height: rem(15px);
+
+      &:not(:last-child) {
+        margin-right: rem(2px);
+      }
+    }
+
+    @include resolution(930px) {
+      width: rem(30px);
+      height: rem(30px);
+
+      &:not(:last-child) {
+        margin-right: rem(10px);
+      }
+    }
+
+    @include resolution(640px) {
+      width: rem(20px);
+      height: rem(20px);
+
+      &:not(:last-child) {
+        margin-right: rem(4px);
+      }
+    }
+
+    @include resolution(500px) {
+      width: rem(16px);
+      height: rem(16px);
+
+      &:not(:last-child) {
+        margin-right: rem(2px);
+      }
+    }
   }
 }
 
@@ -63,6 +201,23 @@
   grid-column: span 6;
   padding: rem(35px) rem(64px) rem(47px);
 
+  @include laptop {
+    padding: rem(25px) rem(60px) rem(35px);
+  }
+
+  @include resolution(1000px) {
+    padding: rem(25px) rem(30px) rem(35px);
+  }
+
+  @include resolution(930px) {
+    grid-column: span 1;
+    padding: rem(30px) rem(32px) rem(60px);
+  }
+
+  @include resolution(500px) {
+    padding: rem(30px) rem(20px) rem(40px);
+  }
+
   &::before {
     display: block;
     width: 100%;
@@ -71,27 +226,88 @@
     content: "";
     background-color: var(--color-primary);
     border-radius: 10px;
+
+    @include laptop {
+      height: rem(10px);
+      margin-bottom: rem(20px);
+    }
+
+    @include resolution(930px) {
+      height: rem(20px);
+      margin: 0 0 rem(45px);
+    }
+
+    @include resolution(500px) {
+      height: rem(15px);
+      margin-bottom: rem(30px);
+    }
   }
 
   &__wrapper {
     display: flex;
     align-items: flex-start;
-  }
 
-  &__column {
-    &:not(:last-child) {
-      margin-right: rem(64px);
+    @include resolution(930px) {
+      display: block;
+      gap: 0;
+      margin-bottom: rem(-70px);
+      columns: 2;
+    }
+
+    @include resolution(640px) {
+      margin-bottom: rem(-40px);
+    }
+
+    @include resolution(500px) {
+      margin-bottom: rem(-25px);
+    }
+
+    @include mobile {
+      columns: 1;
     }
   }
 
-  .radio:not(:last-of-type) {
-    margin-bottom: rem(20px);
+  &__column:not(:last-child) {
+    margin-right: rem(64px);
+
+    @include laptop {
+      margin-right: rem(50px);
+    }
+
+    @include resolution(930px) {
+      margin-right: 0;
+    }
   }
 }
 
 .filter-option {
+  @include resolution(930px) {
+    break-inside: avoid;
+    margin-bottom: rem(70px);
+  }
+
+  @include resolution(640px) {
+    margin-bottom: rem(40px);
+  }
+
+  @include resolution(500px) {
+    margin-bottom: rem(25px);
+  }
+
   &:not(:last-child) {
     margin-bottom: rem(20px);
+
+    @include resolution(930px) {
+      margin-bottom: rem(70px);
+    }
+
+    @include resolution(640px) {
+      margin-bottom: rem(40px);
+    }
+
+    @include resolution(500px) {
+      margin-bottom: rem(25px);
+    }
   }
 
   &__title {
@@ -99,6 +315,54 @@
     margin-bottom: rem(30px);
     font-weight: 700;
     line-height: em(30px, 25px);
+
+    @include laptop {
+      max-width: rem(84px);
+      margin-bottom: rem(20px);
+      font-size: rem(18px);
+    }
+
+    @include resolution(930px) {
+      max-width: rem(150px);
+      margin-bottom: rem(40px);
+      font-size: rem(32px);
+    }
+
+    @include resolution(640px) {
+      margin-bottom: rem(30px);
+      font-size: rem(24px);
+    }
+
+    @include resolution(500px) {
+      margin-bottom: rem(25px);
+      font-size: rem(20px);
+    }
+  }
+
+  .radio {
+    @include resolution(930px) {
+      max-width: rem(256px);
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(20px);
+
+      @include laptop {
+        margin-bottom: rem(15px);
+      }
+
+      @include resolution(930px) {
+        margin-bottom: rem(20px);
+      }
+
+      @include resolution(500px) {
+        margin-bottom: rem(14px);
+      }
+    }
+
+    &__visual {
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -111,6 +375,23 @@
   grid-template-columns: repeat(8, 1fr);
   grid-column: span 8;
   gap: var(--grid-gap);
+
+  @include resolution(930px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: span 1;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include resolution(450px) {
+    gap: rem(12px);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .filter-type {
@@ -122,16 +403,86 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 
+    @include laptop {
+      padding: rem(20px) 0;
+    }
+
+    @include resolution(930px) {
+      padding: rem(30px) 0;
+    }
+
+    @include resolution(560px) {
+      padding: rem(20px) 0;
+    }
+
     h5 {
       margin-bottom: rem(20px);
       transition: color 0.3s ease-in-out;
+
+      @include resolution(1500px) {
+        font-size: rem(16px);
+      }
+
+      @include laptop {
+        margin-bottom: rem(16px);
+        font-size: rem(14px);
+      }
+
+      @include resolution(1060px) {
+        margin-bottom: rem(12px);
+        font-size: rem(13px);
+      }
+
+      @include resolution(930px) {
+        margin-bottom: rem(20px);
+        font-size: rem(20px);
+      }
+
+      @include resolution(560px) {
+        margin-bottom: rem(15px);
+        font-size: rem(16px);
+      }
+
+      @include resolution(450px) {
+        font-size: rem(14px);
+      }
     }
 
     svg {
-      width: 84px;
-      height: 84px;
+      width: rem(84px);
+      height: rem(84px);
       fill: #505050;
       transition: fill 0.3s ease-in-out;
+
+      @include resolution(1500px) {
+        width: rem(68px);
+        height: rem(68px);
+      }
+
+      @include laptop {
+        width: rem(50px);
+        height: rem(50px);
+      }
+
+      @include resolution(1060px) {
+        width: rem(40px);
+        height: rem(40px);
+      }
+
+      @include resolution(930px) {
+        width: rem(80px);
+        height: rem(80px);
+      }
+
+      @include resolution(560px) {
+        width: rem(65px);
+        height: rem(65px);
+      }
+
+      @include resolution(450px) {
+        width: rem(50px);
+        height: rem(50px);
+      }
     }
   }
 

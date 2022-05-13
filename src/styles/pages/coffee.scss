@@ -14,14 +14,59 @@
 
 .banner__container::after {
   position: absolute;
-  top: -160px;
-  right: 10px;
-  z-index: 1;
+  top: rem(-160px);
+  right: rem(10px);
+  z-index: 0;
   display: block;
-  width: 800px;
-  height: 590px;
+  width: rem(800px);
+  height: rem(590px);
   content: "";
   background-image: url("@images/coffee-with-beans.png");
   background-repeat: no-repeat;
   background-size: 100%;
+
+  @include resolution(1630px) {
+    top: rem(-80px);
+    right: rem(-80px);
+    width: rem(600px);
+  }
+
+  @include laptop {
+    top: rem(-150px);
+    right: rem(-150px);
+  }
+
+  @include resolution(1030px) {
+    top: rem(-80px);
+    right: rem(-150px);
+    width: rem(500px);
+  }
+
+  @include resolution(940px) {
+    top: rem(-70px);
+    right: rem(-200px);
+    width: rem(400px);
+  }
+
+  @include tablet {
+    top: rem(130px);
+    right: 50%;
+    width: rem(600px);
+    transform: translateX(50%);
+  }
+
+  @include resolution(630px) {
+    top: rem(90px);
+    width: rem(500px);
+  }
+
+  @include resolution(456px) {
+    top: rem(70px);
+    width: rem(450px);
+  }
+
+  @include mobile {
+    top: rem(50px);
+    width: rem(400px);
+  }
 }

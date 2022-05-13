@@ -13,6 +13,18 @@
   padding: rem(40px) 0 rem(158px);
   background-color: var(--color-primary);
 
+  @include laptop {
+    padding: rem(30px) 0 rem(95px);
+  }
+
+  @include tablet {
+    padding: rem(30px) 0 rem(300px);
+  }
+
+  @include mobile {
+    padding: rem(30px) 0 rem(135px);
+  }
+
   &__container {
     position: relative;
   }
@@ -23,6 +35,29 @@
     font-size: rem(70px);
     font-weight: 900;
     color: var(--color-light);
+
+    @include laptop {
+      margin-top: rem(100px);
+      font-size: rem(50px);
+    }
+
+    @include tablet {
+      margin-top: rem(70px);
+    }
+
+    @include resolution(630px) {
+      margin-top: rem(40px);
+      font-size: rem(35px);
+    }
+
+    @include resolution(456px) {
+      font-size: rem(30px);
+    }
+
+    @include mobile {
+      margin-top: rem(20px);
+      font-size: rem(25px);
+    }
   }
 
   .bottom-wave {
@@ -36,6 +71,18 @@
       display: block;
       width: inherit;
       height: rem(288px);
+
+      @include resolution(1400px) {
+        height: rem(150px);
+      }
+
+      @include tablet {
+        height: rem(80px);
+      }
+
+      @include resolution(500px) {
+        height: rem(50px);
+      }
     }
   }
 }

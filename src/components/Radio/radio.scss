@@ -4,6 +4,22 @@
   font-size: rem(20px);
   font-weight: 500;
 
+  @include laptop {
+    font-size: rem(14px);
+  }
+
+  @include resolution(930px) {
+    font-size: rem(24px);
+  }
+
+  @include resolution(640px) {
+    font-size: rem(18px);
+  }
+
+  @include resolution(500px) {
+    font-size: rem(14px);
+  }
+
   &__input:checked ~ &__visual {
     background-color: var(--color-primary);
   }
@@ -17,5 +33,29 @@
     background-color: var(--color-mercury);
     border-radius: 100%;
     transition: background-color 0.2s ease-in-out;
+
+    @include laptop {
+      width: rem(17px);
+      height: rem(17px);
+      margin-right: rem(15px);
+    }
+
+    @include resolution(930px) {
+      width: rem(40px);
+      height: rem(40px);
+      margin-right: rem(20px);
+    }
+
+    @include resolution(640px) {
+      width: rem(20px);
+      height: rem(20px);
+      margin-right: rem(15px);
+    }
+
+    @include resolution(500px) {
+      width: rem(17px);
+      height: rem(17px);
+      margin-right: rem(10px);
+    }
   }
 }

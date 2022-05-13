@@ -6,6 +6,18 @@
   padding: rem(77px) 0 rem(152px);
   background-color: var(--color-wild-sand);
 
+  @include laptop {
+    padding: rem(40px) 0 rem(152px);
+  }
+
+  @include resolution(900px) {
+    padding: rem(40px) 0 rem(80px);
+  }
+
+  @include tablet {
+    padding: rem(40px) 0 rem(80px);
+  }
+
   &::after {
     position: absolute;
     top: 0;
@@ -19,10 +31,28 @@
     transform: translateY(-100%);
   }
 
-  &__container {
+  &__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, rem(400px));
     gap: rem(70px) var(--grid-gap);
-    justify-content: center;
+    margin-bottom: rem(60px);
+
+    @include laptop {
+      grid-template-columns: repeat(auto-fit, rem(286px));
+      gap: rem(40px) var(--grid-gap);
+      margin-bottom: rem(40px);
+    }
+
+    @include resolution(631px) {
+      justify-content: center;
+    }
+  }
+
+  .sort {
+    margin-bottom: rem(60px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
   }
 }

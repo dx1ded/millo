@@ -201,7 +201,16 @@
     margin-bottom: rem(20px);
   }
 
-  .product__image img {
-    width: auto;
+  .product__image {
+    width: initial;
+    aspect-ratio: initial;
+
+    @include laptop {
+      width: rem(180px);
+    }
+
+    img {
+      width: 100%;
+    }
   }
 }

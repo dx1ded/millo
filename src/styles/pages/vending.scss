@@ -13,6 +13,14 @@
 .proposition__container {
   z-index: 0;
 
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include resolution(440px) {
+    grid-template-columns: 1fr;
+  }
+
   &::after {
     top: rem(-234px);
     right: rem(-110px);
@@ -20,22 +28,112 @@
     width: rem(671px);
     height: rem(615px);
     background-image: url("@images/vending-machine.png");
+
+    @include resolution(1600px) {
+      top: rem(-80px);
+      right: rem(-70px);
+      width: rem(500px);
+    }
+
+    @include laptop {
+      top: rem(-50px);
+      right: rem(-20px);
+      width: rem(350px);
+    }
+
+    @include resolution(1100px) {
+      right: rem(-50px);
+      width: rem(300px);
+    }
+
+    @include tablet {
+      top: rem(-450px);
+      right: 0;
+      width: rem(450px);
+    }
+
+    @include resolution(600px) {
+      top: rem(-380px);
+      width: rem(380px);
+    }
+
+    @include mobile {
+      top: rem(-230px);
+      width: rem(260px);
+    }
   }
 }
 
-.proposition-item__image {
-  height: rem(175px);
-  margin-bottom: rem(45px);
+.proposition-item {
+  @include resolution(1100px) {
+    padding: rem(10px) rem(10px) rem(20px);
+  }
+
+  @include tablet {
+    padding: rem(30px) rem(20px) rem(20px);
+  }
+
+  @include resolution(660px) {
+    padding: rem(20px);
+  }
+
+  @include resolution(440px) {
+    padding: rem(30px) rem(10px) rem(10px);
+  }
+
+  &__text {
+    @include tablet {
+      margin-bottom: rem(30px);
+      font-size: rem(20px);
+    }
+
+    @include resolution(660px) {
+      margin-bottom: rem(20px);
+      font-size: rem(16px);
+    }
+
+    @include resolution(440px) {
+      font-size: rem(16px);
+    }
+  }
+
+  &__image {
+    height: rem(175px);
+    margin-bottom: rem(45px);
+
+    @include tablet {
+      width: 100%;
+      height: rem(175px);
+    }
+
+    @include resolution(600px) {
+      height: rem(120px);
+    }
+
+    @include resolution(440px) {
+      height: rem(180px);
+    }
+
+    img {
+      min-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+}
+
+.product--wide .product__image {
+  @include laptop {
+    width: 100%;
+
+    img {
+      height: rem(150px);
+    }
+  }
 
   img {
-    min-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    height: rem(250px);
     border-radius: 20px;
   }
-}
-
-.product--wide .product__image img {
-  width: 100%;
-  height: rem(250px);
 }

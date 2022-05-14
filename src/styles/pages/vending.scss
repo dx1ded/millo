@@ -101,6 +101,10 @@
     height: rem(175px);
     margin-bottom: rem(45px);
 
+    @include laptop {
+      margin-bottom: rem(20px);
+    }
+
     @include tablet {
       width: 100%;
       height: rem(175px);

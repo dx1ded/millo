@@ -10,15 +10,54 @@
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
 
+.proposition {
+  @include resolution(630px) {
+    padding-top: rem(100px);
+  }
+}
+
 .proposition__container {
   grid-template-columns: repeat(3, 1fr);
 
   &::after {
-    top: -50px;
-    right: 20px;
+    top: rem(-50px);
+    right: rem(20px);
     width: rem(518px);
     height: rem(364px);
     background-image: url("@images/harmless-meal.png");
+
+    @include resolution(1600px) {
+      top: 0;
+      right: rem(50px);
+      width: rem(400px);
+    }
+
+    @include laptop {
+      width: rem(300px);
+    }
+
+    @include resolution(1000px) {
+      right: 0;
+      width: rem(280px);
+    }
+
+    @include tablet {
+      top: rem(-380px);
+      right: rem(-50px);
+      width: rem(500px);
+    }
+
+    @include resolution(630px) {
+      top: rem(-320px);
+      right: rem(-10px);
+      width: rem(400px);
+    }
+
+    @include mobile {
+      top: rem(-200px);
+      right: rem(-40px);
+      width: rem(280px);
+    }
   }
 }
 
@@ -31,5 +70,9 @@
     margin: 0 auto;
     line-height: em(30px, 25px);
     text-align: left;
+
+    @include tablet {
+      text-align: center;
+    }
   }
 }

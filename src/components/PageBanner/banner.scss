@@ -46,11 +46,11 @@
     }
 
     @include resolution(630px) {
-      margin-top: rem(40px);
       font-size: rem(35px);
     }
 
     @include resolution(456px) {
+      margin-top: rem(40px);
       font-size: rem(30px);
     }
 

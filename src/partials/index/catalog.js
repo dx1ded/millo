@@ -28,7 +28,10 @@ const options = {
       centeredSlides: true
     },
 
-    769: { slidesPerView: 2.5 },
+    769: {
+      slidesPerView: 2.5,
+      centeredSlides: false
+    },
 
     901: {
       slidesPerView: 3,

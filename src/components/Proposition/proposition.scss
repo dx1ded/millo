@@ -1,21 +1,40 @@
 .proposition {
   padding-bottom: rem(30px);
 
+  @include tablet {
+    padding-top: rem(180px);
+  }
+
+  @include resolution(600px) {
+    padding-top: rem(110px);
+  }
+
   &__container {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--grid-gap);
 
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+
+      & > div {
+        display: none;
+      }
+    }
+
+    @include resolution(600px) {
+      gap: rem(10px);
+    }
+
+    @include resolution(476px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     &::after {
       position: absolute;
-      top: -308px;
-      right: -230px;
       display: block;
-      width: rem(819px);
-      height: rem(655px);
       content: "";
-      background-image: url("@images/teapot-with-cups-and-leaves.png");
       background-repeat: no-repeat;
       background-size: 100%;
     }
@@ -29,6 +48,26 @@
   border-radius: 20px;
   box-shadow: 0 0 30px rgb(149 149 149 / 25%);
 
+  @include laptop {
+    position: relative;
+    z-index: 1;
+    padding: rem(20px) rem(20px) rem(30px);
+  }
+
+  @include resolution(1100px) {
+    padding: rem(20px) rem(10px) rem(20px);
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @include resolution(600px) {
+    padding: rem(10px);
+  }
+
   &__image {
     display: flex;
     align-items: center;
@@ -36,12 +75,46 @@
     height: rem(236px);
     margin-bottom: rem(4px);
 
+    @include laptop {
+      height: rem(164px);
+      margin-bottom: rem(8px);
+    }
+
+    @include resolution(1100px) {
+      height: rem(140px);
+    }
+
+    @include resolution(800px) {
+      height: rem(120px);
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include resolution(600px) {
+      height: rem(100px);
+    }
+
     img {
       max-width: rem(142px);
+      max-height: 100%;
     }
   }
 
   &__text {
     font-weight: 700;
+
+    @include resolution(1100px) {
+      font-size: rem(15px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+    }
+
+    @include resolution(600px) {
+      font-size: rem(13px);
+    }
   }
 }

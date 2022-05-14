@@ -9,3 +9,45 @@
 @import "@cmps/Product/product";
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
+
+.proposition__container::after {
+  top: -308px;
+  right: -230px;
+  width: rem(819px);
+  height: rem(655px);
+  background-image: url("@images/teapot-with-cups-and-leaves.png");
+
+  @include resolution(1540px) {
+    top: -180px;
+    right: -160px;
+    width: rem(650px);
+  }
+
+  @include laptop {
+    top: -145px;
+    right: -150px;
+    z-index: 0;
+    width: rem(500px);
+  }
+
+  @include resolution(1100px) {
+    top: -180px;
+    right: -180px;
+  }
+
+  @include tablet {
+    top: -490px;
+    right: -40px;
+    width: rem(580px);
+  }
+
+  @include resolution(600px) {
+    top: -420px;
+    width: rem(500px);
+  }
+
+  @include mobile {
+    top: -270px;
+    width: rem(320px);
+  }
+}

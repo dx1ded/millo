@@ -9,6 +9,10 @@
     font-size: rem(18px);
   }
 
+  @include mobile {
+    font-size: rem(16px);
+  }
+
   &::after {
     position: absolute;
     bottom: 0;

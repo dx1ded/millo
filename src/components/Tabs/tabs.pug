@@ -1,6 +1,6 @@
 mixin scroll-tabs(items)
-  nav.scroll-tabs
-    .container.scroll-tabs__container
+  nav.tabs.scroll-tabs
+    .container.tabs__container
       each item in items
         - const { name, path } = item
         a.text.text--md.tabs__item(href=path)= name

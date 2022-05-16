@@ -5,7 +5,29 @@
   margin-bottom: rem(50px);
   border-bottom: 1px solid #b3b3b3;
 
+  @include laptop {
+    padding-bottom: rem(80px);
+    margin-bottom: rem(30px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(30px);
+    margin-bottom: rem(30px);
+  }
+
   &__title {
     margin-bottom: rem(60px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(35px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(30px);
+    }
   }
 }

@@ -4,23 +4,30 @@ include @cmps/Char/char
 include @cmps/Radio/radio
 include @cmps/Counter/counter
 
+//- On mobile
+
+include @cmps/TextMore/more
+include @cmps/Select/select
+
 section.overlay
   .container.overlay__container
     .product
       .product__image
         +image("products/colombia-supremo.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
       .product__info
-        +beans
         .product__row
           .product__column
+            +beans
             h2.product__name Colombia Supremo
             p.text.text--sm.product__type Мытая, натуральная, смесь
           .product__column
             span.text.text--sm.product__sign Популярное
             span.text.text--sm.product__sign Новый урожай
         +rating
-        p.text.text--sm.product__description
-          | Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве. Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет. Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.
+        .product__description
+          p.text.text--sm
+            | Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве. Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет. Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.
+          +text-more
         .product__chars
           +char("Кислинка")
           +char("Горчинка")
@@ -31,7 +38,8 @@ section.overlay
               | 250 г.
             +radio("1000 г. продукта")(name="product-weight")
               | 1000 г.
-          .product-form__row
+          .product-form__summary
+            +select(0, ["100 г.", "250 г.", "300 г."])
             +counter
             input.btn.btn-reset.btn--primary.product__buy(type="submit" value="Купить за 250 ₽")
   .bottom-wave

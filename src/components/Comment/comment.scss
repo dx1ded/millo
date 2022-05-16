@@ -6,6 +6,22 @@
     padding: rem(40px) rem(80px) rem(85px);
     background-color: var(--color-light);
     border-radius: 20px 20px 0 0;
+
+    @include laptop {
+      padding: rem(32px) rem(60px) rem(70px);
+    }
+
+    @include tablet {
+      padding: rem(40px) rem(50px) rem(50px);
+    }
+
+    @include resolution(600px) {
+      padding: rem(30px);
+    }
+
+    @include mobile {
+      padding: rem(20px);
+    }
   }
 
   &__row {
@@ -13,6 +29,18 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: rem(40px);
+
+    @include laptop {
+      margin-bottom: rem(20px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(40px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__quote {
@@ -24,12 +52,39 @@
     color: var(--color-black);
     quotes: none;
 
+    @include laptop {
+      margin-bottom: rem(10px);
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(30px);
+      font-size: rem(25px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(10px);
+      font-size: rem(16px);
+    }
+
     &::before {
       display: block;
       font-size: rem(40px);
       font-weight: 900;
       color: var(--color-black);
       content: "“”";
+
+      @include laptop {
+        font-size: rem(28px);
+      }
+
+      @include tablet {
+        font-size: rem(25px);
+      }
+
+      @include mobile {
+        font-size: rem(18px);
+      }
     }
   }
 
@@ -37,15 +92,63 @@
     font-size: rem(20px);
     font-weight: 500;
     color: var(--color-black);
+
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__text {
     max-width: rem(1058px);
+
+    @include laptop {
+      max-width: rem(748px);
+    }
+
+    @include tablet {
+      max-width: rem(544px);
+    }
+
+    @include resolution(600px) {
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      max-width: rem(269px);
+      font-size: rem(14px);
+    }
   }
 
   .rating svg {
     width: rem(34px);
     height: rem(34px);
+
+    @include laptop {
+      width: rem(24px);
+      height: rem(24px);
+
+      &:not(:first-child) {
+        margin-right: rem(2px);
+      }
+    }
+
+    @include tablet {
+      width: rem(21px);
+      height: rem(21px);
+    }
+
+    @include mobile {
+      width: rem(12px);
+      height: rem(12px);
+
+      &:not(:first-child) {
+        margin-right: rem(1px);
+      }
+    }
 
     &:not(:first-child) {
       margin-right: rem(4px);
@@ -60,10 +163,49 @@
   background-color: var(--color-secondary);
   border-radius: 0 0 20px 20px;
 
+  @include laptop {
+    padding: rem(18px) rem(60px);
+  }
+
+  @include tablet {
+    padding: rem(15px) rem(50px);
+  }
+
+  @include resolution(600px) {
+    padding: rem(12px) rem(30px);
+  }
+
+  @include mobile {
+    padding: rem(10px) rem(20px);
+  }
+
   &__avatar {
     width: rem(70px);
     height: rem(70px);
     margin-right: rem(50px);
+
+    @include laptop {
+      width: rem(50px);
+      height: rem(50px);
+      margin-right: rem(35px);
+    }
+
+    @include tablet {
+      width: rem(90px);
+      height: rem(90px);
+      margin-right: rem(30px);
+    }
+
+    @include resolution(600px) {
+      width: rem(60px);
+      height: rem(60px);
+      margin-right: rem(20px);
+    }
+
+    @include mobile {
+      width: rem(40px);
+      height: rem(40px);
+    }
 
     img {
       width: 100%;
@@ -77,6 +219,24 @@
     font-size: rem(20px);
     font-weight: 700;
     color: var(--color-black);
+
+    @include laptop {
+      margin-bottom: rem(10px);
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(25px);
+    }
+
+    @include resolution(600px) {
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(5px);
+      font-size: rem(12px);
+    }
   }
 
   &__location {
@@ -84,5 +244,21 @@
     font-style: normal;
     font-weight: 500;
     color: var(--color-black);
+
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+    }
+
+    @include resolution(600px) {
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      font-size: rem(12px);
+    }
   }
 }

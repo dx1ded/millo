@@ -4,10 +4,27 @@
 @import "@cmps/Radio/radio";
 @import "@cmps/Counter/counter";
 
+// On mobile
+
+@import "@cmps/TextMore/more";
+@import "@cmps/Select/select";
+
 .overlay {
   position: relative;
   margin-bottom: rem(100px);
   background-color: var(--color-secondary);
+
+  @include laptop {
+    margin-bottom: rem(60px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(70px);
+  }
+
+  @include resolution(630px) {
+    margin-bottom: rem(40px);
+  }
 
   &__container {
     position: relative;
@@ -23,6 +40,10 @@
       display: block;
       width: inherit;
       height: rem(288px);
+
+      @include laptop {
+        height: rem(150px);
+      }
     }
   }
 }
@@ -35,9 +56,86 @@
   border-radius: 20px;
   box-shadow: 0 0 50px rgb(163 163 163 / 25%);
 
+  @include laptop {
+    padding: rem(46px) rem(94px) rem(94px);
+  }
+
+  @include resolution(1060px) {
+    padding: rem(46px) rem(40px) rem(50px);
+  }
+
+  @include tablet {
+    padding: rem(50px) rem(40px) rem(70px);
+  }
+
+  @include resolution(630px) {
+    padding: rem(25px) rem(20px) rem(40px);
+  }
+
   &__image {
     position: relative;
+    width: rem(366px);
     margin-right: rem(183px);
+
+    @include laptop {
+      flex-shrink: 0;
+      width: rem(294px);
+      margin-right: rem(112px);
+
+      &::after {
+        width: rem(145px);
+        height: rem(145px);
+      }
+    }
+
+    @include resolution(1060px) {
+      width: rem(250px);
+      margin-right: rem(80px);
+
+      &::after {
+        top: rem(30px);
+        right: rem(-30px);
+        width: rem(100px);
+        height: rem(100px);
+      }
+    }
+
+    @include resolution(930px) {
+      width: rem(200px);
+    }
+
+    @include tablet {
+      position: absolute;
+      top: rem(50px);
+      right: rem(60px);
+      margin-right: 0;
+    }
+
+    @include resolution(630px) {
+      top: rem(25px);
+      right: rem(40px);
+      width: rem(170px);
+
+      &::after {
+        top: rem(20px);
+        right: rem(-20px);
+        width: rem(70px);
+        height: rem(70px);
+      }
+    }
+
+    @include resolution(516px) {
+      width: rem(120px);
+
+      &::after {
+        width: rem(50px);
+        height: rem(50px);
+      }
+    }
+
+    @include mobile {
+      width: rem(90px);
+    }
 
     &::after {
       position: absolute;
@@ -51,22 +149,61 @@
       background-repeat: no-repeat;
       border-radius: 100%;
     }
+
+    img {
+      width: 100%;
+    }
   }
 
   &__info {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   &__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     max-width: rem(700px);
     margin-bottom: rem(38px);
+
+    @include laptop {
+      max-width: rem(492px);
+      margin-bottom: rem(24px);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      order: 1;
+      margin-bottom: rem(44px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(20px);
+    }
   }
 
-  &__column:last-child {
-    max-width: rem(1290px);
+  &__column {
+    @include tablet {
+      &:nth-child(1) {
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        order: 0;
+        margin-bottom: rem(100px);
+      }
+    }
+
+    @include resolution(630px) {
+      &:nth-child(2) {
+        margin-bottom: rem(40px);
+      }
+    }
   }
 
   &__name {
@@ -74,6 +211,34 @@
     font-size: rem(30px);
     font-weight: 900;
     color: var(--color-dark);
+
+    @include laptop {
+      margin-bottom: rem(16px);
+      font-size: rem(28px);
+    }
+
+    @include tablet {
+      font-size: rem(30px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(5px);
+      font-size: rem(18px);
+    }
+  }
+
+  &__type {
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+    }
+
+    @include resolution(630px) {
+      font-size: rem(12px);
+    }
   }
 
   &__sign {
@@ -82,51 +247,170 @@
     line-height: 1;
     color: var(--color-primary);
 
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(25px);
+
+      &:not(:last-child) {
+        margin-bottom: rem(14px);
+      }
+    }
+
+    @include resolution(630px) {
+      font-size: rem(14px);
+
+      &:not(:last-child) {
+        margin-bottom: rem(8px);
+      }
+    }
+
     &:not(:last-child) {
       margin-bottom: rem(10px);
     }
   }
 
   &__description {
-    max-width: rem(652px);
-    margin-bottom: rem(40px);
+    @include tablet {
+      order: 2;
+      margin-bottom: rem(50px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(30px);
+    }
+
+    .text-more {
+      display: none;
+
+      @include tablet {
+        display: inline-block;
+      }
+    }
+
+    p {
+      max-width: rem(652px);
+      margin-bottom: rem(40px);
+
+      @include laptop {
+        max-width: rem(462px);
+        margin-bottom: rem(30px);
+        font-size: rem(14px);
+      }
+
+      @include tablet {
+        display: -webkit-box;
+        max-width: rem(393px);
+        overflow: hidden;
+        font-size: rem(20px);
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+
+      @include resolution(630px) {
+        max-width: rem(260px);
+        margin-bottom: rem(20px);
+        font-size: rem(12px);
+      }
+    }
   }
 
   &__chars {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     max-width: rem(740px);
     margin-bottom: rem(78px);
 
-    .char {
-      &__name {
-        font-size: rem(20px);
-        font-weight: 700;
-      }
+    @include laptop {
+      max-width: rem(536px);
+      margin-bottom: rem(55px);
+    }
 
-      &__bullets div {
-        width: rem(14px);
-        height: rem(14px);
+    @include resolution(870px) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: rem(400px);
+    }
 
-        &:not(:first-child) {
-          margin-right: rem(4.25px);
-        }
-      }
+    @include tablet {
+      order: 3;
+      max-width: rem(528px);
+    }
+
+    @include resolution(630px) {
+      max-width: rem(257px);
+      margin-bottom: rem(20px);
     }
   }
 
   &__buy {
-    padding: rem(20.6px) 0;
+    padding: rem(20px) 0;
     font-size: rem(25px);
     font-weight: 600;
+
+    @include laptop {
+      padding: rem(14px) 0;
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      grid-column: span 2;
+      font-size: rem(25px);
+    }
+
+    @include resolution(630px) {
+      font-size: rem(14px);
+    }
   }
 
   .beans {
     margin-bottom: rem(20px);
 
+    @include laptop {
+      margin-bottom: rem(16px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(20px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(10px);
+    }
+
     svg {
       width: rem(27px);
       height: rem(27px);
+
+      @include laptop {
+        width: rem(17px);
+        height: rem(17px);
+
+        &:not(:last-child) {
+          margin-right: rem(2px);
+        }
+      }
+
+      @include tablet {
+        width: rem(40px);
+        height: rem(40px);
+
+        &:not(:last-child) {
+          margin-right: rem(8px);
+        }
+      }
+
+      @include resolution(630px) {
+        width: rem(20px);
+        height: rem(20px);
+
+        &:not(:last-child) {
+          margin-right: rem(6px);
+        }
+      }
 
       &:not(:last-child) {
         margin-right: rem(11px);
@@ -139,12 +423,66 @@
     align-items: center;
     margin-bottom: rem(30px);
 
+    @include laptop {
+      margin-bottom: rem(25px);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      order: 0;
+      margin-bottom: rem(80px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(40px);
+    }
+
     &__stars {
       margin-right: rem(20px);
+
+      @include laptop {
+        margin-right: rem(15px);
+      }
+
+      @include tablet {
+        margin: 0 0 rem(30px);
+      }
+
+      @include resolution(630px) {
+        margin-bottom: rem(5px);
+      }
 
       svg {
         width: rem(34px);
         height: rem(34px);
+
+        @include laptop {
+          width: rem(24px);
+          height: rem(24px);
+
+          &:not(:last-child) {
+            margin-right: rem(2px);
+          }
+        }
+
+        @include tablet {
+          width: rem(50px);
+          height: rem(50px);
+
+          &:not(:last-child) {
+            margin-right: rem(5px);
+          }
+        }
+
+        @include resolution(630px) {
+          width: rem(25px);
+          height: rem(25px);
+
+          &:not(:first-child) {
+            margin-right: rem(2px);
+          }
+        }
 
         &:not(:first-child) {
           margin-right: rem(4px);
@@ -155,38 +493,215 @@
     &__text {
       font-size: rem(16px);
 
+      @include laptop {
+        font-size: rem(12px);
+      }
+
+      @include tablet {
+        font-size: rem(24px);
+      }
+
+      @include resolution(630px) {
+        font-size: rem(12px);
+      }
+
       strong {
         margin-right: rem(10px);
         font-size: rem(30px);
+
+        @include laptop {
+          margin-right: rem(15px);
+          font-size: rem(22px);
+        }
+
+        @include tablet {
+          font-size: rem(32px);
+        }
+
+        @include resolution(630px) {
+          margin-right: rem(10px);
+          font-size: rem(16px);
+        }
+      }
+    }
+  }
+
+  .char {
+    &:not(:last-child) {
+      margin-right: rem(20px);
+
+      @include resolution(870px) {
+        margin: 0 rem(20px) rem(30px) 0;
+      }
+    }
+
+    &__name {
+      font-size: rem(20px);
+      font-weight: 700;
+
+      @include laptop {
+        margin-bottom: rem(10px);
+        font-size: rem(14px);
+      }
+
+      @include tablet {
+        font-size: rem(20px);
+      }
+
+      @include resolution(630px) {
+        margin-bottom: rem(5px);
+        font-size: rem(12px);
+      }
+    }
+
+    &__bullets div {
+      width: rem(14px);
+      height: rem(14px);
+
+      @include laptop {
+        width: rem(10px);
+        height: rem(10px);
+
+        &:not(:first-child) {
+          margin-right: rem(4px);
+        }
+      }
+
+      @include tablet {
+        width: rem(16px);
+        height: rem(16px);
+      }
+
+      @include resolution(630px) {
+        width: rem(8px);
+        height: rem(8px);
+
+        &:not(:first-child) {
+          margin-right: rem(2px);
+        }
+      }
+
+      &:not(:first-child) {
+        margin-right: rem(4.25px);
       }
     }
   }
 }
 
 .product-form {
+  width: 100%;
+
+  @include tablet {
+    order: 4;
+
+    .select__display {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: rem(18px) rem(30px) rem(18px) rem(50px);
+      font-size: rem(25px);
+
+      &::after {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+
+    .select-list__item {
+      padding: rem(18px) 0;
+      font-size: rem(25px);
+    }
+  }
+
+  @include resolution(630px) {
+    .select__display {
+      padding: rem(10px) rem(18px) rem(10px) rem(20px);
+      font-size: rem(14px);
+
+      &::after {
+        width: rem(10px);
+        height: rem(10px);
+      }
+    }
+
+    .select-list__item {
+      padding: rem(10px) 0;
+      font-size: rem(14px);
+    }
+  }
+
   &__options {
     display: flex;
     padding: 0;
     margin-bottom: rem(65px);
     border: none;
+
+    @include laptop {
+      margin-bottom: rem(52px);
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
-  &__row {
+  &__summary {
     display: grid;
     grid-template-columns: rem(260px) 1fr;
     gap: var(--grid-gap);
     max-width: rem(680px);
+
+    @include laptop {
+      grid-template-columns: rem(184px) 1fr;
+      gap: rem(15px);
+      max-width: rem(384px);
+    }
+
+    @include tablet {
+      grid-template-rows: repeat(2, rem(70px));
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--grid-gap);
+      max-width: initial;
+    }
+
+    @include resolution(630px) {
+      grid-template-rows: repeat(2, rem(40px));
+    }
+
+    @include mobile {
+      gap: rem(10px);
+    }
+  }
+
+  .select {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   .radio {
     font-size: rem(30px);
 
+    @include laptop {
+      font-size: rem(22px);
+
+      &:not(:last-child) {
+        margin-right: rem(40px);
+      }
+    }
+
+    @include resolution(930px) {
+      &__visual {
+        width: rem(17px);
+        height: rem(17px);
+        margin-right: rem(15px);
+      }
+    }
+
     &:not(:last-child) {
       margin-right: rem(60px);
     }
-  }
-
-  .select {
-    margin-right: rem(20px);
   }
 }

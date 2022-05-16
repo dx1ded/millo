@@ -6,20 +6,56 @@
   padding-bottom: rem(100px);
   background-color: var(--color-wild-sand);
 
+  @include laptop {
+    padding-bottom: rem(80px);
+  }
+
+  @include tablet {
+    padding-bottom: rem(60px);
+  }
+
   &__container {
     position: relative;
   }
 
   &__title {
     margin-bottom: rem(100px);
+
+    @include laptop {
+      margin-bottom: rem(80px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(60px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(30px);
+    }
   }
 
   &__wrapper {
     margin-bottom: rem(50px);
+
+    @include tablet {
+      margin-bottom: rem(30px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(40px);
+    }
   }
 
   .comment:not(:last-child) {
     margin-bottom: rem(70px);
+
+    @include laptop {
+      margin-bottom: rem(50px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(30px);
+    }
   }
 
   .top-wave {
@@ -31,6 +67,18 @@
       display: block;
       width: inherit;
       height: rem(203px);
+
+      @include resolution(1200px) {
+        height: rem(100px);
+      }
+
+      @include tablet {
+        height: rem(80px);
+      }
+
+      @include resolution(600px) {
+        height: rem(50px);
+      }
     }
   }
 }

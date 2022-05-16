@@ -20,6 +20,14 @@
   padding: rem(40px) 0;
   background-color: var(--color-secondary);
 
+  @include tablet {
+    padding: rem(30px) 0;
+  }
+
+  @include resolution(630px) {
+    padding: rem(20px) 0;
+  }
+
   &__list {
     max-width: var(--mw);
     padding: 0 var(--container-horizontal-offset);
@@ -29,4 +37,20 @@
 
 .scroll-tabs {
   margin-bottom: rem(100px);
+
+  @include laptop {
+    margin-bottom: rem(60px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(70px);
+  }
+
+  @include resolution(630px) {
+    margin-bottom: rem(40px);
+  }
+
+  @include mobile {
+    margin-bottom: rem(30px);
+  }
 }

@@ -1,30 +1,29 @@
+@import "@cmps/Topic/topic";
+
 .addition {
   margin-bottom: rem(150px);
 
-  &__title,
-  &-theme:not(:last-of-type) {
-    margin-bottom: rem(60px);
-  }
-}
-
-.addition-theme {
-  &__name {
-    margin-bottom: rem(60px);
-    font-size: rem(30px);
-    font-weight: 700;
-    color: var(--color-black);
+  @include laptop {
+    margin-bottom: rem(100px);
   }
 
-  &__text {
-    max-width: rem(1380px);
+  @include tablet {
     margin-bottom: rem(70px);
+  }
 
-    p:not(:last-child) {
+  @include mobile {
+    margin-bottom: rem(40px);
+  }
+
+  &__title {
+    margin-bottom: rem(60px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include mobile {
       margin-bottom: rem(30px);
     }
-  }
-
-  &__image img {
-    border-radius: 20px;
   }
 }

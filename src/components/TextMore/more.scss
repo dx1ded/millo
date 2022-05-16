@@ -1,0 +1,30 @@
+.text-more {
+  position: relative;
+  font-size: rem(25px);
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+
+  @include resolution(630px) {
+    font-size: rem(12px);
+
+    &::after {
+      width: rem(10px);
+      height: rem(10px);
+      margin-left: rem(6px);
+    }
+  }
+
+  &::after {
+    display: inline-block;
+    width: rem(20px);
+    height: rem(20px);
+    margin-left: rem(10px);
+    vertical-align: middle;
+    content: "";
+    background-image: url("#/small-arrow-down-primary");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+}

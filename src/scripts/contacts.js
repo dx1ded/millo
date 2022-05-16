@@ -1,5 +1,6 @@
 import "focus-visible";
 import osm from "osm"
+
 import { Tabs } from "@cmps/Tabs/tabs";
 
 const sections = document.querySelectorAll("section[id]")

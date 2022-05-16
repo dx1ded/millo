@@ -21,6 +21,18 @@
 
   &--sm {
     font-size: rem(20px);
+
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      font-size: rem(12px);
+    }
   }
 
   &--xs {

@@ -1,32 +1,34 @@
+@import "@cmps/Topic/topic";
+
 .education {
   padding-bottom: rem(100px);
   margin-bottom: rem(50px);
   border-bottom: 1px solid #b3b3b3;
 
-  &__title,
-  &-topic:not(:last-of-type) {
-    margin-bottom: rem(60px);
-  }
-}
-
-.education-topic {
-  &__name {
-    margin-bottom: rem(60px);
-    font-size: rem(30px);
-    font-weight: 700;
-    color: var(--color-black);
+  @include laptop {
+    padding-bottom: rem(80px);
+    margin-bottom: rem(30px);
   }
 
-  &__text {
-    max-width: rem(1380px);
-    margin-bottom: rem(70px);
+  @include tablet {
+    padding-bottom: 0;
+    margin-bottom: rem(80px);
+    border: none;
+  }
 
-    p:not(:last-child) {
+  @include mobile {
+    margin-bottom: rem(50px);
+  }
+
+  &__title {
+    margin-bottom: rem(60px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include mobile {
       margin-bottom: rem(30px);
     }
-  }
-
-  &__image img {
-    border-radius: 20px;
   }
 }

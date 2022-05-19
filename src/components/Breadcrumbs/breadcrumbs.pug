@@ -1,7 +1,17 @@
-mixin breadcrumbs(pathLine)
+mixin breadcrumbs(pathline)
   nav.breadcrumbs
     ul.list-reset.breadcrumbs__list
-      each item in pathLine
+      each item in pathline
+        - const { name, path } = item
+        li.breadcrumbs__item
+          a.text.text--xs(href=path)= name
+
+//- Breadcrumbs as a separated container
+
+mixin separated-breadcrumbs(pathline)
+  nav.breadcrumbs.breadcrumbs--separated
+    ul.list-reset.breadcrumbs__list
+      each item in pathline
         - const { name, path } = item
         li.breadcrumbs__item
           a.text.text--xs(href=path)= name

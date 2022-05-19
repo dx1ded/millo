@@ -1,3 +1,5 @@
+include @cmps/Article/article
+
 section.news
   .top-wave
     svg(viewbox="0 0 1906 395" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
@@ -13,43 +15,7 @@ section.news
         +icon("big-arrow-right")
     .swiper.news-slider
       .swiper-wrapper.news__cards
-        article.swiper-slide.news-item.news-item--big
-          .news-item__image
-            +image(
-              "tanzania-arabica.jpg",
-              "Пачка кофе Tanzania Arabica со львом на логотипе"
-            )
-          .news-item__content
-            h4.text.text--md.news-item__title
-              | Танзанийский кофе. Откуда он взялся и&nbsp;почему мы его так любим?
-            p.text.text--sm.news-item__text
-              | Танзания – красивая африканская страна. Именно здесь расположены легендарные географические объекты – вулкан Килиманджаро и озеро Виктория.
-            p.text.text--sm.news-item__text
-              | Но наш интерес вызван не столько природными красотами, сколько кофе...
-            include @cmps/Details/details
-        article.swiper-slide.news-item
-          .news-item__content
-            h4.text.text--md.news-item__title Африканский кофе Кения АА
-            p.text.text--sm.news-item__text
-              | Кения АА – у этого кофе, из африканской страны, репутация одного из самых вкусных и ярких сортов в мире. Многие обжарщики высоко оценивают местные разновидности высокогорной арабики.
-            include @cmps/Details/details
-        article.swiper-slide.news-item
-          .news-item__content
-            h4.text.text--md.news-item__title Африканский кофе Кения АА
-            p.text.text--sm.news-item__text
-              | Кения АА – у этого кофе, из африканской страны, репутация одного из самых вкусных и ярких сортов в мире. Многие обжарщики высоко оценивают местные разновидности высокогорной арабики.
-            include @cmps/Details/details
-        article.swiper-slide.news-item.news-item--big
-          .news-item__image
-            +image(
-              "tanzania-arabica.jpg",
-              "Пачка кофе Tanzania Arabica со львом на логотипе"
-            )
-          .news-item__content
-            h4.text.text--md.news-item__title
-              | Танзанийский кофе. Откуда он взялся и&nbsp;почему мы его так любим?
-            p.text.text--sm.news-item__text
-              | Танзания – красивая африканская страна. Именно здесь расположены легендарные географические объекты – вулкан Килиманджаро и озеро Виктория.
-            p.text.text--sm.news-item__text
-              | Но наш интерес вызван не столько природными красотами, сколько кофе...
-            include @cmps/Details/details
+        +article-big.swiper-slide
+        +article-small.swiper-slide
+        +article-small.swiper-slide
+        +article-big.swiper-slide

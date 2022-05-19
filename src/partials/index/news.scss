@@ -1,4 +1,4 @@
-@import "@cmps/Details/details";
+@import "@cmps/Article/article";
 
 .news {
   position: relative;
@@ -97,17 +97,7 @@
   margin: rem(-30px);
 }
 
-.news-item {
-  display: flex;
-  flex-basis: rem(680px);
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  padding: 0 rem(20px);
-  background-color: var(--color-light);
-  border-radius: 20px;
-  box-shadow: var(--shadow-primary);
-
+.article {
   @include resolution(1600px) {
     flex-basis: rem(520px);
   }
@@ -127,21 +117,10 @@
 
   @include tablet {
     flex: 1 0 auto;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 rem(60px);
-  }
-
-  @include resolution(600px) {
-    padding-bottom: rem(30px);
   }
 
   &__image {
-    display: block;
-    flex-shrink: 0;
-    width: rem(336px);
     margin-right: rem(84px);
-    font-size: 0;
 
     @include resolution(1600px) {
       margin-right: rem(40px);
@@ -155,42 +134,14 @@
       margin-right: rem(20px);
     }
 
-    @include tablet {
-      width: 100%;
-      height: rem(280px);
-      margin: 0 0 rem(60px);
-
-      img {
-        height: 100%;
-        border-radius: 20px 20px 0 0;
-      }
-    }
-
-    @include resolution(600px) {
-      height: rem(200px);
-      margin-bottom: rem(30px);
-    }
-
-    @include mobile {
-      height: rem(137px);
-    }
-
-    img {
-      object-fit: cover;
-      width: 100%;
-      border-radius: 20px 0 0 20px;
-    }
-  }
-
-  &__content {
-    @include tablet {
-      padding: 0 rem(20px);
+    @include resolution(980px) {
+      margin-right: rem(40px);
     }
   }
 
   &__title {
+    max-width: rem(460px);
     margin-bottom: rem(30px);
-    font-weight: 700;
 
     @include resolution(1600px) {
       font-size: rem(20px);
@@ -200,22 +151,6 @@
       max-width: rem(325px);
       margin-bottom: rem(20px);
       font-size: rem(17px);
-    }
-
-    @include tablet {
-      max-width: rem(461px);
-      margin-bottom: rem(50px);
-      font-size: rem(25px);
-    }
-
-    @include resolution(600px) {
-      margin-bottom: rem(30px);
-      font-size: rem(20px);
-    }
-
-    @include mobile {
-      max-width: rem(270px);
-      font-size: rem(16px);
     }
   }
 
@@ -230,59 +165,26 @@
       max-width: rem(325px);
       font-size: rem(13px);
     }
-
-    @include tablet {
-      max-width: rem(540px);
-      font-size: rem(20px);
-    }
-
-    @include resolution(600px) {
-      max-width: rem(400px);
-      font-size: rem(16px);
-    }
-
-    @include mobile {
-      max-width: rem(270px);
-      font-size: rem(14px);
-    }
-
-    &:not(:last-of-type) {
-      margin-bottom: rem(25px);
-
-      @include laptop {
-        margin-bottom: rem(20px);
-      }
-    }
   }
 
-  &--big {
-    flex: 1;
-    justify-content: flex-start;
-    padding: 0 rem(20px) 0 0;
-
-    @include resolution(980px) {
-      flex: 1 0 auto;
-      padding: 0 rem(20px) 0 0;
-    }
-  }
-
-  .details {
+  &__footer {
     margin-top: rem(30px);
 
     @include resolution(1600px) {
-      font-size: rem(18px);
+      .details {
+        font-size: rem(18px);
+      }
     }
 
     @include laptop {
       margin-top: rem(20px);
     }
+  }
 
-    @include tablet {
-      margin-top: rem(40px);
-    }
-
-    @include resolution(600px) {
-      margin-top: rem(30px);
+  &--big {
+    @include resolution(980px) {
+      flex: 1 0 auto;
+      padding: 0 rem(20px) 0 0;
     }
   }
 }

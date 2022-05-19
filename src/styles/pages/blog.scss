@@ -1,5 +1,9 @@
 @import "../mixins";
 
+// Libs
+
+@import "swiper/swiper";
+
 // Components
 
 @import "@cmps/Header/header";
@@ -17,10 +21,8 @@
 
 .breadcrumbs {
   background-color: var(--color-light);
+}
 
-  &__list {
-    max-width: var(--mw);
-    padding: rem(40px) var(--container-horizontal-offset) rem(50px);
-    margin: 0 auto;
-  }
+.tabs__item:first-child {
+  grid-column: span 2;
 }

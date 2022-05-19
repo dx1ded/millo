@@ -15,12 +15,6 @@
 
 .breadcrumbs {
   background-color: var(--color-secondary);
-
-  &__list {
-    max-width: var(--mw);
-    padding: rem(40px) var(--container-horizontal-offset) rem(50px);
-    margin: 0 auto;
-  }
 }
 
 // Inputs / submit buttons

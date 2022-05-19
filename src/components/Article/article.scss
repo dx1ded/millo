@@ -1,0 +1,145 @@
+@import "@cmps/Details/details";
+
+.article {
+  display: flex;
+  flex-basis: rem(680px);
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0 rem(20px);
+  background-color: var(--color-light);
+  border-radius: 20px;
+  box-shadow: var(--shadow-primary);
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 rem(60px);
+  }
+
+  @include resolution(600px) {
+    padding-bottom: rem(30px);
+  }
+
+  &__image {
+    display: block;
+    flex-shrink: 0;
+    width: rem(336px);
+    margin-right: rem(70px);
+    font-size: 0;
+
+    @include resolution(1350px) {
+      width: rem(240px);
+      margin-right: rem(40px);
+    }
+
+    @include tablet {
+      width: 100%;
+      height: rem(280px);
+      margin: 0 0 rem(60px);
+
+      img {
+        height: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+
+    @include resolution(600px) {
+      height: rem(200px);
+      margin-bottom: rem(30px);
+    }
+
+    @include mobile {
+      height: rem(137px);
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 20px 0 0 20px;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      padding: 0 rem(20px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(60px);
+    font-weight: 700;
+
+    @include resolution(1350px) {
+      margin-bottom: rem(40px);
+    }
+
+    @include tablet {
+      max-width: rem(461px);
+      margin-bottom: rem(50px);
+      font-size: rem(25px);
+    }
+
+    @include resolution(600px) {
+      margin-bottom: rem(30px);
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      max-width: rem(270px);
+      font-size: rem(16px);
+    }
+  }
+
+  &__text {
+    max-width: rem(459px);
+
+    @include tablet {
+      max-width: rem(540px);
+      font-size: rem(20px);
+    }
+
+    @include resolution(600px) {
+      max-width: rem(400px);
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      max-width: rem(270px);
+      font-size: rem(14px);
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(25px);
+
+      @include laptop {
+        margin-bottom: rem(20px);
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: rem(80px);
+
+    @include resolution(1350px) {
+      margin-top: rem(40px);
+    }
+
+    @include tablet {
+      margin-top: rem(40px);
+    }
+
+    @include resolution(600px) {
+      margin-top: rem(30px);
+    }
+  }
+
+  &--big {
+    flex: 1;
+    justify-content: flex-start;
+    padding: 0 rem(20px) 0 0;
+  }
+}

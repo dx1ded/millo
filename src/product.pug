@@ -13,14 +13,14 @@ block styles
 block partials
   include @cmps/Header/header
   main
-    +breadcrumbs([
+    +separated-breadcrumbs([
       {
         name: "Главная",
-        path: "/"
+        path: "/index.html"
       },
       {
         name: "Каталог товаров",
-        path: "/"
+        path: "/index.html#catalog"
       },
       {
         name: "Свежеобжаренный кофе",

@@ -1,6 +1,6 @@
 mixin accordion(items)
   .accordion
-    each item in items
+    each item, index in items
       - const { title, text } = item
       .accordion-item
         .accordion-item__head

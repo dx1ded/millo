@@ -5,6 +5,14 @@
   padding-bottom: rem(150px);
   background-color: var(--color-secondary);
 
+  @include resolution(1000px) {
+    padding-bottom: rem(100px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(70px);
+  }
+
   &__container {
     position: relative;
     z-index: 1;
@@ -12,6 +20,18 @@
 
   &__title {
     margin-bottom: rem(55px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(50px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(30px);
+    }
   }
 
   &__wrapper {
@@ -19,11 +39,31 @@
     background-repeat: no-repeat;
     background-position: rem(30px) center;
     background-size: rem(780px) rem(645px);
+
+    @include resolution(1350px) {
+      background-size: rem(458px) rem(380px);
+    }
+
+    @include resolution(1000px) {
+      background-image: none;
+    }
   }
 
   .accordion {
     max-width: rem(960px);
     margin-left: auto;
+
+    @include resolution(1350px) {
+      max-width: rem(680px);
+    }
+
+    @include resolution(1000px) {
+      margin-left: initial;
+    }
+
+    @include tablet {
+      max-width: initial;
+    }
   }
 
   .top-wave,
@@ -36,6 +76,18 @@
       display: block;
       width: inherit;
       height: rem(225px);
+
+      @include resolution(1200px) {
+        height: rem(150px);
+      }
+
+      @include tablet {
+        height: rem(80px);
+      }
+
+      @include resolution(470px) {
+        height: rem(50px);
+      }
     }
   }
 

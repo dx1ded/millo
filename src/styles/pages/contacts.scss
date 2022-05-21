@@ -8,18 +8,11 @@
 @import "@cmps/Subscribe/subscribe";
 @import "@cmps/Footer/footer";
 
-.breadcrumbs {
-  padding: rem(40px) 0;
-  background-color: var(--color-light);
-
-  &__list {
-    max-width: var(--mw);
-    padding: 0 var(--container-horizontal-offset);
-    margin: 0 auto;
+.tabs__container {
+  @include tablet {
+    grid-template-columns: 1fr;
   }
 }
-
-// Sections
 
 .content {
   position: absolute;
@@ -28,19 +21,75 @@
   margin-top: rem(90px);
   visibility: hidden;
 
+  @include laptop {
+    padding-bottom: rem(150px);
+    margin-top: rem(60px);
+  }
+
+  @include tablet {
+    padding-bottom: rem(100px);
+  }
+
+  @include resolution(630px) {
+    margin-top: rem(40px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(80px);
+  }
+
   &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__items {
+    @include tablet {
+      margin-bottom: rem(60px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__map {
     width: rem(960px);
     height: rem(526px);
+    margin-left: rem(50px);
+
+    @include laptop {
+      width: rem(680px);
+      height: rem(372px);
+    }
+
+    @include resolution(880px) {
+      width: rem(400px);
+    }
+
+    @include tablet {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    @include resolution(630px) {
+      height: rem(300px);
+    }
+
+    @include mobile {
+      height: rem(200px);
+    }
 
     iframe {
       width: 100%;
       height: 100%;
+      border: 1px solid #a4a4a4;
+      border-radius: 5px;
     }
   }
 
@@ -53,12 +102,32 @@
 .content-item {
   max-width: rem(560px);
 
+  @include laptop {
+    max-width: rem(378px);
+  }
+
   &:not(:last-child) {
     margin-bottom: rem(50px);
+
+    @include laptop {
+      margin-bottom: rem(40px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(30px);
+    }
   }
 
   &__title {
     margin-bottom: rem(30px);
+
+    @include laptop {
+      margin-bottom: rem(16px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+    }
   }
 
   &__info {
@@ -71,8 +140,19 @@
       text-decoration: none;
     }
 
+    a,
+    p {
+      @include resolution(630px) {
+        font-size: rem(16px);
+      }
+    }
+
     *:not(:last-child) {
       margin-bottom: rem(10px);
+
+      @include laptop {
+        margin-bottom: rem(6px);
+      }
     }
   }
 }
@@ -88,5 +168,21 @@
     display: block;
     width: inherit;
     height: rem(207px);
+
+    @include laptop {
+      height: rem(150px);
+    }
+
+    @include resolution(900px) {
+      height: rem(100px);
+    }
+
+    @include resolution(630px) {
+      height: rem(80px);
+    }
+
+    @include mobile {
+      height: rem(50px);
+    }
   }
 }

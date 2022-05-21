@@ -1,0 +1,117 @@
+.offers {
+  padding-bottom: rem(236px);
+
+  @include laptop {
+    padding-bottom: rem(150px);
+  }
+
+  @include tablet {
+    padding-bottom: rem(100px);
+  }
+
+  @include mobile {
+    padding-bottom: rem(80px);
+  }
+
+  &__title {
+    margin-bottom: rem(40px);
+
+    @include laptop {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: rem(450px);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+
+    @include laptop {
+      grid-template-rows: rem(315px);
+    }
+
+    @include resolution(1080px) {
+      gap: 0;
+    }
+
+    @include tablet {
+      grid-template-rows: rem(450px);
+    }
+
+    @include resolution(500px) {
+      grid-template-rows: rem(350px);
+    }
+
+    @include mobile {
+      grid-template-rows: rem(274px);
+    }
+  }
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: rem(40px) 0 rem(40px) rem(20px);
+  background-image:
+    linear-gradient(180deg, rgb(0 0 0 / 30%) 0%, rgb(0 0 0 / 30%) 100%),
+    url("@images/cheers-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+
+  @include tablet {
+    border-radius: 8px;
+  }
+
+  // A plug
+
+  &::before {
+    content: "";
+  }
+
+  &__title {
+    font-weight: 700;
+    color: var(--color-light);
+
+    @include laptop {
+      max-width: rem(240px);
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      max-width: rem(294px);
+      font-size: rem(24px);
+    }
+
+    @include resolution(500px) {
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      max-width: rem(180px);
+      font-size: rem(14px);
+    }
+  }
+
+  &__term {
+    font-size: rem(20px);
+    font-weight: 500;
+    color: var(--color-light);
+
+    @include laptop {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(16px);
+    }
+
+    @include resolution(500px) {
+      font-size: rem(14px);
+    }
+  }
+}

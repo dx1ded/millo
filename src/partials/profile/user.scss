@@ -3,23 +3,78 @@
   margin-bottom: rem(40px);
   background-color: var(--color-secondary);
 
+  @include laptop {
+    margin-bottom: rem(30px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(20px);
+  }
+
   &__wrapper {
     display: grid;
-    grid-template-columns: minmax(0, rem(979px)) rem(540px);
+    grid-template-columns: minmax(0, rem(1000px)) rem(540px);
     justify-content: end;
     background-color: var(--color-light);
     border: 1px solid var(--color-mercury);
     border-radius: 20px;
     box-shadow: 0 0 50px rgb(163 163 163 / 25%);
+
+    @include laptop {
+      grid-template-columns: minmax(0, rem(718px)) rem(382px);
+    }
+
+    @include resolution(980px) {
+      grid-template-columns: minmax(0, rem(718px)) rem(330px);
+    }
+
+    @include tablet {
+      grid-template-columns: minmax(0, rem(452px)) rem(240px);
+      border-radius: 8px;
+    }
+
+    @include resolution(580px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__info {
+    position: relative;
     display: flex;
     align-items: center;
+    padding-left: rem(20px);
+
+    @include resolution(580px) {
+      padding: rem(85px) 0 rem(30px) rem(20px);
+    }
   }
 
   &__greeting {
     margin-bottom: rem(10px);
+
+    @include laptop {
+      margin-bottom: rem(8px);
+    }
+
+    @include resolution(980px) {
+      font-size: rem(18px);
+    }
+
+    @include resolution(660px) {
+      font-size: rem(14px);
+    }
+
+    @include resolution(580px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: rem(40px) 0 0 rem(20px);
+      font-size: rem(20px);
+    }
+
+    @include mobile {
+      font-size: rem(18px);
+    }
   }
 
   &__data {
@@ -29,6 +84,38 @@
   &__email,
   &__number {
     margin-bottom: rem(20px);
+
+    @include laptop {
+      margin-bottom: rem(12px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+      font-size: rem(12px);
+    }
+
+    @include resolution(580px) {
+      margin-bottom: rem(25px);
+      font-size: rem(14px);
+    }
+
+    @include mobile {
+      font-size: rem(13px);
+    }
+  }
+
+  &__password {
+    @include tablet {
+      font-size: rem(12px);
+    }
+
+    @include resolution(580px) {
+      font-size: rem(14px);
+    }
+
+    @include mobile {
+      font-size: rem(13px);
+    }
   }
 
   .bottom-wave {
@@ -48,13 +135,47 @@
 .user-avatar {
   margin-right: rem(20px);
 
+  @include resolution(660px) {
+    margin-right: rem(15px);
+  }
+
+  @include resolution(580px) {
+    margin-right: rem(20px);
+  }
+
   &__photo {
     margin-bottom: rem(20px);
-    text-align: center;
+
+    @include laptop {
+      margin-bottom: rem(12px);
+
+      img {
+        width: rem(80px);
+        height: rem(80px);
+      }
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+
+      img {
+        width: rem(60px);
+        height: rem(60px);
+      }
+    }
+
+    @include resolution(580px) {
+      margin-bottom: rem(15px);
+
+      img {
+        width: rem(70px);
+        height: rem(70px);
+      }
+    }
 
     img {
-      width: rem(119px);
-      height: rem(119px);
+      width: rem(120px);
+      height: rem(120px);
       border-radius: 100%;
       object-fit: cover;
     }
@@ -63,13 +184,49 @@
   &__change {
     padding: rem(7.5px) rem(24px);
     font-weight: 600;
+
+    @include laptop {
+      padding: rem(6px) rem(15px);
+      font-size: rem(12px);
+    }
+
+    @include tablet {
+      padding: rem(8px) rem(14px);
+    }
+
+    @include resolution(660px) {
+      padding: rem(5px) rem(9px);
+      font-size: rem(10px);
+    }
+
+    @include resolution(580px) {
+      padding: rem(8px);
+      font-size: rem(12px);
+    }
   }
 }
 
 .user-sale {
-  padding: rem(24px) rem(20px) rem(47px) rem(60px);
+  padding: rem(20px) rem(20px) rem(47px) rem(60px);
   background-color: var(--color-primary);
   border-radius: 20px;
+
+  @include laptop {
+    padding: rem(16px) rem(16px) rem(30px) rem(40px);
+  }
+
+  @include resolution(980px) {
+    padding: rem(16px) rem(16px) rem(30px) rem(20px);
+  }
+
+  @include tablet {
+    padding: rem(10px) rem(12px) rem(25px) rem(28px);
+    border-radius: 8px;
+  }
+
+  @include resolution(580px) {
+    padding: rem(20px) rem(26px) rem(30px) rem(20px);
+  }
 
   &__what {
     display: flex;
@@ -83,11 +240,43 @@
     background-color: var(--color-light);
     border: none;
     border-radius: 100%;
+
+    @include laptop {
+      width: rem(23px);
+      height: rem(23px);
+      font-size: rem(18px);
+    }
+
+    @include tablet {
+      width: rem(16px);
+      height: rem(16px);
+      font-size: rem(13px);
+    }
+
+    @include resolution(580px) {
+      width: rem(32px);
+      height: rem(32px);
+      font-size: rem(25px);
+    }
   }
 
   &__percent {
     margin-bottom: rem(18px);
     color: var(--color-light);
+
+    @include laptop {
+      margin-bottom: rem(12px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+      font-size: rem(14px);
+    }
+
+    @include resolution(580px) {
+      margin-bottom: rem(20px);
+      font-size: rem(20px);
+    }
   }
 
   &__sum {
@@ -95,8 +284,32 @@
     font-weight: 700;
     color: var(--color-light);
 
+    @include laptop {
+      margin-bottom: rem(30px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(20px);
+      font-size: rem(14px);
+    }
+
     span {
       font-weight: 500;
+    }
+  }
+
+  &__info {
+    @include laptop {
+      font-size: rem(12px);
+    }
+
+    @include tablet {
+      max-width: rem(152px);
+    }
+
+    @include resolution(580px) {
+      max-width: initial;
+      font-size: rem(11px);
     }
   }
 }

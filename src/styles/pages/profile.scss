@@ -14,12 +14,35 @@
 @import "@partials/profile/offers";
 
 .breadcrumbs {
-  padding: rem(40px) 0;
   background-color: var(--color-secondary);
+}
 
-  &__list {
-    max-width: var(--mw);
-    padding: 0 var(--container-horizontal-offset);
-    margin: 0 auto;
+.subscribe .bottom-wave {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-100%);
+
+  svg {
+    display: block;
+    width: inherit;
+    height: rem(207px);
+
+    @include laptop {
+      height: rem(150px);
+    }
+
+    @include resolution(900px) {
+      height: rem(100px);
+    }
+
+    @include resolution(630px) {
+      height: rem(80px);
+    }
+
+    @include mobile {
+      height: rem(50px);
+    }
   }
 }

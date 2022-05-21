@@ -12,7 +12,7 @@ block styles
 block partials
   include @cmps/Header/header
   main
-    +breadcrumbs([
+    +separated-breadcrumbs([
       {
         name: "Главная",
         path: "/index.html"
@@ -26,6 +26,9 @@ block partials
     include @partials/profile/orders
     include @partials/profile/offers
     +subscribe
+      .bottom-wave
+        svg(viewbox="0 0 1904 207" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+          path(d="M38 7L0 0V206.5H1904V93L1887.5 97.5L1802.5 118.5L1714.5 137L1605 156.5L1513.5 169.5L1426.5 177.5L1365.5 181.5L1308.5 183.5L1284 184.5H1265H1246.5H1224L1205 184L1175.5 183.5L1105 181.5L1022 175L890 161L732 139L541.5 106L364.5 70.5L251 47.5L167 31L112.5 21L78 14L38 7Z" fill="#F5F5F5")
   include @cmps/Footer/footer
 
 block scripts

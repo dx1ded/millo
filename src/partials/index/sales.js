@@ -26,8 +26,8 @@ const salesSlider = new Swiper(".sales-slider", {
 
 // Products load / render / loader
 
-// import { getProductsWithSales } from "./services/FirebaseService"
-// import { productCard } from "./utils/productMarkup"
+// import { getProductsWithSales } from "@/services/FirebaseService"
+// import { productCard } from "@/markup/product"
 
 // const options = {
 //   root: null,

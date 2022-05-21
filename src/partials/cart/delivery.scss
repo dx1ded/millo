@@ -1,17 +1,53 @@
 .delivery {
   margin-bottom: rem(30px);
 
+  @include laptop {
+    margin-bottom: rem(20px);
+  }
+
   &__wrapper {
     padding: rem(70px) rem(140px);
     background-color: var(--color-light);
     border: 1px solid var(--color-mercury);
     border-radius: 20px;
     box-shadow: 0 0 50px 0 rgb(163 163 163 / 25%);
+
+    @include resolution(1500px) {
+      padding: rem(80px) rem(60px);
+    }
+
+    @include laptop {
+      padding: rem(50px) rem(30px);
+    }
+
+    @include tablet {
+      padding: rem(50px) rem(20px);
+    }
+
+    @include resolution(630px) {
+      padding: rem(40px) rem(20px);
+    }
+
+    @include mobile {
+      padding: rem(30px) rem(20px);
+    }
   }
 
   &__title {
     margin-bottom: rem(50px);
     color: var(--color-dark);
+
+    @include laptop {
+      margin-bottom: rem(35px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(30px);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20px);
+    }
   }
 }
 
@@ -23,5 +59,15 @@
     padding: 0;
     margin-bottom: rem(40px);
     border: none;
+
+    @include laptop {
+      margin-bottom: rem(30px);
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: rem(10px);
+      margin-bottom: rem(20px);
+    }
   }
 }

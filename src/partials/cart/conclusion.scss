@@ -1,13 +1,41 @@
 @import "@cmps/Radio/radio";
 
+.promocode,
+.result {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-mercury);
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgb(163 163 163 / 25%);
+}
+
 .conclusion {
   position: relative;
   padding-bottom: rem(150px);
+
+  @include laptop {
+    padding-bottom: rem(100px);
+  }
+
+  @include tablet {
+    padding-bottom: rem(60px);
+  }
 
   &__container {
     display: grid;
     grid-template-columns: 1fr rem(680px);
     gap: var(--grid-gap);
+
+    @include laptop {
+      grid-template-columns: 1fr rem(480px);
+    }
+
+    @include resolution(930px) {
+      grid-template-columns: 1fr rem(410px);
+    }
+
+    @include resolution(850px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .bottom-wave {
@@ -20,49 +48,132 @@
       display: block;
       width: inherit;
       height: rem(358px);
+
+      @include laptop {
+        height: rem(250px);
+      }
+
+      @include tablet {
+        height: rem(120px);
+      }
     }
   }
 }
 
 .promocode {
-  padding: rem(50px) 0 rem(60px);
+  padding: rem(50px) rem(40px) rem(60px);
+
+  @include laptop {
+    padding: rem(40px) rem(20px);
+  }
+
+  @include mobile {
+    padding: rem(30px) rem(20px);
+  }
 
   &__wrapper {
     max-width: rem(680px);
     margin: 0 auto;
+
+    @include laptop {
+      max-width: rem(480px);
+    }
+
+    @include resolution(850px) {
+      max-width: initial;
+    }
   }
 
   &__title {
     margin-bottom: rem(30px);
     color: var(--color-dark);
+
+    @include laptop {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__info {
     max-width: rem(600px);
     margin-bottom: rem(40px);
     color: var(--color-dark);
+
+    @include laptop {
+      max-width: rem(422px);
+      margin-bottom: rem(30px);
+    }
+
+    @include tablet {
+      max-width: rem(646px);
+    }
+
+    @include resolution(630px) {
+      margin-bottom: rem(20px);
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      max-width: rem(306px);
+      font-size: rem(13px);
+    }
   }
 }
 
-.promocode-form {
-  &__input {
-    width: 100%;
-    margin-bottom: rem(40px);
+.promocode-form__input {
+  width: 100%;
+  margin-bottom: rem(40px);
+
+  @include laptop {
+    margin-bottom: rem(25px);
+  }
+
+  @include tablet {
+    margin-bottom: rem(20px);
   }
 }
 
 .result {
+  position: relative;
   padding: rem(50px) rem(80px) rem(23px);
 
-  &__wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  @include laptop {
+    padding: rem(40px) rem(50px) rem(14px);
+  }
+
+  @include resolution(930px) {
+    padding: rem(40px) rem(20px) rem(14px);
+  }
+
+  @include tablet {
+    padding: rem(40px) rem(20px);
+  }
+
+  @include mobile {
+    padding: rem(30px) rem(20px);
+  }
+
+  &__info {
     margin-bottom: rem(30px);
+
+    @include laptop {
+      margin-bottom: rem(20px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(30px);
+    }
   }
 
   &__title {
     margin-bottom: rem(20px);
+
+    @include laptop {
+      margin-bottom: rem(12px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__pre-conclusion,
@@ -70,30 +181,94 @@
     margin-bottom: rem(10px);
     line-height: 1.2;
     color: var(--color-boulder);
+
+    @include resolution(630px) {
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      font-size: rem(14px);
+    }
   }
 
   &__methods {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     align-items: center;
+    padding: inherit;
 
-    img:not(:last-child) {
-      margin-right: rem(8px);
+    img {
+      @include laptop {
+        width: rem(52px);
+
+        &:not(:last-child) {
+          margin-right: rem(6px);
+        }
+      }
+
+      @include tablet {
+        width: rem(64px);
+
+        &:not(:last-child) {
+          margin-right: rem(12px);
+        }
+      }
+
+      @include resolution(630px) {
+        width: rem(46px);
+
+        &:not(:last-child) {
+          margin-right: rem(6px);
+        }
+      }
+
+      @include mobile {
+        width: rem(36px);
+      }
+
+      &:not(:last-child) {
+        margin-right: rem(8px);
+      }
     }
   }
 
   &__submit {
-    width: 100%;
-    padding: rem(19.5px) 0;
     margin-bottom: rem(10px);
-    font-size: rem(25px);
-    font-weight: 600;
+
+    @include laptop {
+      margin-bottom: rem(8px);
+    }
+
+    @include tablet {
+      margin-bottom: rem(10px);
+    }
   }
 
   &__credentials {
+    display: inline-block;
     font-size: rem(14px);
     font-weight: 500;
-    line-height: em(16.48px, 14px);
+    line-height: 1.17;
     color: var(--color-boulder);
+
+    @include laptop {
+      font-size: rem(10px);
+    }
+
+    @include resolution(850px) {
+      max-width: rem(550px);
+    }
+
+    @include tablet {
+      max-width: rem(542px);
+      font-size: rem(12px);
+    }
+
+    @include mobile {
+      font-size: rem(10px);
+    }
   }
 }
 
@@ -102,25 +277,86 @@
 
   &__column:first-child {
     margin-right: rem(13px);
+
+    @include laptop {
+      margin-right: rem(8px);
+    }
+
+    @include tablet {
+      margin-right: rem(24px);
+    }
+
+    @include resolution(630px) {
+      margin-right: rem(14px);
+
+      span {
+        font-size: rem(16px);
+      }
+    }
+
+    @include mobile {
+      margin-right: rem(10px);
+
+      span {
+        font-size: rem(14px);
+      }
+    }
   }
 
   .radio {
+    @include laptop {
+      &:not(:last-child) {
+        margin-bottom: rem(10px);
+      }
+    }
+
+    @include resolution(930px) {
+      font-size: rem(14px);
+    }
+
+    @include tablet {
+      font-size: rem(20px);
+
+      &:not(:last-child) {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    @include resolution(630px) {
+      font-size: rem(16px);
+    }
+
+    @include mobile {
+      font-size: rem(12px);
+    }
+
     &:not(:last-child) {
       margin-bottom: rem(14px);
     }
 
     &__visual {
+      flex-shrink: 0;
       width: rem(16px);
       height: rem(16px);
       margin-right: rem(12px);
+
+      @include laptop {
+        width: rem(12px);
+        height: rem(12px);
+        margin-right: rem(8px);
+      }
+
+      @include tablet {
+        width: rem(16px);
+        height: rem(16px);
+        margin-right: rem(12px);
+      }
+
+      @include resolution(630px) {
+        width: rem(14px);
+        height: rem(14px);
+        margin-right: rem(8px);
+      }
     }
   }
-}
-
-.promocode,
-.result {
-  background-color: var(--color-light);
-  border: 1px solid var(--color-mercury);
-  border-radius: 20px;
-  box-shadow: 0 0 5px rgb(163 163 163 / 25%);
 }

@@ -100,50 +100,31 @@
     }
   }
 
-  .top-wave,
-  .bottom-wave {
-    position: absolute;
-    width: 100%;
+  .top-wave svg {
+    height: rem(225px);
 
-    svg {
-      display: block;
-      width: inherit;
+    @include resolution(1100px) {
+      height: rem(120px);
+    }
+
+    @include tablet {
+      height: rem(80px);
+    }
+
+    @include resolution(600px) {
+      height: rem(40px);
     }
   }
 
-  .top-wave {
-    top: 0;
+  .bottom-wave svg {
+    height: rem(208px);
 
-    svg {
-      height: rem(225px);
-
-      @include resolution(1100px) {
-        height: rem(120px);
-      }
-
-      @include tablet {
-        height: rem(80px);
-      }
-
-      @include resolution(600px) {
-        height: rem(40px);
-      }
+    @include resolution(1100px) {
+      height: rem(100px);
     }
-  }
 
-  .bottom-wave {
-    bottom: 0;
-
-    svg {
-      height: rem(208px);
-
-      @include resolution(1100px) {
-        height: rem(100px);
-      }
-
-      @include resolution(600px) {
-        height: rem(40px);
-      }
+    @include resolution(600px) {
+      height: rem(40px);
     }
   }
 }

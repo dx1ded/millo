@@ -8,7 +8,7 @@
   height: auto;
   padding: 0 rem(20px);
   background-color: var(--color-light);
-  border-radius: 20px;
+  border-radius: var(--r-regular);
   box-shadow: var(--shadow-primary);
 
   @include tablet {

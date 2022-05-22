@@ -45,7 +45,7 @@
   padding: rem(20px) rem(35px) rem(40px);
   text-align: center;
   background-color: var(--color-light);
-  border-radius: 20px;
+  border-radius: var(--r-regular);
   box-shadow: 0 0 30px rgb(149 149 149 / 25%);
 
   @include laptop {

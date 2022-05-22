@@ -66,33 +66,20 @@
     }
   }
 
-  .top-wave,
-  .bottom-wave {
-    position: absolute;
-    top: 0;
-    width: 100%;
+  .top-wave svg,
+  .bottom-wave svg {
+    height: rem(225px);
 
-    svg {
-      display: block;
-      width: inherit;
-      height: rem(225px);
-
-      @include resolution(1200px) {
-        height: rem(150px);
-      }
-
-      @include tablet {
-        height: rem(80px);
-      }
-
-      @include resolution(470px) {
-        height: rem(50px);
-      }
+    @include resolution(1200px) {
+      height: rem(150px);
     }
-  }
 
-  .bottom-wave {
-    top: auto;
-    bottom: 0;
+    @include tablet {
+      height: rem(80px);
+    }
+
+    @include resolution(470px) {
+      height: rem(50px);
+    }
   }
 }

@@ -61,15 +61,10 @@
   }
 
   .bottom-wave {
-    position: absolute;
-    bottom: 0;
     z-index: -1;
-    width: 100%;
     transform: translateY(100%);
 
     svg {
-      display: block;
-      width: inherit;
       height: rem(288px);
 
       @include resolution(1400px) {

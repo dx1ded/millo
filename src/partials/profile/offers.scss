@@ -61,11 +61,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-radius: 20px;
-
-  @include tablet {
-    border-radius: 8px;
-  }
+  border-radius: var(--r-regular);
 
   // A plug
 

@@ -58,27 +58,19 @@
     }
   }
 
-  .top-wave {
-    position: absolute;
-    top: 0;
-    width: 100%;
+  .top-wave svg {
+    height: rem(203px);
 
-    svg {
-      display: block;
-      width: inherit;
-      height: rem(203px);
+    @include resolution(1200px) {
+      height: rem(100px);
+    }
 
-      @include resolution(1200px) {
-        height: rem(100px);
-      }
+    @include tablet {
+      height: rem(80px);
+    }
 
-      @include tablet {
-        height: rem(80px);
-      }
-
-      @include resolution(600px) {
-        height: rem(50px);
-      }
+    @include resolution(600px) {
+      height: rem(50px);
     }
   }
 }

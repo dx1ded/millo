@@ -3,6 +3,9 @@
 @import "normalize.css/normalize";
 @import "./mixins";
 @import "./variables";
+
+/* purgecss end ignore */
+
 @import "./base";
 @import "./animations";
 @import "./fonts";
@@ -12,5 +15,3 @@
 @import "typography/title";
 @import "typography/text";
 @import "typography/btn";
-
-/* purgecss end ignore */

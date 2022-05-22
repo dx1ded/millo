@@ -25,74 +25,73 @@
     }
 
     &::before {
-      top: 5px;
-      left: -878px;
+      top: rem(5px);
+      left: rem(-878px);
       z-index: -1;
-      width: 1230px;
-      height: 1380px;
+      width: rem(1230px);
+      height: rem(1380px);
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1230 1380' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M556.543 1271.45C448.013 1252.2 330.882 1303.89 235.653 1240.72C126.826 1168.54 17.3975 1056.05 2.13463 903.699C-13.0132 752.495 103.774 630.284 160.499 490.537C215.645 354.679 228.971 187.166 329.442 97.3435C433.886 3.96871 572.692 -15.7035 696.205 11.6052C813.693 37.5819 895.325 149.271 985.182 242.328C1078.9 339.383 1223.37 411.207 1229.81 564.218C1236.32 718.902 1073.84 806.105 1014.85 946.89C959.107 1079.93 1003.1 1283.04 897.211 1358.03C791.267 1433.05 674.506 1292.36 556.543 1271.45Z' fill='%23F9B300'/%3E%3C/svg%3E%0A");
 
       @include laptop {
-        left: -600px;
-        width: 844px;
-        height: 955px;
+        left: rem(-600px);
+        width: rem(844px);
+        height: rem(955px);
         transform: rotate(-15deg);
       }
 
       @include resolution(900px) {
-        top: 380px;
-        left: -650px;
+        top: rem(380px);
+        left: rem(-650px);
         transform: rotate(180deg);
       }
 
       @include resolution(630px) {
-        top: 500px;
-        left: -330px;
-        width: 439px;
-        height: 497px;
+        top: rem(500px);
+        left: rem(-330px);
+        width: rem(439px);
+        height: rem(497px);
         transform: rotate(180deg);
       }
 
       @include resolution(600px) {
-        top: 330px;
+        top: rem(330px);
       }
     }
 
     &::after {
-      top: 524px;
-      left: -436px;
+      top: rem(524px);
+      left: rem(-436px);
       z-index: 1;
-      width: 674px;
-      height: 674px;
+      width: rem(674px);
+      height: rem(674px);
       pointer-events: none;
       background-image: url("@images/blured-beans.png");
       background-size: 100% 100%;
 
       @include laptop {
-        top: 376px;
-        left: -280px;
-        z-index: 100;
-        width: 477px;
-        height: 477px;
+        top: rem(376px);
+        left: rem(-280px);
+        width: rem(477px);
+        height: rem(477px);
       }
 
       @include resolution(900px) {
-        top: 550px;
-        left: -280px;
+        top: rem(550px);
+        left: rem(-280px);
         z-index: -1;
-        width: 509px;
-        height: 509px;
+        width: rem(509px);
+        height: rem(509px);
       }
 
       @include resolution(630px) {
-        top: 640px;
-        left: -190px;
-        width: 300px;
-        height: 300px;
+        top: rem(640px);
+        left: rem(-190px);
+        width: rem(300px);
+        height: rem(300px);
       }
 
       @include resolution(600px) {
-        top: 400px;
+        top: rem(400px);
       }
     }
   }
@@ -132,7 +131,7 @@
   padding: rem(60px) rem(35px) rem(54px);
   text-align: center;
   background-color: var(--color-light);
-  border-radius: 20px;
+  border-radius: var(--r-regular);
   outline: none;
   box-shadow: var(--shadow-primary);
 

@@ -97,13 +97,9 @@
   }
 
   .top-wave {
-    position: absolute;
     top: rem(-3px);
-    width: 100%;
 
     svg {
-      display: block;
-      width: 100%;
       height: rem(246px);
 
       @include laptop {

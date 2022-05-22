@@ -54,6 +54,10 @@
     padding: rem(40px) rem(10px) rem(10px);
     margin: rem(-40px) rem(-10px) rem(-10px);
     overflow: hidden;
+
+    @include resolution(900px) {
+      margin-right: calc(var(--container-horizontal-offset) * -1);
+    }
   }
 
   &__link {

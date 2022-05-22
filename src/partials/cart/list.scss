@@ -13,7 +13,7 @@
     padding: rem(110px) rem(140px) rem(86px);
     background-color: var(--color-light);
     border: 1px solid var(--color-mercury);
-    border-radius: 20px;
+    border-radius: var(--r-regular);
     box-shadow: 0 0 50px rgb(163 163 163 / 25%);
 
     @include resolution(1500px) {
@@ -165,15 +165,10 @@
   }
 
   .bottom-wave {
-    position: absolute;
-    bottom: 0;
     z-index: -1;
-    width: 100%;
     transform: translateY(100%);
 
     svg {
-      display: block;
-      width: inherit;
       height: rem(288px);
 
       @include laptop {

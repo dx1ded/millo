@@ -18,15 +18,12 @@
 }
 
 .subscribe .bottom-wave {
-  position: absolute;
   top: 0;
+  bottom: auto;
   z-index: -1;
-  width: 100%;
   transform: translateY(-100%);
 
   svg {
-    display: block;
-    width: inherit;
     height: rem(207px);
 
     @include laptop {

@@ -122,7 +122,7 @@
       min-width: 100%;
       max-height: 100%;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: var(--r-regular);
     }
   }
 }
@@ -138,6 +138,6 @@
 
   img {
     height: rem(250px);
-    border-radius: 20px;
+    border-radius: var(--r-regular);
   }
 }

@@ -51,27 +51,19 @@
     }
   }
 
-  .top-wave {
-    position: absolute;
-    top: 0;
-    width: 100%;
+  .top-wave svg {
+    height: rem(225px);
 
-    svg {
-      display: block;
-      width: inherit;
-      height: rem(225px);
+    @include resolution(1100px) {
+      height: rem(150px);
+    }
 
-      @include resolution(1100px) {
-        height: rem(150px);
-      }
+    @include tablet {
+      height: rem(100px);
+    }
 
-      @include tablet {
-        height: rem(100px);
-      }
-
-      @include resolution(560px) {
-        height: rem(60px);
-      }
+    @include resolution(560px) {
+      height: rem(60px);
     }
   }
 }

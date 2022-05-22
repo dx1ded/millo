@@ -36,10 +36,27 @@
   --z-scroll-tabs: 200;
   --z-loader: 300;
   --z-burger: 1000;
+
+  // Border-radiuses
+
+  --r-regular: 20px;
 }
 
 @include laptop {
   :root {
     --design-mw: #{em(1180px)};
+    --r-regular: 14px;
+  }
+}
+
+@include tablet {
+  :root {
+    --r-regular: 12px;
+  }
+}
+
+@include mobile {
+  :root {
+    --r-regular: 10px;
   }
 }

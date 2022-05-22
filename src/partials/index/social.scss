@@ -202,7 +202,6 @@
 
 .social-slide {
   height: rem(382px);
-  background-color: #e9e9e9;
   border-radius: 10px;
 
   @include resolution(1690px) {
@@ -219,5 +218,12 @@
 
   @include resolution(600px) {
     height: rem(270px);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
   }
 }

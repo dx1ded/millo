@@ -1,9 +1,8 @@
 import { getProducts } from "@/services/FirebaseService"
-import { Filter } from "@cmps/Filter/filter"
-import { Product } from "@cmps/Product/product"
+import { productCard } from "@/markup/product"
 
 const section = document.querySelector(".products")
-const container = section.querySelector(".container")
+const container = section.querySelector(".products__wrapper")
 const loadMoreButton = section.querySelector("#more-btn")
 
 const TYPE = section.dataset.type
@@ -11,21 +10,10 @@ const OFFSET = 12
 
 let step = 0
 
-const database = []
 const options = {
   root: null,
   threshold: 0.5
 }
-
-// Form
-
-const form = document.querySelector(".filter-form")
-const filter = new Filter({
-  form,
-  database,
-  container,
-  loadMoreButton
-})
 
 async function loadProducts() {
   const products = await getProducts({
@@ -34,7 +22,7 @@ async function loadProducts() {
   })
 
   renderProducts(products)
-  // areMoreProducts(products.size)
+  areMoreProducts(products.size)
 
   step++
 }
@@ -42,20 +30,9 @@ async function loadProducts() {
 function renderProducts(products) {
   products.forEach((product) => {
     const data = product.data()
-    const isSuitable = filter.filter(data)
-
-    if (!isSuitable) return
-
-    const productNode = new Product(data).node
+    const productMarkup = productCard(data)
     
-    container.insertBefore(
-      productNode,
-      loadMoreButton
-    )
-
-    // Push product to <local database>
-
-    database.push(data)
+    container.insertAdjacentHTML("beforeend", productMarkup)
   })
 }
 

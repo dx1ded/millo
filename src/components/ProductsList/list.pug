@@ -2,8 +2,5 @@ mixin products-list
   .products&attributes(attributes)
     .container.products__container
       include @cmps/Sort/sort
-      //- Content (might be blocks of products)
       .products__wrapper
-        block
-      //- ==================
       include @cmps/More/more

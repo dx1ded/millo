@@ -10,16 +10,9 @@ section.sales
     .sales__row
       button.btn.btn-reset.btn--primary.sales-nav.sales-nav--prev(aria-label="Слайдер влево")
       .sales__wrapper
-        //- include @cmps/Loader/loader
+        include @cmps/Loader/loader
         .swiper.sales-slider
           .swiper-wrapper
-            //- Remove That
-            //- ==========
-            +product-with-sales.swiper-slide
-            +product-with-sales.swiper-slide
-            +product-with-sales.swiper-slide
-            +product-with-sales.swiper-slide
-            //- ==========
       button.btn.btn-reset.btn--primary.sales-nav.sales-nav--next(aria-label="Слайдер вправо")
     .sales__link
       a.text.text--sm(href="coffee.html") Смотреть все

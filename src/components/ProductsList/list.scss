@@ -7,15 +7,11 @@
   background-color: var(--color-wild-sand);
 
   @include laptop {
-    padding: rem(40px) 0 rem(152px);
+    padding: rem(40px) 0 rem(100px);
   }
 
   @include resolution(900px) {
-    padding: rem(40px) 0 rem(80px);
-  }
-
-  @include tablet {
-    padding: rem(40px) 0 rem(80px);
+    padding: rem(40px) 0 rem(50px);
   }
 
   &::after {
@@ -53,6 +49,16 @@
 
     @include laptop {
       margin-bottom: rem(40px);
+    }
+  }
+
+  .more {
+    @include laptop {
+      margin-bottom: rem(52px);
+    }
+
+    @include resolution(900px) {
+      margin-bottom: rem(30px);
     }
   }
 }

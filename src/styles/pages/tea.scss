@@ -50,3 +50,7 @@
     width: rem(320px);
   }
 }
+
+.product--wide .product__image {
+  max-width: rem(220px);
+}

@@ -1,5 +1,5 @@
 import { getProducts } from "@/services/FirebaseService"
-import { productCard } from "@/markup/product"
+import { productCard, productCardWide } from "@/markup/product"
 
 const section = document.querySelector(".products")
 const container = section.querySelector(".products__wrapper")
@@ -16,13 +16,18 @@ const options = {
 }
 
 async function loadProducts() {
-  const products = await getProducts({
+  const product = await getProducts({
     type: TYPE,
     offset: OFFSET * step
   })
 
-  renderProducts(products)
-  areMoreProducts(products.size)
+  const docs = product.docs
+
+  if (areMoreProducts(product.size)) {
+    docs.pop()
+  }
+
+  renderProducts(docs)
 
   step++
 }
@@ -30,16 +35,22 @@ async function loadProducts() {
 function renderProducts(products) {
   products.forEach((product) => {
     const data = product.data()
-    const productMarkup = productCard(data)
+    const productMarkup = data.type
+      ? productCardWide(data)
+      : productCard(data)
     
     container.insertAdjacentHTML("beforeend", productMarkup)
   })
 }
 
 function areMoreProducts(size) {
-  if (size !== OFFSET) {
+  if (size !== 13) {
     loadMoreButton.remove()
+
+    return false
   }
+
+  return true
 }
 
 // Load products only if user's viewport is in the section

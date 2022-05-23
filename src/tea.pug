@@ -13,14 +13,14 @@ block config
       {
         name: "Черный чай",
         image: {
-          url: "black-tea.jpg",
+          url: "products/tea/millo-black-tea.jpg",
           alt: "Пачка черного чая"
         }
       },
       {
         name: "Зеленый чай",
         image: {
-          url: "green-tea.jpg",
+          url: "products/tea/millo-green-tea.jpg",
           alt: "Пачка зеленого чая"
         }
       },
@@ -34,14 +34,14 @@ block config
       {
         name: "Травяной чай",
         image: {
-          url: "black-tea.jpg",
+          url: "products/tea/millo-black-tea.jpg",
           alt: "Пачка черного чая"
         }
       },
       {
         name: "Матча",
         image: {
-          url: "green-tea.jpg",
+          url: "products/tea/millo-green-tea.jpg",
           alt: "Пачка зеленого чая"
         }
       },
@@ -85,55 +85,7 @@ block partials
       ]
     )
     +proposition(data)
-    +products-list
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
-      +product-without-options({
-        url: "black-tea.jpg",
-        alt: "Пакет черного чая"
-      })
+    +products-list(data-type="1")
     +subscribe
   include @cmps/Footer/footer
 

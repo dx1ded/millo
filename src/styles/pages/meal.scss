@@ -65,6 +65,14 @@
   display: flex;
   align-items: center;
 
+  &__image {
+    margin-right: rem(20px);
+
+    @include tablet {
+      margin-right: 0;
+    }
+  }
+
   &__text {
     max-width: rem(256px);
     margin: 0 auto;
@@ -75,4 +83,9 @@
       text-align: center;
     }
   }
+}
+
+.product--wide .product__image {
+  width: rem(170px);
+  height: rem(260px);
 }

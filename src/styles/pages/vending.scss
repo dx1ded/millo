@@ -128,6 +128,8 @@
 }
 
 .product--wide .product__image {
+  width: 100%;
+
   @include laptop {
     width: 100%;
 

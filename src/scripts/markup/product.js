@@ -4,7 +4,7 @@ export const productCard = ({
   id, name, preview, image, price, rating, reviewsCount,
   chars, extent, weights, isPopular, isNew
 }) => (`
-  <article class="product product--sale">
+  <article class="product ${price.old ? "product--sale" : ""}">
     <div class="product__header">
       ${price.old
         ? "<span class='text text--xs sales-sign'>Скидки</span>"
@@ -50,7 +50,7 @@ export const productCard = ({
         <div class="product-chars">
           ${Object.entries(chars).map(([name, value]) => (`
             <div class="char">
-              <span class="text text--sm char__name">${name}</span>
+              <span class="text text--xs char__name">${name}</span>
               <div class="char__bullets">
                 ${new Array(10).fill().map((_, index) => (`
                   <div ${index === value - 1 ? "class='current'" : ""}></div>
@@ -80,6 +80,45 @@ export const productCard = ({
     </div>
   </article>
 `)
+
+export const productCardWide = ({
+  id, name, preview, image, price, rating, reviewsCount, weights
+}) => (`
+  <article class="product product--wide">
+    <div class="product__header">
+      <div class="rating">
+        <div class="rating__stars">
+          ${new Array(5).fill().map((_, index) => (`
+            <svg ${index === rating - 1 ? "class='current'" : ""}>
+              <use xlink:href="assets/images/sprite.svg#star"></use>
+            </svg>
+          `)).reverse().join("")}
+        </div>
+        <span class="rating__text">
+          <strong>${rating}.0</strong>&nbsp;
+          (${reviewsCount} отзыва)
+        </span>
+      </div>
+      ${select(weights)}
+    </div>
+    <div class="product__content">
+      <div class="product__image">
+        <img src="${image.url}" alt="${image.alt}">
+      </div>
+    </div>
+    <div class="product__info">
+      <h4 class="text text--md product__name">${name}</h4>
+      <p class="text text--xs product__description">${preview}</p>
+      <div class="product__wrapper">
+        <div class="product-price">
+          <ins class="product-price__current">${price.current} &#8381;</ins>
+        </div>
+        <button class="btn btn-reset btn--primary product__cta" href="product.html?id=${id}">Купить</button>
+      </div>
+    </div>
+  </article>
+`)
+
 
 export const productSlide = ({
   id, name, preview, image, price, rating, reviewsCount,
@@ -131,7 +170,7 @@ export const productSlide = ({
         <div class="product-chars">
           ${Object.entries(chars).map(([name, value]) => (`
             <div class="char">
-              <span class="text text--sm char__name">${name}</span>
+              <span class="text text--xs char__name">${name}</span>
               <div class="char__bullets">
                 ${new Array(10).fill().map((_, index) => (`
                   <div ${index === value - 1 ? "class='current'" : ""}></div>

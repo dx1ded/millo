@@ -91,6 +91,10 @@
 
   .loader {
     height: rem(687px);
+
+    @include laptop {
+      height: rem(502px);
+    }
   }
 }
 

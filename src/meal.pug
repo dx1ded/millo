@@ -13,35 +13,35 @@ block config
       {
         name: "Цикорий и\u00A0корень\u00A0цикория",
         image: {
-          url: "barley-drink.jpg",
+          url: "products/meal/barley-drink.jpg",
           alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
         }
       },
       {
         name: "Ячменные напитки",
         image: {
-          url: "barley-drink.jpg",
+          url: "products/meal/barley-drink.jpg",
           alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
         }
       },
       {
         name: `Напитки для\u00A0здоровья`,
         image: {
-          url: "barley-drink.jpg",
+          url: "products/meal/barley-drink.jpg",
           alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
         }
       },
       {
         name: "Протеиновые смеси",
         image: {
-          url: "barley-drink.jpg",
+          url: "products/meal/barley-drink.jpg",
           alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
         }
       },
       {
         name: "Толокняные каши",
         image: {
-          url: "barley-drink.jpg",
+          url: "products/meal/barley-drink.jpg",
           alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
         }
       }
@@ -71,55 +71,7 @@ block partials
       ]
     )
     +proposition(data, 2)
-    +products-list
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
-      +product-without-options({
-        url: "barley-drink.jpg",
-        alt: "Коричневая пачка ячменного напитка с изображением чашки напитка и ячменя сзади"
-      })
+    +products-list(data-type="3")
     +subscribe
   include @cmps/Footer/footer
 

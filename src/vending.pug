@@ -13,49 +13,49 @@ block config
       {
         name: "Гранулированный кофе",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Гранулированный цикорий",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Зерновой кофе",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Гранулированный какао",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Гранулированные напитки",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Кофе порошкообразный",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       },
       {
         name: "Сухое молоко",
         image: {
-          url: "beans-dust.jpg",
+          url: "products/crop/beans-dust.jpg",
           alt: "Коричневая пыль перемеленного кофе"
         }
       }
@@ -85,55 +85,7 @@ block partials
       ]
     )
     +proposition(data)
-    +products-list
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
-      +product-without-options({
-        url: "beans-dust.jpg",
-        alt: "Коричневая пыль перемеленного кофе"
-      })
+    +products-list(data-type="2")
     +subscribe
   include @cmps/Footer/footer
 

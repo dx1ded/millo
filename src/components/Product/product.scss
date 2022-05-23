@@ -4,6 +4,9 @@
 @import "@cmps/Char/char";
 
 .product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: rem(25px) rem(38px) rem(52px) rem(41px);
   background-color: var(--color-light);
   border-radius: var(--r-regular);
@@ -17,6 +20,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    width: 100%;
     margin-bottom: rem(50px);
 
     @include laptop {
@@ -42,6 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     margin-bottom: rem(33px);
 
     @include laptop {
@@ -67,6 +72,11 @@
 
   &__options {
     padding-top: rem(18px);
+  }
+
+  &__info {
+    width: 100%;
+    margin-top: auto;
   }
 
   &__name {
@@ -204,6 +214,7 @@
   .product__image {
     width: initial;
     aspect-ratio: initial;
+    margin-right: 0;
 
     @include laptop {
       width: rem(180px);

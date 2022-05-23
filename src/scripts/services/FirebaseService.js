@@ -7,7 +7,8 @@ import {
   orderBy,
   where,
   startAt,
-  limit
+  limit,
+  onSnapshot
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -37,7 +38,7 @@ export const getProducts = async ({ type, offset }) => {
     where("type", "==", Number(type)),
     orderBy("id"),
     startAt(++offset),
-    limit(12)
+    limit(13)
   )
 
   return getDocs(q)

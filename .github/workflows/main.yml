@@ -20,4 +20,4 @@ jobs:
         with:
           dir: build
           branch: gh-pages
-          token: ${{ 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 }}
+          token: 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

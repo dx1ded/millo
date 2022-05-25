@@ -15,7 +15,7 @@ jobs:
       - name: Install packages
         run: npm i
       
-      - name: Buld project
+      - name: Build project
         run: npm run build
 
       - name: Publish generated content to GitHub Pages
@@ -23,4 +23,4 @@ jobs:
         with:
           dir: build
           branch: gh-pages
-          token: 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
+          token: ${{ secrets.ACCESS_TOKEN }}

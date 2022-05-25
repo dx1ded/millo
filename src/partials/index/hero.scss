@@ -167,8 +167,6 @@
     }
 
     &--active {
-      /* purgecss ignore current */
-
       background-color: var(--color-cork);
 
       @include tablet {

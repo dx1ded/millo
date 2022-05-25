@@ -11,37 +11,7 @@ include @cmps/Select/select
 
 section.overlay
   .container.overlay__container
-    .product
-      .product__image
-        +image("products/colombia-supremo.jpg", "Пакет кофе, на котором логотип с надписью Ethiopia Yirgachefee и картинка с козлом на фоне гор")
-      .product__info
-        .product__row
-          .product__column
-            +beans
-            h2.product__name Colombia Supremo
-            p.text.text--sm.product__type Мытая, натуральная, смесь
-          .product__column
-            span.text.text--sm.product__sign Популярное
-            span.text.text--sm.product__sign Новый урожай
-        +rating
-        .product__description
-          p.text.text--sm
-            | Компания Нью Рефайнинг Груп находится в г. Калининграде и имеет свой склад и представительство в Москве. Завод работает на рынке свежеобжаренного кофе и растворимой продукции более 15 лет. Завод имеет немецкое оборудование марки Probat по обжарке кофе и итальянские агломераторы для производства растворимой продукции.
-          +text-more
-        .product__chars
-          +char("Кислинка")
-          +char("Горчинка")
-          +char("Насыщенность")
-        form.product-form
-          fieldset.product-form__options
-            +radio("250 г. продукта")(name="product-weight" checked)
-              | 250 г.
-            +radio("1000 г. продукта")(name="product-weight")
-              | 1000 г.
-          .product-form__summary
-            +select(0, ["100 г.", "250 г.", "300 г."])
-            +counter
-            input.btn.btn-reset.btn--primary.product__buy(type="submit" value="Купить за 250 ₽")
+    include @cmps/Loader/loader
   .bottom-wave
     svg(viewbox="0 0 1909 265" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
       path(d="M0 157V265H1909L1871 256.5L1814.5 244L1763.5 232L1700.5 217.5L1603 194.5L1514.5 172.5L1425.5 149.5L1330 123.5L1233 97.5L1146 74.5L1054.5 52.5L985 37L927.5 26L878.5 18.5L826 11.5L790.5 7.5L740 3L690.5 0.5L653.5 0L601.5 1.5L557 4L498.5 10L467 14.5L439 19.5L377 32L310.5 49.5L219 77L133 107L39.5 142L0 157Z" fill="white")

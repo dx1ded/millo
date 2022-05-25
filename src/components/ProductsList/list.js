@@ -3,6 +3,7 @@ import { productCard, productCardWide } from "@/markup/product"
 
 const section = document.querySelector(".products")
 const container = section.querySelector(".products__wrapper")
+const loader = section.querySelector(".loader")
 const loadMoreButton = section.querySelector("#more-btn")
 
 const TYPE = section.dataset.type
@@ -27,6 +28,7 @@ async function loadProducts() {
     docs.pop()
   }
 
+  toggleLoader()
   renderProducts(docs)
 
   step++
@@ -51,6 +53,12 @@ function areMoreProducts(size) {
   }
 
   return true
+}
+
+function toggleLoader() {
+  if (loader) {
+    loader.remove()
+  }
 }
 
 // Load products only if user's viewport is in the section

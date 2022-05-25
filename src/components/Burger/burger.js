@@ -6,6 +6,7 @@ const burgerActiveClassName = "burger--active"
 
 function toggleBurger() {
   burger.classList.toggle(burgerActiveClassName)
+  document.body.classList.toggle("scroll-disabled")
 }
 
 [burgerOpen, burgerClose].forEach(

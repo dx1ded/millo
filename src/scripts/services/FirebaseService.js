@@ -7,19 +7,10 @@ import {
   orderBy,
   where,
   startAt,
-  limit,
-  onSnapshot
-} from "firebase/firestore"
+  limit
+} from "firebase/firestore/lite"
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCrK0W9LDIN-SYcnKz50g8QLm6LYpYsHkM",
-  authDomain: "millo-347519.firebaseapp.com",
-  projectId: "millo-347519",
-  storageBucket: "millo-347519.appspot.com",
-  messagingSenderId: "362610178133",
-  appId: "1:362610178133:web:314199486e9e5cf1b4bcdc",
-  measurementId: "G-FG7G5SZQ8V"
-}
+import firebaseConfig from "@db"
 
 const app = initializeApp(firebaseConfig)
 const firestore = getFirestore(app)
@@ -39,6 +30,14 @@ export const getProducts = async ({ type, offset }) => {
     orderBy("id"),
     startAt(++offset),
     limit(13)
+  )
+
+  return getDocs(q)
+}
+
+export const getProduct = async ({ id }) => {
+  const q = query(collection(firestore, "products"),
+    where("id", "==", Number(id))
   )
 
   return getDocs(q)

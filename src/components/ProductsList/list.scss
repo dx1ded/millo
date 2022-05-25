@@ -1,3 +1,4 @@
+@import "@cmps/Loader/loader";
 @import "@cmps/Sort/sort";
 @import "@cmps/More/more";
 
@@ -60,5 +61,10 @@
     @include resolution(900px) {
       margin-bottom: rem(30px);
     }
+  }
+
+  .loader {
+    grid-column: span 4;
+    height: rem(500px);
   }
 }

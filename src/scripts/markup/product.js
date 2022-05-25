@@ -1,8 +1,106 @@
 import { select } from "./select"
+import { beans } from "./beans"
+import { ratingMarkup } from "./rating"
+import { charsMarkup } from "./chars"
+
+export const product = ({
+  image,
+  extent,
+  name,
+  isPopular,
+  isNew,
+  reviewsCount,
+  rating,
+  description,
+  chars,
+  weights,
+  price
+}) => (`
+  <div class="product">
+    <div class="product__image">
+      <img src="${image.url}" alt="${image.alt}">
+    </div>
+    <div class="product__info">
+      <div class="product__row">
+        <div class="product__column">
+          ${beans(extent)}
+          <h2 class="product__name">${name}</h2>
+          <p class="text text--sm product__type">Мытая, натуральная, смесь</p>
+        </div>
+        <div class="product__column">
+          ${isPopular
+            ? "<span class='text text--sm product__sign'>Популярное</span>"
+            : ""
+          }
+          ${isNew
+            ? "<span class='text text--sm product__sign'>Новый урожай</span>"
+            : ""
+          }
+        </div>
+      </div>
+      ${ratingMarkup(rating, reviewsCount)}
+      <div class="product__description">
+        <p class="text text--sm">${description}</p>
+        <button class="btn-reset text-more" id="text-more">Читать полностью</button>
+      </div>
+      ${charsMarkup(chars)}
+      <form class="product-form">
+        <fieldset class="product-form__options">
+          ${weights.map((weight) => (`
+            <label class="radio">
+              <input
+                class="visually-hidden radio__input"
+                type="radio"
+                aria-label="Вес ${weight}"
+              >
+              <span class="radio__visual"></span>
+              ${weight} г.
+            </label>
+          `)).join("")}
+        </fieldset>
+        <div class="product-form__summary">
+          ${select(weights)}
+          <div class="counter">
+            <input
+              class="counter__display"
+              type="number"
+              value="1"
+              min="1"
+              max="99"
+              required
+            >
+            <input
+              class="btn-reset counter__action counter__action--decrement"
+              type="button"
+              value="-"
+            >
+            <input
+              class="btn-reset counter__action counter__action--increment"
+              type="button"
+              value="+"
+            >
+          </div>
+          <input type="submit" class="btn btn-reset btn--primary product__buy" value="Купить за ${price.current} ₽">
+        </div>
+      </form>
+    </div>
+  </div>
+`)
+
 
 export const productCard = ({
-  id, name, preview, image, price, rating, reviewsCount,
-  chars, extent, weights, isPopular, isNew
+  id,
+  name,
+  preview,
+  image,
+  price,
+  rating,
+  reviewsCount,
+  chars,
+  extent,
+  weights,
+  isPopular,
+  isNew
 }) => (`
   <article class="product ${price.old ? "product--sale" : ""}">
     <div class="product__header">
@@ -82,7 +180,14 @@ export const productCard = ({
 `)
 
 export const productCardWide = ({
-  id, name, preview, image, price, rating, reviewsCount, weights
+  id,
+  name,
+  preview,
+  image,
+  price,
+  rating,
+  reviewsCount,
+  weights
 }) => (`
   <article class="product product--wide">
     <div class="product__header">
@@ -113,7 +218,7 @@ export const productCardWide = ({
         <div class="product-price">
           <ins class="product-price__current">${price.current} &#8381;</ins>
         </div>
-        <button class="btn btn-reset btn--primary product__cta" href="product.html?id=${id}">Купить</button>
+        <a class="btn btn-reset btn--primary product__cta" href="product.html?id=${id}">Купить</a>
       </div>
     </div>
   </article>
@@ -121,8 +226,18 @@ export const productCardWide = ({
 
 
 export const productSlide = ({
-  id, name, preview, image, price, rating, reviewsCount,
-  chars, extent, weights, isPopular, isNew
+  id,
+  name,
+  preview,
+  image,
+  price,
+  rating,
+  reviewsCount,
+  chars,
+  extent,
+  weights,
+  isPopular,
+  isNew
 }) => (`
   <article class="swiper-slide product product--sale">
     <div class="product__header">

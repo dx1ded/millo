@@ -1,6 +1,7 @@
 import path from 'path'
+import TerserPlugin from 'terser-webpack-plugin'
 
-import { isDev } from './tasks/_utils'
+import { isDev, isProd } from './tasks/_utils'
 
 export default {
   mode: process.env.NODE_ENV,
@@ -29,7 +30,22 @@ export default {
     alias: {
       '@': path.resolve(__dirname, 'src/scripts'),
       '@cmps': path.resolve(__dirname, 'src/components'),
-      '@partials': path.resolve(__dirname, 'src/partials')
+      '@partials': path.resolve(__dirname, 'src/partials'),
+      '@db': path.resolve(__dirname, 'firebase/options.json')
     }
+  },
+  optimization: {
+    minimize: isProd,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false,
+          }
+        }
+      })
+    ]
   }
 }

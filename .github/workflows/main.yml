@@ -8,11 +8,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - name: Check out
         uses: actions/checkout@v1
 
       - name: Generate your awesome content
+        run: npm i
         run: npm run build
 
       - name: Publish generated content to GitHub Pages

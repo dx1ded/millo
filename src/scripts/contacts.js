@@ -1,5 +1,7 @@
 import "focus-visible"
 
+import "@cmps/Header/header"
+
 import "@partials/contacts/contacts"
 import "@partials/contacts/shops"
 

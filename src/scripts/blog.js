@@ -1,6 +1,8 @@
 import "focus-visible"
-import { ScrollTabs } from "@cmps/Tabs/tabs"
+
 import "@partials/blog/news"
 import "@partials/blog/faq"
+
+import { ScrollTabs } from "@cmps/Tabs/tabs"
 
 new ScrollTabs()

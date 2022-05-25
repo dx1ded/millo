@@ -1,3 +1,4 @@
+import { imageMarkup } from "./image"
 import { select } from "./select"
 import { beans } from "./beans"
 import { ratingMarkup } from "./rating"
@@ -18,7 +19,7 @@ export const product = ({
 }) => (`
   <div class="product">
     <div class="product__image">
-      <img src="${image.url}" alt="${image.alt}">
+      ${imageMarkup(image)}
     </div>
     <div class="product__info">
       <div class="product__row">
@@ -122,7 +123,7 @@ export const productCard = ({
     </div>
     <div class="product__content">
       <div class="product__image">
-        <img src="${image.url}" alt="${image.alt}">
+        ${imageMarkup(image)}
       </div>
       <div class="product__options">
         <div class="rating">
@@ -208,7 +209,7 @@ export const productCardWide = ({
     </div>
     <div class="product__content">
       <div class="product__image">
-        <img src="${image.url}" alt="${image.alt}">
+        ${imageMarkup(image)}
       </div>
     </div>
     <div class="product__info">
@@ -259,7 +260,7 @@ export const productSlide = ({
     </div>
     <div class="product__content">
       <div class="product__image">
-        <img src="${image.url}" alt="${image.alt}">
+        ${imageMarkup(image)}
       </div>
       <div class="product__options">
         <div class="rating">
